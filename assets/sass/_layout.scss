@@ -1,0 +1,182 @@
+// ==========================================================================
+// Tabela de Conteúdos:
+// ==========================================================================
+
+//
+// # Header
+// 		# Title + description
+// 		# Navbar
+// # Wrapper
+// # Content
+// # Sidebar and Widgets
+// # Components
+// 		# Fancy skip link
+// 		# Pagination
+// 		# Comments
+// # Footer
+//
+
+html,
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+body.logged-in.admin-bar {
+	//margin-top: 32px;
+	.navbar.fixed-top {
+		margin-top: 32px;
+	}
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 300;
+	&.entry-title {
+		text-transform: uppercase;
+	}
+}
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.nopadding {
+	padding-left: 0;
+	padding-right: 0;
+}
+.site {
+	margin-top: 56px;
+}
+.hfeed.site {
+	overflow: hidden;
+}
+
+/* Header */
+.site-header {
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+	position: fixed;
+	top: 56px;
+	width: 100%;
+	z-index: 999	;
+	.navbar.fixed-top {
+	}
+	@media ( min-width: 1040px ) {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	&.blurred-image {
+		-webkit-transition: all 0.3 ease-in-out;
+		-o-transition: all 0.3 ease-in-out;
+		transition: all 0.3 ease-in-out;
+		opacity: 0;
+		-webkit-filter: blur(5px) brightness(0.5);
+		-ms-filter: blur(5px) brightness(0.5);
+		-o-filter: blur(5px) brightness(0.5);
+		filter: blur(5px) brightness(0.5);
+	}
+}
+.wrap-logo {
+	padding: 15px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 99;
+	img {
+		max-width: 160px; 
+	}
+}
+body.home {
+	.wrap-logo {
+		//padding: 290px 15px;
+	}
+}
+
+// # Content
+#content {
+	background: $branco;
+	margin: 0 auto;
+	max-width: 1280px;
+	position: relative;
+	z-index: 99;
+	.entry-content {
+		@media ( max-width: 1258px ) {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+		}
+	}
+}
+
+// # Footer
+
+#footer {
+	.container {
+		color: $cinza-claro;
+		max-width: 800px;
+		padding-bottom: 30px;
+		padding-top: 30px;
+		.infos {
+			padding-top: 75px;
+		}
+		.infos span {
+			display: block;
+			font-size: 16px;
+			margin-bottom: 15px;
+			width: 100%;
+			&.telefone {
+				background: url( '../images/phone.png' ) left center no-repeat;
+				background-size: 30px;
+				padding: 5px 15px 5px 45px;
+			}
+			&.email {
+				background: url( '../images/mail.png' ) left center no-repeat;
+				background-size: 30px;
+				padding: 5px 15px 5px 45px;
+			}
+			&.instagram {
+				background: url( '../images/instagram.png' ) left center no-repeat;
+				background-size: 30px;
+				padding: 5px 15px 5px 45px;
+			}
+		}
+		a {
+			color: $cinza-claro;
+		}
+		.wpcf7 {
+			textarea {
+				height: 100px;
+			}
+			input[ type="text" ],
+			input[ type="email" ],
+			textarea {
+				background-color: #666;
+				border: none;
+				border-radius: 5px;
+				color: #FFF;
+				padding: 10px;
+				width: 100%;
+				&:focus {
+					outline: none;
+				}
+				&::-webkit-input-placeholder /* Chrome/Opera/Safari */,
+				&::-moz-placeholder,
+				&:-ms-input-placeholder,
+				&:-moz-placeholder {
+					color: $cinza-claro;
+				}
+			}
+			input[ type="submit" ] {
+				background-color: #666;
+				border: none;
+				border-radius: 5px;
+				color: #FFF;
+				padding: 10px;
+			}
+		}
+	}
+}
