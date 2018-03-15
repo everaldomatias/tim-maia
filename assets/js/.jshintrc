@@ -19,7 +19,7 @@
 		"_": false,
 		"Backbone": false,
 		"jQuery": false,
-		"AOS": true,
+		"bootstrap.min": true,
 		"wp": false,
 		"devel": true
 	}
