@@ -1,5 +1,5 @@
-<nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark" role="navigation">
-    <div class="container">
+<nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark" role="navigation">
+    <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,11 +13,11 @@
                     'container'         => 'div',
                     'container_class'   => 'collapse navbar-collapse',
                     'container_id'      => 'bs-example-navbar-collapse-1',
-                    'menu_class'        => 'nav navbar-nav',
+                    'menu_class'        => 'nav navbar-nav float-right',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker()
                 )
             );
             ?>
-    </div>
+    </div><!-- /.container-fluid -->
 </nav>

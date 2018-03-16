@@ -35,5 +35,13 @@
 
 	</header><!-- #masthead -->
 
+	<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'http://via.placeholder.com/1980x980' ); ?>
+
+	<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+		<div class="container text-center">
+			<h1><?php bloginfo( 'name' ); ?></h1>
+		</div>
+	</div><!-- /#section-nome -->
+
 	<div class="site-content-contain">
 		<div id="content" class="site-content">

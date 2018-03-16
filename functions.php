@@ -3,6 +3,10 @@
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
+if ( class_exists( 'Kirki' ) ) {
+	require 'inc/kirki.php';
+}
+
 /*
  * Let WordPress manage the document title.
  * By adding theme support, we declare that this theme does not use a
