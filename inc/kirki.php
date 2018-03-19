@@ -40,7 +40,13 @@ Kirki::add_section( 'sobre', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-
+Kirki::add_section( 'acao', array(
+    'title'          => __( 'Ação' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 /**
  * Campos (separados por Sessões)
  * ==============================================================================
@@ -107,3 +113,71 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'priority'    => 10,
 ) );
 
+/* Ação */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'custom',
+	'settings'    => 'section_acao',
+	'label'       => '',
+	'section'     => 'acao',
+	'default'		=> '<h1 style="text-align: center">Sessão Call to Action</h1><hr>',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'titulo_section_acao',
+	'label'       => __( 'Título', 'model' ),
+	'description' => esc_attr__( 'Título para a sessão Call to Action.', 'model' ),
+	'section'     => 'acao',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'editor',
+	'settings'    => 'editor_section_acao',
+	'label'       => __( 'Texto', 'model' ),
+	'description' => esc_attr__( 'Faça uma chamada para o botão de ação.', 'model' ),
+	'section'     => 'acao',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'titulo_botao_section_acao',
+	'label'       => __( 'Título do Botão de Ação', 'model' ),
+	'description' => esc_attr__( 'Título para o botão da sessão Call to Action.', 'model' ),
+	'section'     => 'acao',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'link',
+	'settings'    => 'link_botao_section_acao',
+	'label'       => __( 'Link do Botão de Ação', 'model' ),
+	'description' => esc_attr__( 'Link para o botão da sessão Call to Action.', 'model' ),
+	'section'     => 'acao',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'image',
+	'settings'		=> 'image_section_acao',
+	'label'			=> __( 'Imagem para a sessão "Ação"', 'model' ),
+	'section'		=> 'acao',
+	'description'	=> esc_attr__( 'Imagem de fundo para a sessão Ação.', 'model' ),
+	'priority'		=> 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'color_section_acao',
+	'label'       => __( 'Cor', 'model' ),
+	'description' => esc_attr__( 'Cores para os textos da sessão Ação.', 'model' ),
+	'section'     => 'acao',
+	'default'     => '#ffffff',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => '#section-acao',
+			'property' => 'color'
+		),
+	),
+) );
