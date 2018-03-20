@@ -20,7 +20,7 @@ get_header(); ?>
 	<h2><?php echo apply_filters( 'the_title', $titulo_section_acao ); ?></h2>
 	<span><?php echo apply_filters( 'the_title', $editor_section_acao ); ?></span>
 	<?php if ( ! empty( $titulo_botao_section_acao ) && ! empty( $link_botao_section_acao ) ): ?>
-		<a href="<?php echo esc_url( $link_botao_section_acao ); ?>" target="_blank"><?php echo esc_attr( $titulo_botao_section_acao ); ?></a>
+		<a class="btn" href="<?php echo esc_url( $link_botao_section_acao ); ?>" target="_blank"><?php echo esc_attr( $titulo_botao_section_acao ); ?></a>
 	<?php endif; ?>
 </div><!-- /#section-acao -->
 
