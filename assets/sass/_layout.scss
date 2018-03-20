@@ -29,6 +29,12 @@ body.logged-in.admin-bar {
 		}
 	}
 }
+a {
+	color: #969696;
+	&:hover {
+		color: #000000;
+	}
+}
 h1,
 h2,
 h3,

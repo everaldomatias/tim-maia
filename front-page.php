@@ -24,6 +24,17 @@ get_header(); ?>
 	<?php endif; ?>
 </div><!-- /#section-acao -->
 
+<?php $titulo_section_diferenciais = get_theme_mod( 'titulo_section_diferenciais' ); ?>
+<?php $editor_section_diferenciais = get_theme_mod( 'editor_section_diferenciais' ); ?>
+
+<div id="section-diferenciais">
+	<div class="container">
+		<h2><?php echo apply_filters( 'the_title', $titulo_section_diferenciais ); ?></h2>
+		<?php echo apply_filters( 'the_content', $editor_section_diferenciais ); ?>
+	</div>
+</div><!-- /#section-diferenciais -->
+
+
 <div class="clearfix"></div>
 	<div class="container">
 		<div class="row">

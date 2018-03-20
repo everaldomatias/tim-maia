@@ -47,6 +47,13 @@ Kirki::add_section( 'acao', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+Kirki::add_section( 'diferenciais', array(
+    'title'          => __( 'Diferenciais' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 /**
  * Campos (separados por Sessões)
  * ==============================================================================
@@ -180,4 +187,23 @@ Kirki::add_field( 'kirki_custom_config', array(
 			'property' => 'color'
 		),
 	),
+) );
+/* Diferenciais */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'titulo_section_diferenciais',
+	'label'       => __( 'Título da Sessão Diferenciais', 'model' ),
+	'description' => esc_attr__( 'Título para a sessão Diferenciais.', 'model' ),
+	'section'     => 'diferenciais',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'editor',
+	'settings'    => 'editor_section_diferenciais',
+	'label'       => __( 'Texto', 'model' ),
+	'description' => esc_attr__( 'Texto para a sessão Diferenciais.', 'model' ),
+	'section'     => 'diferenciais',
+	'default'     => '',
+	'priority'    => 10,
 ) );
