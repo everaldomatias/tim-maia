@@ -54,6 +54,13 @@ Kirki::add_section( 'diferenciais', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+Kirki::add_section( 'social', array(
+    'title'          => __( 'Redes Sociais' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 /**
  * Campos (separados por Sessões)
  * ==============================================================================
@@ -204,6 +211,79 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Texto', 'model' ),
 	'description' => esc_attr__( 'Texto para a sessão Diferenciais.', 'model' ),
 	'section'     => 'diferenciais',
+	'default'     => '',
+	'priority'    => 10,
+) );
+/* Redes Sociais */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'facebook',
+	'label'       => __( 'Facebook', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu perfil no Facebook.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'instagram',
+	'label'       => __( 'Instagram', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu perfil no Instagram.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'twitter',
+	'label'       => __( 'Twitter', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu perfil no Twitter.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'tumblr',
+	'label'       => __( 'Tumblr', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu perfil no Tumblr.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'flickr',
+	'label'       => __( 'Flickr', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu perfil no Flickr.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'snapchat',
+	'label'       => __( 'Snapchat', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu perfil no Snapchat.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'site',
+	'label'       => __( 'Site/Link externo', 'model' ),
+	'description' => esc_attr__( 'Adicione o link para o seu Site/Link externo.', 'model' ),
+	'section'     => 'social',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'email',
+	'label'       => __( 'E-mail', 'model' ),
+	'description' => esc_attr__( 'Adicione o seu e-mail.', 'model' ),
+	'section'     => 'social',
 	'default'     => '',
 	'priority'    => 10,
 ) );
