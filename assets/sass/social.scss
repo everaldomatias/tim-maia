@@ -1,0 +1,42 @@
+/* Social */
+#section-social {
+	padding-bottom: 80px;
+    padding-top: 80px;
+	text-align: center;
+	a {
+		background: url( '../images/social-icons-sprite.png' ) center center no-repeat transparent;
+		background-size: 40px;
+		display: inline-block;
+		height: 40px;
+		margin: 5px;
+		overflow: hidden;
+		width: 40px;
+		&:hover {
+			opacity: 0.75;
+		}
+		&.facebook {
+			background-position: center -200px;
+		}
+		&.instagram {
+			background-position: center -240px;
+		}
+		&.twitter {
+			background-position: center -160px;
+		}
+		&.tumblr {
+			background-position: center -120px;
+		}
+		&.snapchat {
+			background-position: center -280px;
+		}
+		&.flickr {
+			background-position: center -80px;
+		}
+		&.site {
+			background-position: center -40px;
+		}
+		&.email {
+			background-position: center 0;
+		}
+	}
+}

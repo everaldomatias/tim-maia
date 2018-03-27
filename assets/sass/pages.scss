@@ -1,0 +1,31 @@
+.page {
+	.entry-content {
+		padding: 60px 0 0;
+
+
+		/* Forms */
+		label {
+			display: block
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		textarea {
+			border: 1px solid $cinza-medio;
+			display: block;
+			padding: 10px 15px;
+			width: 100%;
+			&:focus {
+				border: 1px solid $cinza-escuro;
+				outline: none;
+			}
+		}
+		input[type="submit"] {
+			background-color: $cinza-escuro;
+			border: 0;
+			box-shadow: 0;
+			color: $branco;
+			padding: 10px 15px;
+		}
+	}
+}

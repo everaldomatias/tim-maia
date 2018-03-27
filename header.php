@@ -35,13 +35,37 @@
 
 	</header><!-- #masthead -->
 
-	<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'http://via.placeholder.com/1980x980' ); ?>
+	<?php if ( is_home() || is_front_page() ) : ?>
 
-	<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
-		<div class="container text-center">
-			<h1><?php bloginfo( 'name' ); ?></h1>
-		</div>
-	</div><!-- /#section-nome -->
+		<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'http://via.placeholder.com/1980x980' ); ?>
+
+		<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+			<div class="container text-center">
+				<h1><?php bloginfo( 'name' ); ?></h1>
+			</div>
+		</div><!-- /#section-nome -->
+
+	<?php elseif( has_post_thumbnail() ) : ?>
+
+		<?php $image_section_nome = get_the_post_thumbnail_url(); ?>
+
+		<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+			<div class="container text-center">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</div>
+		</div><!-- /#section-nome -->
+		
+	<?php else : ?>
+
+		<?php $image_section_nome = 'http://via.placeholder.com/1980x980'; ?>
+
+		<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+			<div class="container text-center">
+				<h1><?php bloginfo( 'name' ); ?></h1>
+			</div>
+		</div><!-- /#section-nome -->
+
+	<?php endif; ?>
 
 	<div class="site-content-contain">
 		<div id="content" class="site-content">

@@ -23,6 +23,9 @@ function model_setup() {
 		'social' => __( 'Social Links Menu', 'model' ),
 	) );
 
+	// Add support to Post Thumbnails
+	add_theme_support( 'post-thumbnails' );
+
 }
 add_action( 'after_setup_theme', 'model_setup' );
 
@@ -63,3 +66,25 @@ function model_stylesheet_uri( $uri, $dir ) {
 	return $dir . '/assets/css/model.css';
 }
 add_filter( 'stylesheet_uri', 'model_stylesheet_uri', 10, 2 );
+
+/**
+ * Add custom class in the body
+ *
+ * @since  0.0.1
+ * 
+ * @param  string $clasees
+ * 
+ * @return string in the body HTML class
+ */
+function model_body_class( $classes ) {
+
+	global $post;
+ 
+    if ( is_page() || is_single() ) {
+        $classes[] = $post->post_name;
+    }
+     
+    return $classes;
+
+}
+add_filter( 'body_class', 'model_body_class' );
