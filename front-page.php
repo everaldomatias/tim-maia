@@ -34,6 +34,28 @@ get_header(); ?>
 	</div>
 </div><!-- /#section-diferenciais -->
 
+<?php $use_doacoes = get_theme_mod( 'use_doacoes', 1 ); ?>
+<?php if ( $use_doacoes ) : ?>
+
+<div id="section-doacoes">
+
+	<div class="container">
+
+		<?php $titulo_section_doacoes = get_theme_mod( 'titulo_section_doacoes', 'Doe!' ); ?>
+		<?php $editor_section_doacoes = get_theme_mod( 'editor_section_doacoes' ); ?>
+
+		<h2><?php echo apply_filters( 'the_title', $titulo_section_doacoes ); ?></h2>
+
+		<?php if ( $editor_section_doacoes ) : ?>
+			<?php echo apply_filters( 'the_content', $editor_section_doacoes ); ?>
+		<?php endif; ?>
+
+	</div>
+
+</div><!-- /#section-doacoes -->
+
+<?php endif; ?>
+
 <?php get_template_part( 'template-parts/section/section', 'social' ); ?>
 
 <div class="clearfix"></div>

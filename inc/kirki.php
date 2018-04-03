@@ -54,6 +54,13 @@ Kirki::add_section( 'diferenciais', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+Kirki::add_section( 'doacoes', array(
+    'title'          => __( 'Doações' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 Kirki::add_section( 'social', array(
     'title'          => __( 'Redes Sociais' ),
     'panel'          => 'sessoes', // Not typically needed.
@@ -214,6 +221,74 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'default'     => '',
 	'priority'    => 10,
 ) );
+/* Doações */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'switch',
+	'settings'    => 'use_doacoes',
+	'label'       => __( 'Usar sessão Doações', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'titulo_section_doacoes',
+	'label'       => __( 'Título da Sessão Doações', 'model' ),
+	'description' => esc_attr__( 'Título para a sessão Doações.', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'editor',
+	'settings'    => 'editor_section_doacoes',
+	'label'       => __( 'Texto', 'model' ),
+	'description' => esc_attr__( 'Texto para a sessão Doações.', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'titulo_botao_section_doacoes_1',
+	'label'       => __( 'Título do Botão de Ação das Doações 1', 'model' ),
+	'description' => esc_attr__( 'Título para o botão da sessão Doações 1.', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'link',
+	'settings'    => 'link_botao_section_doacoes_1',
+	'label'       => __( 'Link do Botão de Ação das Doações 1', 'model' ),
+	'description' => esc_attr__( 'Link para o botão da sessão Doações 1.', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'text',
+	'settings'    => 'titulo_botao_section_doacoes_2',
+	'label'       => __( 'Título do Botão de Ação das Doações 2', 'model' ),
+	'description' => esc_attr__( 'Título para o botão da sessão Doações 2.', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'link',
+	'settings'    => 'link_botao_section_doacoes_2',
+	'label'       => __( 'Link do Botão de Ação das Doações 2', 'model' ),
+	'description' => esc_attr__( 'Link para o botão da sessão Doações 2.', 'model' ),
+	'section'     => 'doacoes',
+	'default'     => '',
+	'priority'    => 10,
+) );
+
 /* Redes Sociais */
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
