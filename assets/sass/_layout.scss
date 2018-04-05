@@ -100,8 +100,11 @@ img {
 	width: 100%;
 	z-index: 99;
 	img {
-		max-width: 160px; 
+		max-width: 200px;
 	}
+}
+.logo {
+	max-width: 200px;
 }
 body.home {
 	.wrap-logo {

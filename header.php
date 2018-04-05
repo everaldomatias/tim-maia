@@ -41,7 +41,14 @@
 
 		<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
 			<div class="container text-center">
-				<h1><?php bloginfo( 'name' ); ?></h1>
+				<?php
+				if ( has_custom_logo() ) {
+					$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+				    echo '<img class="logo" src="'. esc_url( $logo[0] ) .'">';
+				} else {
+				    echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+				}
+				?>
 			</div>
 		</div><!-- /#section-nome -->
 

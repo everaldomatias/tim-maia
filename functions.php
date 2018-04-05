@@ -26,6 +26,9 @@ function model_setup() {
 	// Add support to Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
 
+	// Add support to Custom Logo
+	add_theme_support( 'custom-logo' );	
+
 }
 add_action( 'after_setup_theme', 'model_setup' );
 
@@ -82,6 +85,10 @@ function model_body_class( $classes ) {
  
     if ( is_page() || is_single() ) {
         $classes[] = $post->post_name;
+    }
+
+    if ( has_custom_logo() ) {
+    	$classes[] = 'has-custom-logo';
     }
      
     return $classes;
