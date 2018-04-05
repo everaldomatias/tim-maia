@@ -136,12 +136,24 @@ Kirki::add_field( 'kirki_custom_config', array(
 
 /* Ação */
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'custom',
-	'settings'    => 'section_acao',
-	'label'       => '',
-	'section'     => 'acao',
+	'type'			=> 'custom',
+	'settings'		=> 'section_acao',
+	'label'			=> '',
+	'section'		=> 'acao',
 	'default'		=> '<h1 style="text-align: center">Sessão Call to Action</h1><hr>',
+	'priority'		=> 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'switch',
+	'settings'    => 'use_acao',
+	'label'       => __( 'Usar sessão Call to Action', 'model' ),
+	'section'     => 'acao',
+	'default'     => '1',
 	'priority'    => 10,
+	'choices'     => array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
@@ -188,21 +200,37 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'priority'		=> 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'color',
-	'settings'    => 'color_section_acao',
-	'label'       => __( 'Cor', 'model' ),
-	'description' => esc_attr__( 'Cores para os textos da sessão Ação.', 'model' ),
-	'section'     => 'acao',
-	'default'     => '#ffffff',
-	'transport'   => 'auto',
-	'output'    	=> array(
+	'type'			=> 'color',
+	'settings'		=> 'color_section_acao',
+	'label'			=> __( 'Cor', 'model' ),
+	'description'	=> esc_attr__( 'Cores para os textos da sessão Ação.', 'model' ),
+	'section'		=> 'acao',
+	'default'		=> '#ffffff',
+	'transport'		=> 'auto',
+	'output'		=> array(
 		array(
 			'element'  => '#section-acao',
 			'property' => 'color'
 		),
+		array(
+			'element'  => '#section-acao .btn',
+			'property' => 'color'
+		),
+		array(
+			'element'  => '#section-acao .btn',
+			'property' => 'border-color'
+		),
 	),
 ) );
 /* Diferenciais */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'custom',
+	'settings'		=> 'section_diferenciais',
+	'label'			=> '',
+	'section'		=> 'diferenciais',
+	'default'		=> '<h1 style="text-align: center">Sessão Diferenciais</h1><hr>',
+	'priority'		=> 10,
+) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
 	'settings'    => 'titulo_section_diferenciais',
@@ -222,6 +250,14 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'priority'    => 10,
 ) );
 /* Doações */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'custom',
+	'settings'		=> 'section_doacoes',
+	'label'			=> '',
+	'section'		=> 'doacoes',
+	'default'		=> '<h1 style="text-align: center">Sessão Doações</h1><hr>',
+	'priority'		=> 10,
+) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'switch',
 	'settings'    => 'use_doacoes',
@@ -290,6 +326,14 @@ Kirki::add_field( 'kirki_custom_config', array(
 ) );
 
 /* Redes Sociais */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'custom',
+	'settings'    => 'section_social',
+	'label'       => '',
+	'section'     => 'social',
+	'default'		=> '<h1 style="text-align: center">Sessão Redes Sociais</h1><hr>',
+	'priority'    => 10,
+) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
 	'settings'    => 'facebook',
