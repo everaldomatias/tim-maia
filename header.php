@@ -27,13 +27,13 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-		<?php endif; ?>
-
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 	</header><!-- #masthead -->
+
+	<?php if ( has_nav_menu( 'top' ) ) : ?>
+		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+	<?php endif; ?>
 
 	<?php if ( is_home() || is_front_page() ) : ?>
 
