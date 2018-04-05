@@ -240,7 +240,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título da Sessão Doações', 'model' ),
 	'description' => esc_attr__( 'Título para a sessão Doações.', 'model' ),
 	'section'     => 'doacoes',
-	'default'     => '',
+	'default'     => 'Doe!',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -258,7 +258,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título do Botão de Ação das Doações 1', 'model' ),
 	'description' => esc_attr__( 'Título para o botão da sessão Doações 1.', 'model' ),
 	'section'     => 'doacoes',
-	'default'     => '',
+	'default'     => 'Botão 1',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -267,7 +267,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Link do Botão de Ação das Doações 1', 'model' ),
 	'description' => esc_attr__( 'Link para o botão da sessão Doações 1.', 'model' ),
 	'section'     => 'doacoes',
-	'default'     => '',
+	'default'     => home_url(),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -276,7 +276,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título do Botão de Ação das Doações 2', 'model' ),
 	'description' => esc_attr__( 'Título para o botão da sessão Doações 2.', 'model' ),
 	'section'     => 'doacoes',
-	'default'     => '',
+	'default'     => 'Botão 2',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -285,7 +285,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Link do Botão de Ação das Doações 2', 'model' ),
 	'description' => esc_attr__( 'Link para o botão da sessão Doações 2.', 'model' ),
 	'section'     => 'doacoes',
-	'default'     => '',
+	'default'     => home_url(),
 	'priority'    => 10,
 ) );
 

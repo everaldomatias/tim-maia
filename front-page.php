@@ -41,13 +41,25 @@ get_header(); ?>
 
 	<div class="container">
 
-		<?php $titulo_section_doacoes = get_theme_mod( 'titulo_section_doacoes', 'Doe!' ); ?>
+		<?php $titulo_section_doacoes = get_theme_mod( 'titulo_section_doacoes' ); ?>
 		<?php $editor_section_doacoes = get_theme_mod( 'editor_section_doacoes' ); ?>
+		<?php $titulo_botao_section_doacoes_1 = get_theme_mod( 'titulo_botao_section_doacoes_1' ); ?>
+		<?php $link_botao_section_doacoes_1 = get_theme_mod( 'link_botao_section_doacoes_1' ); ?>
+		<?php $titulo_botao_section_doacoes_2 = get_theme_mod( 'titulo_botao_section_doacoes_2' ); ?>
+		<?php $link_botao_section_doacoes_2 = get_theme_mod( 'link_botao_section_doacoes_2' ); ?>
 
 		<h2><?php echo apply_filters( 'the_title', $titulo_section_doacoes ); ?></h2>
 
 		<?php if ( $editor_section_doacoes ) : ?>
 			<?php echo apply_filters( 'the_content', $editor_section_doacoes ); ?>
+		<?php endif; ?>
+
+		<?php if ( $titulo_botao_section_doacoes_1 && $link_botao_section_doacoes_1 ) : ?>
+			<a class="btn" href="<?php echo esc_url( $link_botao_section_doacoes_1 ); ?>"><?php echo apply_filters( 'the_title', $titulo_botao_section_doacoes_1 ) ?></a>
+		<?php endif; ?>
+
+		<?php if ( $titulo_botao_section_doacoes_2 && $link_botao_section_doacoes_2 ) : ?>
+			<a class="btn" href="<?php echo esc_url( $link_botao_section_doacoes_2 ); ?>"><?php echo apply_filters( 'the_title', $titulo_botao_section_doacoes_2 ) ?></a>
 		<?php endif; ?>
 
 	</div>
