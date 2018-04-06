@@ -3,11 +3,15 @@ get_header(); ?>
 
 <main>
 
+	<?php $sd = get_transient( 'strings_default' ); ?>
+
 	<?php $editor_section_sobre = get_theme_mod( 'editor_section_sobre' ); ?>
-	<?php $titulo_section_sobre = get_theme_mod( 'titulo_section_sobre', 'About us..' ); ?>
+	<?php $titulo_section_sobre = get_theme_mod( 'titulo_section_sobre', $sd['titulo_section_sobre'] ); ?>
 	<div id="section-sobre">
-		<h2><?php echo apply_filters( 'the_title', $titulo_section_sobre ); ?></h2>
-		<?php echo apply_filters( 'the_title', $editor_section_sobre ); ?>
+		<div class="container">
+			<h2><?php echo apply_filters( 'the_title', $titulo_section_sobre ); ?></h2>
+			<?php echo apply_filters( 'the_content', $editor_section_sobre ); ?>
+		</div>
 	</div><!-- /#section-sobre -->
 
 	<?php $titulo_section_acao = get_theme_mod( 'titulo_section_acao', 'Call to Action' ); ?>

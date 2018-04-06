@@ -7,6 +7,8 @@ if ( class_exists( 'Kirki' ) ) {
 	require 'inc/kirki.php';
 }
 
+require_once get_template_directory() . '/inc/strings-default.php';
+
 /*
  * Let WordPress manage the document title.
  * By adding theme support, we declare that this theme does not use a

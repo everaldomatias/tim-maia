@@ -88,6 +88,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Imagem para a sessão "Nome"', 'model' ),
 	'section'		=> 'nome',
 	'description'	=> esc_attr__( 'Imagem de fundo para a sessão Nome.', 'model' ),
+	'default'		=> esc_url( 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=750&w=1260' ),
 	'priority'		=> 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -116,13 +117,13 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'titulo_section_sobre',
-	'label'       => __( 'Título', 'model' ),
-	'description' => esc_attr__( 'Título para a sessão Sobre.', 'model' ),
-	'section'     => 'sobre',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'titulo_section_sobre',
+	'label'			=> __( 'Título', 'model' ),
+	'description'	=> esc_attr__( 'Título para a sessão Sobre.', 'model' ),
+	'section'		=> 'sobre',
+	'default'		=> esc_attr__( 'Seja bem vindo ao Tema Model', 'model' ),
+	'priority'		=> 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'editor',
@@ -130,7 +131,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Sobre', 'model' ),
 	'description' => esc_attr__( 'Descreva em poucos parágrafos quem é você, o que deseja e outras informações que julgar necessário.', 'model' ),
 	'section'     => 'sobre',
-	'default'     => '',
+	'default'     => 'Com ele, artistas, modelos, figuras públicas e muitas outras pessoas poderão criar um site simples e direto para se apresentarem ao mundo através da internet. Altere todos os textos e imagens que tem no menu à esquerda e clique em <strong>Publicar</strong>',
 	'priority'    => 10,
 ) );
 
