@@ -180,7 +180,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título do Botão de Ação', 'model' ),
 	'description' => esc_attr__( 'Título para o botão da sessão Call to Action.', 'model' ),
 	'section'     => 'acao',
-	'default'     => '',
+	'default'     => esc_attr__( 'Veja o repositório do Tema Model no Github!', 'model' ),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -189,7 +189,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Link do Botão de Ação', 'model' ),
 	'description' => esc_attr__( 'Link para o botão da sessão Call to Action.', 'model' ),
 	'section'     => 'acao',
-	'default'     => '',
+	'default'     => esc_url( 'https://github.com/everaldomatias/model/' ),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -206,7 +206,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Cor', 'model' ),
 	'description'	=> esc_attr__( 'Cores para os textos da sessão Ação.', 'model' ),
 	'section'		=> 'acao',
-	'default'		=> '#ffffff',
+	'default'		=> '#333333',
 	'transport'		=> 'auto',
 	'output'		=> array(
 		array(
@@ -238,14 +238,14 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título da Sessão Diferenciais', 'model' ),
 	'description' => esc_attr__( 'Título para a sessão Diferenciais.', 'model' ),
 	'section'     => 'diferenciais',
-	'default'     => '',
+	'default'     => esc_attr__( 'Simples, direto e elegante.', 'model' ),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'editor',
 	'settings'    => 'editor_section_diferenciais',
 	'label'       => __( 'Texto', 'model' ),
-	'description' => esc_attr__( 'Texto para a sessão Diferenciais.', 'model' ),
+	'description' => esc_attr__( 'Esse tema foi desenvolvido com o objetivo de apresentar as informações mais importantes de forma simples, elegante e de fácil manutenção. Tudo ao seu controle, edite em poucos minutos, pelo celular, de onde estiver.', 'model' ),
 	'section'     => 'diferenciais',
 	'default'     => '',
 	'priority'    => 10,
@@ -277,7 +277,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título da Sessão Doações', 'model' ),
 	'description' => esc_attr__( 'Título para a sessão Doações.', 'model' ),
 	'section'     => 'doacoes',
-	'default'     => 'Doe!',
+	'default'     => esc_attr__( 'Ajude o Tema Model a continuar!', 'model' ),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
