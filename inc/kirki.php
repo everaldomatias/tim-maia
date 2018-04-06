@@ -4,7 +4,6 @@
  * Kirki Framework.
  * ==============================================================================
  */
-
 Kirki::add_config( 'kirki_custom_config', array(
 	'capability'    => 'edit_theme_options',
 	'option_type'   => 'theme_mod',
@@ -68,6 +67,7 @@ Kirki::add_section( 'social', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+
 /**
  * Campos (separados por Sessões)
  * ==============================================================================
@@ -88,7 +88,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Imagem para a sessão "Nome"', 'model' ),
 	'section'		=> 'nome',
 	'description'	=> esc_attr__( 'Imagem de fundo para a sessão Nome.', 'model' ),
-	'default'		=> esc_url( 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=750&w=1260' ),
+	'default'		=> esc_url( 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ),
 	'priority'		=> 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -162,7 +162,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Título', 'model' ),
 	'description' => esc_attr__( 'Título para a sessão Call to Action.', 'model' ),
 	'section'     => 'acao',
-	'default'     => '',
+	'default'     => esc_attr__( 'Call to Action', 'model' ),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -171,7 +171,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       => __( 'Texto', 'model' ),
 	'description' => esc_attr__( 'Faça uma chamada para o botão de ação.', 'model' ),
 	'section'     => 'acao',
-	'default'     => '',
+	'default'     => esc_attr__( 'Aqui é um espaço para você criar uma chamada para o seu serviço/produto ou para outro objetivo em que deseja obter resultados.', 'model' ),
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
