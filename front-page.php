@@ -77,11 +77,11 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<?php if ( $titulo_botao_section_doacoes_1 && $link_botao_section_doacoes_1 ) : ?>
-					<a class="btn" href="<?php echo esc_url( $link_botao_section_doacoes_1 ); ?>"><?php echo apply_filters( 'the_title', $titulo_botao_section_doacoes_1 ) ?></a>
+					<a class="btn" target="_blank" href="<?php echo esc_url( $link_botao_section_doacoes_1 ); ?>"><?php echo apply_filters( 'the_title', $titulo_botao_section_doacoes_1 ) ?></a>
 				<?php endif; ?>
 
 				<?php if ( $titulo_botao_section_doacoes_2 && $link_botao_section_doacoes_2 ) : ?>
-					<a class="btn" href="<?php echo esc_url( $link_botao_section_doacoes_2 ); ?>"><?php echo apply_filters( 'the_title', $titulo_botao_section_doacoes_2 ) ?></a>
+					<a class="btn" target="_blank" href="<?php echo esc_url( $link_botao_section_doacoes_2 ); ?>"><?php echo apply_filters( 'the_title', $titulo_botao_section_doacoes_2 ) ?></a>
 				<?php endif; ?>
 
 			</div>

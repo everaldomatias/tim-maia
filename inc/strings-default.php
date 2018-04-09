@@ -38,6 +38,12 @@ function string_default() {
 
 		/* Sessão Doações */
 		$default['titulo_section_doacoes'] = 'Ajude o Tema Model a continuar!';
+		$default['editor_section_doacoes'] = 'O Tema Model é desenvolvido por voluntários e qualquer ajuda é bem vinda, seja com valore$, críticas construtivas, issues de melhorias e divulgação.';
+		$default['titulo_botao_section_doacoes_1'] = 'Doar qualquer quantia';
+		$default['link_botao_section_doacoes_1'] = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=48LLGK4VPXMBJ';
+		$default['titulo_botao_section_doacoes_2'] = 'Propor melhorias';
+		$default['link_botao_section_doacoes_2'] = 'https://github.com/everaldomatias/model/issues';
+
 
 		/* Sessão Social */
 		$default['facebook']	= 'https://facebook.com';
@@ -46,7 +52,7 @@ function string_default() {
 		$default['tumblr'] 		= 'https://tumblr.com';
 		$default['snapchat']	= 'https://snapchat.com';
 		$default['flickr']		= 'https://flickr.com';
-		$default['site']		= 'http://everaldomatias.github.io';
+		$default['site']		= 'https://everaldomatias.github.io';
 		$default['email']		= '';
 		
 		$strings_default = $default;

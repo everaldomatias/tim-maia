@@ -1,6 +1,18 @@
 <?php
 
 /**
+ *
+ * Retorna as strings padrões do tema no array $sd
+ * 
+	 * @author 		Everaldo Matias <http://everaldomatias.github.io>
+	 * @version 	0.1
+	 * @since 		09/04/2018
+	 * @see 		https://codex.wordpress.org/Transients_API
+	 * 
+ */
+$sd = get_transient( 'strings_default' );
+
+/**
  * Kirki Framework.
  * ==============================================================================
  */
@@ -299,7 +311,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Texto', 'model' ),
 	'description'	=> esc_attr__( 'Texto para a sessão Doações.', 'model' ),
 	'section'		=> 'doacoes',
-	'default'		=> '',
+	'default'		=> esc_attr__( 'O Tema Model é desenvolvido por voluntários e qualquer ajuda é bem vinda, seja com valore$, críticas construtivas, issues de melhorias e divulgação.', 'model' ),
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
@@ -309,7 +321,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Título do Botão de Ação das Doações 1', 'model' ),
 	'description'	=> esc_attr__( 'Título para o botão da sessão Doações 1.', 'model' ),
 	'section'		=> 'doacoes',
-	'default'		=> 'Botão 1',
+	'default'		=> esc_attr__( 'Doar qualquer quantia', 'model' ),
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
@@ -319,7 +331,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Link do Botão de Ação das Doações 1', 'model' ),
 	'description'	=> esc_attr__( 'Link para o botão da sessão Doações 1.', 'model' ),
 	'section'		=> 'doacoes',
-	'default'		=> home_url(),
+	'default'		=> esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=48LLGK4VPXMBJ' ),
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
@@ -329,7 +341,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Título do Botão de Ação das Doações 2', 'model' ),
 	'description'	=> esc_attr__( 'Título para o botão da sessão Doações 2.', 'model' ),
 	'section'		=> 'doacoes',
-	'default'		=> 'Botão 2',
+	'default'		=> esc_attr__( 'Propor melhorias', 'model' ),
 	'priority' 		=> 10,
 	'transport'		=> 'refresh'
 ) );
@@ -339,7 +351,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Link do Botão de Ação das Doações 2', 'model' ),
 	'description'	=> esc_attr__( 'Link para o botão da sessão Doações 2.', 'model' ),
 	'section'		=> 'doacoes',
-	'default'		=> home_url(),
+	'default'		=> esc_url( 'https://github.com/everaldomatias/model/issues' ),
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
