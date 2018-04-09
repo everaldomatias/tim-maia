@@ -124,15 +124,17 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'		=> 'sobre',
 	'default'		=> esc_attr__( 'Seja bem vindo ao Tema Model', 'model' ),
 	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'editor',
-	'settings'    => 'editor_section_sobre',
-	'label'       => __( 'Sobre', 'model' ),
-	'description' => esc_attr__( 'Descreva em poucos parágrafos quem é você, o que deseja e outras informações que julgar necessário.', 'model' ),
-	'section'     => 'sobre',
-	'default'     => 'Com ele, artistas, modelos, figuras públicas e muitas outras pessoas poderão criar um site simples e direto para se apresentarem ao mundo através da internet. Altere todos os textos e imagens que tem no menu à esquerda e clique em <strong>Publicar</strong>',
-	'priority'    => 10,
+	'type'        	=> 'editor',
+	'settings'    	=> 'editor_section_sobre',
+	'label'       	=> __( 'Sobre', 'model' ),
+	'description' 	=> esc_attr__( 'Descreva em poucos parágrafos quem é você, o que deseja e outras informações que julgar necessário.', 'model' ),
+	'section'     	=> 'sobre',
+	'default'     	=> esc_attr__( 'Com ele, artistas, modelos, figuras públicas e muitas outras pessoas poderão criar um site simples e direto para se apresentarem ao mundo através da internet. Altere todos os textos e imagens que tem no menu à esquerda e clique em <strong>Publicar</strong>', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 
 /* Ação */
@@ -164,6 +166,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'     => 'acao',
 	'default'     => esc_attr__( 'Call to Action', 'model' ),
 	'priority'    => 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'editor',
@@ -173,6 +176,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'     => 'acao',
 	'default'     => esc_attr__( 'Aqui é um espaço para você criar uma chamada para o seu serviço/produto ou para outro objetivo em que deseja obter resultados.', 'model' ),
 	'priority'    => 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
@@ -182,6 +186,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'     => 'acao',
 	'default'     => esc_attr__( 'Veja o repositório do Tema Model no Github!', 'model' ),
 	'priority'    => 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'link',
@@ -191,6 +196,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'     => 'acao',
 	'default'     => esc_url( 'https://github.com/everaldomatias/model/' ),
 	'priority'    => 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'image',
@@ -199,6 +205,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'		=> 'acao',
 	'description'	=> esc_attr__( 'Imagem de fundo para a sessão Ação.', 'model' ),
 	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'color',
@@ -207,7 +214,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'description'	=> esc_attr__( 'Cores para os textos da sessão Ação.', 'model' ),
 	'section'		=> 'acao',
 	'default'		=> '#333333',
-	'transport'		=> 'auto',
+	'transport'		=> 'refresh',
 	'output'		=> array(
 		array(
 			'element'  => '#section-acao',
@@ -231,6 +238,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'		=> 'diferenciais',
 	'default'		=> '<h1 style="text-align: center">Sessão Diferenciais</h1><hr>',
 	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
@@ -240,170 +248,189 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'     => 'diferenciais',
 	'default'     => esc_attr__( 'Simples, direto e elegante.', 'model' ),
 	'priority'    => 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'editor',
-	'settings'    => 'editor_section_diferenciais',
-	'label'       => __( 'Texto', 'model' ),
-	'description' => esc_attr__( 'Esse tema foi desenvolvido com o objetivo de apresentar as informações mais importantes de forma simples, elegante e de fácil manutenção. Tudo ao seu controle, edite em poucos minutos, pelo celular, de onde estiver.', 'model' ),
-	'section'     => 'diferenciais',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'editor',
+	'settings'		=> 'editor_section_diferenciais',
+	'label'			=> __( 'Texto', 'model' ),
+	'description'	=> esc_attr__( 'Esse tema foi desenvolvido com o objetivo de apresentar as informações mais importantes de forma simples, elegante e de fácil manutenção. Tudo ao seu controle, edite em poucos minutos, pelo celular, de onde estiver.', 'model' ),
+	'section'		=> 'diferenciais',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 /* Doações */
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'			=> 'custom',
-	'settings'		=> 'section_doacoes',
-	'label'			=> '',
-	'section'		=> 'doacoes',
-	'default'		=> '<h1 style="text-align: center">Sessão Doações</h1><hr>',
-	'priority'		=> 10,
+	'type'		=> 'custom',
+	'settings'	=> 'section_doacoes',
+	'label'		=> '',
+	'section'	=> 'doacoes',
+	'default'	=> '<h1 style="text-align: center">Sessão Doações</h1><hr>',
+	'priority'	=> 10,
+	'transport'	=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'switch',
-	'settings'    => 'use_doacoes',
-	'label'       => __( 'Usar sessão Doações', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => '1',
-	'priority'    => 10,
-	'choices'     => array(
+	'type'		=> 'switch',
+	'settings'	=> 'use_doacoes',
+	'label'		=> __( 'Usar sessão Doações', 'model' ),
+	'section'	=> 'doacoes',
+	'default'	=> '1',
+	'priority'	=> 10,
+	'transport'	=> 'refresh',
+	'choices'	=> array(
 		'on'  => esc_attr__( 'Sim', 'model' ),
 		'off' => esc_attr__( 'Não', 'model' ),
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'titulo_section_doacoes',
-	'label'       => __( 'Título da Sessão Doações', 'model' ),
-	'description' => esc_attr__( 'Título para a sessão Doações.', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => esc_attr__( 'Ajude o Tema Model a continuar!', 'model' ),
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'titulo_section_doacoes',
+	'label'			=> __( 'Título da Sessão Doações', 'model' ),
+	'description' 	=> esc_attr__( 'Título para a sessão Doações.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> esc_attr__( 'Ajude o Tema Model a continuar!', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'editor',
-	'settings'    => 'editor_section_doacoes',
-	'label'       => __( 'Texto', 'model' ),
-	'description' => esc_attr__( 'Texto para a sessão Doações.', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'editor',
+	'settings'		=> 'editor_section_doacoes',
+	'label'			=> __( 'Texto', 'model' ),
+	'description'	=> esc_attr__( 'Texto para a sessão Doações.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'titulo_botao_section_doacoes_1',
-	'label'       => __( 'Título do Botão de Ação das Doações 1', 'model' ),
-	'description' => esc_attr__( 'Título para o botão da sessão Doações 1.', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => 'Botão 1',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'titulo_botao_section_doacoes_1',
+	'label'			=> __( 'Título do Botão de Ação das Doações 1', 'model' ),
+	'description'	=> esc_attr__( 'Título para o botão da sessão Doações 1.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> 'Botão 1',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'link',
-	'settings'    => 'link_botao_section_doacoes_1',
-	'label'       => __( 'Link do Botão de Ação das Doações 1', 'model' ),
-	'description' => esc_attr__( 'Link para o botão da sessão Doações 1.', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => home_url(),
-	'priority'    => 10,
+	'type'			=> 'link',
+	'settings'		=> 'link_botao_section_doacoes_1',
+	'label'			=> __( 'Link do Botão de Ação das Doações 1', 'model' ),
+	'description'	=> esc_attr__( 'Link para o botão da sessão Doações 1.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> home_url(),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'titulo_botao_section_doacoes_2',
-	'label'       => __( 'Título do Botão de Ação das Doações 2', 'model' ),
-	'description' => esc_attr__( 'Título para o botão da sessão Doações 2.', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => 'Botão 2',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'titulo_botao_section_doacoes_2',
+	'label'			=> __( 'Título do Botão de Ação das Doações 2', 'model' ),
+	'description'	=> esc_attr__( 'Título para o botão da sessão Doações 2.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> 'Botão 2',
+	'priority' 		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'link',
-	'settings'    => 'link_botao_section_doacoes_2',
-	'label'       => __( 'Link do Botão de Ação das Doações 2', 'model' ),
-	'description' => esc_attr__( 'Link para o botão da sessão Doações 2.', 'model' ),
-	'section'     => 'doacoes',
-	'default'     => home_url(),
-	'priority'    => 10,
+	'type'			=> 'link',
+	'settings'		=> 'link_botao_section_doacoes_2',
+	'label'			=> __( 'Link do Botão de Ação das Doações 2', 'model' ),
+	'description'	=> esc_attr__( 'Link para o botão da sessão Doações 2.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> home_url(),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 
 /* Redes Sociais */
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'custom',
-	'settings'    => 'section_social',
-	'label'       => '',
-	'section'     => 'social',
+	'type'			=> 'custom',
+	'settings'		=> 'section_social',
+	'label'			=> '',
+	'section'		=> 'social',
 	'default'		=> '<h1 style="text-align: center">Sessão Redes Sociais</h1><hr>',
-	'priority'    => 10,
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'facebook',
-	'label'       => __( 'Facebook', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu perfil no Facebook.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'facebook',
+	'label'			=> __( 'Facebook', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu perfil no Facebook.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'instagram',
-	'label'       => __( 'Instagram', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu perfil no Instagram.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'instagram',
+	'label'			=> __( 'Instagram', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu perfil no Instagram.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'twitter',
-	'label'       => __( 'Twitter', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu perfil no Twitter.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'twitter',
+	'label'			=> __( 'Twitter', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu perfil no Twitter.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'tumblr',
-	'label'       => __( 'Tumblr', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu perfil no Tumblr.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'tumblr',
+	'label'			=> __( 'Tumblr', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu perfil no Tumblr.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'flickr',
-	'label'       => __( 'Flickr', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu perfil no Flickr.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'flickr',
+	'label'			=> __( 'Flickr', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu perfil no Flickr.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'snapchat',
-	'label'       => __( 'Snapchat', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu perfil no Snapchat.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'snapchat',
+	'label'			=> __( 'Snapchat', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu perfil no Snapchat.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'site',
-	'label'       => __( 'Site/Link externo', 'model' ),
-	'description' => esc_attr__( 'Adicione o link para o seu Site/Link externo.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'site',
+	'label'			=> __( 'Site/Link externo', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o link para o seu Site/Link externo.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'email',
-	'label'       => __( 'E-mail', 'model' ),
-	'description' => esc_attr__( 'Adicione o seu e-mail.', 'model' ),
-	'section'     => 'social',
-	'default'     => '',
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'email',
+	'label'			=> __( 'E-mail', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o seu e-mail.', 'model' ),
+	'section'		=> 'social',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );

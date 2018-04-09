@@ -38,9 +38,16 @@ function string_default() {
 
 		/* Sessão Doações */
 		$default['titulo_section_doacoes'] = 'Ajude o Tema Model a continuar!';
-		
 
-
+		/* Sessão Social */
+		$default['facebook']	= 'https://facebook.com';
+		$default['instagram']	= 'https://instagram.com/eve14_osli';
+		$default['twitter']		= 'https://twiter.com/matiaseveraldo';
+		$default['tumblr'] 		= 'https://tumblr.com';
+		$default['snapchat']	= 'https://snapchat.com';
+		$default['flickr']		= 'https://flickr.com';
+		$default['site']		= 'http://everaldomatias.github.io';
+		$default['email']		= '';
 		
 		$strings_default = $default;
 		set_transient( 'strings_default', $strings_default, WEEK_IN_SECONDS );
