@@ -283,6 +283,39 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'transport'	=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'image',
+	'settings'		=> 'image_section_doacoes',
+	'label'			=> __( 'Imagem para a sessão "Doações"', 'model' ),
+	'section'		=> 'doacoes',
+	'description'	=> esc_attr__( 'Imagem de fundo para a sessão Doações.', 'model' ),
+	'default'		=> esc_url( 'https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&h=960&w=1960' ),
+	'priority'		=> 10,
+	'transport'	=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'color',
+	'settings'		=> 'color_section_doacoes',
+	'label'			=> __( 'Cor', 'model' ),
+	'description'	=> esc_attr__( 'Cores para os textos da sessão Doações.', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> '#ffffff',
+	'transport'		=> 'refresh',
+	'output'		=> array(
+		array(
+			'element'  => '#section-doacoes',
+			'property' => 'color'
+		),
+		array(
+			'element'  => '#section-doacoes a.btn',
+			'property' => 'color'
+		),
+		array(
+			'element'  => '#section-doacoes a.btn',
+			'property' => 'border-color'
+		),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
 	'type'		=> 'switch',
 	'settings'	=> 'use_doacoes',
 	'label'		=> __( 'Usar sessão Doações', 'model' ),

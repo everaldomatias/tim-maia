@@ -22,7 +22,7 @@ function model_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'model' ),
-		'social' => __( 'Social Links Menu', 'model' ),
+		'footer' => __( 'Footer Menu', 'model' ),
 	) );
 
 	// Add support to Post Thumbnails

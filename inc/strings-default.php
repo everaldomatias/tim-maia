@@ -37,13 +37,13 @@ function string_default() {
 		$default['editor_section_diferenciais']	= 'Esse tema foi desenvolvido com o objetivo de apresentar as informações mais importantes de forma simples, elegante e de fácil manutenção. Tudo ao seu controle, edite em poucos minutos, pelo celular, de onde estiver.';
 
 		/* Sessão Doações */
+		$default['image_section_doacoes'] = 'https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&h=960&w=1960';
 		$default['titulo_section_doacoes'] = 'Ajude o Tema Model a continuar!';
 		$default['editor_section_doacoes'] = 'O Tema Model é desenvolvido por voluntários e qualquer ajuda é bem vinda, seja com valore$, críticas construtivas, issues de melhorias e divulgação.';
 		$default['titulo_botao_section_doacoes_1'] = 'Doar qualquer quantia';
 		$default['link_botao_section_doacoes_1'] = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=48LLGK4VPXMBJ';
 		$default['titulo_botao_section_doacoes_2'] = 'Propor melhorias';
 		$default['link_botao_section_doacoes_2'] = 'https://github.com/everaldomatias/model/issues';
-
 
 		/* Sessão Social */
 		$default['facebook']	= 'https://facebook.com';

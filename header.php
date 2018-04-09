@@ -35,7 +35,7 @@
 
 	<?php if ( is_home() || is_front_page() ) : ?>
 
-		<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'http://via.placeholder.com/1980x980' ); ?>
+		<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
 
 		<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
 			<div class="container text-center">
@@ -62,7 +62,7 @@
 		
 	<?php else : ?>
 
-		<?php $image_section_nome = 'http://via.placeholder.com/1980x980'; ?>
+		<?php $image_section_nome = 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960'; ?>
 
 		<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
 			<div class="container text-center">

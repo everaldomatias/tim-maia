@@ -36,12 +36,14 @@ get_header(); ?>
 	<?php if ( $use_acao ) : ?>
 
 		<div id="section-acao" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_acao ); ?>">
-			<h2><?php echo apply_filters( 'the_title', $titulo_section_acao ); ?></h2>
-			<span><?php echo apply_filters( 'the_title', $editor_section_acao ); ?></span>
-			<?php if ( ! empty( $titulo_botao_section_acao ) && ! empty( $link_botao_section_acao ) ): ?>
-				<div class="clearfix"></div>
-				<a class="btn" href="<?php echo esc_url( $link_botao_section_acao ); ?>" target="_blank"><?php echo esc_attr( $titulo_botao_section_acao ); ?></a>
-			<?php endif; ?>
+			<div class="container">
+				<h2><?php echo apply_filters( 'the_title', $titulo_section_acao ); ?></h2>
+				<span><?php echo apply_filters( 'the_title', $editor_section_acao ); ?></span>
+				<?php if ( ! empty( $titulo_botao_section_acao ) && ! empty( $link_botao_section_acao ) ): ?>
+					<div class="clearfix"></div>
+					<a class="btn" href="<?php echo esc_url( $link_botao_section_acao ); ?>" target="_blank"><?php echo esc_attr( $titulo_botao_section_acao ); ?></a>
+				<?php endif; ?>
+			</div>
 		</div><!-- /#section-acao -->
 
 	<?php endif; ?>
@@ -59,16 +61,17 @@ get_header(); ?>
 	<?php $use_doacoes = get_theme_mod( 'use_doacoes', '1' ); ?>
 	<?php if ( $use_doacoes ) : ?>
 
-		<div id="section-doacoes">
+		<?php $image_section_doacoes = get_theme_mod( 'image_section_doacoes', $sd['image_section_doacoes'] ); ?>
+		<?php $titulo_section_doacoes = get_theme_mod( 'titulo_section_doacoes', $sd['titulo_section_doacoes'] ); ?>
+		<?php $editor_section_doacoes = get_theme_mod( 'editor_section_doacoes', $sd['editor_section_doacoes'] ); ?>
+		<?php $titulo_botao_section_doacoes_1 = get_theme_mod( 'titulo_botao_section_doacoes_1', $sd['titulo_botao_section_doacoes_1'] ); ?>
+		<?php $link_botao_section_doacoes_1 = get_theme_mod( 'link_botao_section_doacoes_1', $sd['link_botao_section_doacoes_1'] ); ?>
+		<?php $titulo_botao_section_doacoes_2 = get_theme_mod( 'titulo_botao_section_doacoes_2', $sd['titulo_botao_section_doacoes_2'] ); ?>
+		<?php $link_botao_section_doacoes_2 = get_theme_mod( 'link_botao_section_doacoes_2', $sd['link_botao_section_doacoes_2'] ); ?>
+
+		<div id="section-doacoes" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_doacoes ); ?>">
 
 			<div class="container">
-
-				<?php $titulo_section_doacoes = get_theme_mod( 'titulo_section_doacoes', $sd['titulo_section_doacoes'] ); ?>
-				<?php $editor_section_doacoes = get_theme_mod( 'editor_section_doacoes', $sd['editor_section_doacoes'] ); ?>
-				<?php $titulo_botao_section_doacoes_1 = get_theme_mod( 'titulo_botao_section_doacoes_1', $sd['titulo_botao_section_doacoes_1'] ); ?>
-				<?php $link_botao_section_doacoes_1 = get_theme_mod( 'link_botao_section_doacoes_1', $sd['link_botao_section_doacoes_1'] ); ?>
-				<?php $titulo_botao_section_doacoes_2 = get_theme_mod( 'titulo_botao_section_doacoes_2', $sd['titulo_botao_section_doacoes_2'] ); ?>
-				<?php $link_botao_section_doacoes_2 = get_theme_mod( 'link_botao_section_doacoes_2', $sd['link_botao_section_doacoes_2'] ); ?>
 
 				<h2><?php echo apply_filters( 'the_title', $titulo_section_doacoes ); ?></h2>
 
