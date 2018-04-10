@@ -19,6 +19,7 @@
 html,
 body {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
 }
 body.logged-in.admin-bar {
 	//margin-top: 32px;
@@ -56,7 +57,7 @@ img {
 	padding-right: 0;
 }
 .site {
-	margin-top: 56px;
+	margin-top: 52px;
 	@media ( max-width: 782px ) {
 		margin-top: 70px;
 	}
@@ -66,9 +67,15 @@ img {
 }
 
 /* Header */
-.site-header {
+header.site-header {
 	.navbar.fixed-top {
 		background-color: #222222;
+		&>.container-fluid {
+			display: block !important;
+			.navbar-brand {
+				float: left;
+			}
+		}
 	}
 	@media ( min-width: 1040px ) {
 		-webkit-background-size: cover;

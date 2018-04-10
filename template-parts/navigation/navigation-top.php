@@ -46,9 +46,7 @@ $sd = get_transient( 'strings_default' ); ?>
             if ( $use_doacoes && ! empty( $menu_section_doacoes ) ) : ?>
                 <li class="menu-item nav-item"><a class="nav-link" href="<?php echo home_url( '#section-doacoes' ); ?>"><?php echo apply_filters( 'the_title', $menu_section_doacoes ); ?></a></li>
             <?php endif; ?>
-
         </ul>
-
 
         <?php
         wp_nav_menu(
