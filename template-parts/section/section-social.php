@@ -11,31 +11,36 @@
  */
 $sd = get_transient( 'strings_default' );
 
-/**
- * Sessão Social
- */
+$use_social = get_theme_mod( 'use_social', '1' ); ?>
+<?php if ( $use_social ) :
 
-$social 				= array();
-$social['facebook'] 	= get_theme_mod( 'facebook', $sd['facebook'] );
-$social['instagram'] 	= get_theme_mod( 'instagram', $sd['instagram'] );
-$social['twitter'] 		= get_theme_mod( 'twitter', $sd['twitter'] );
-$social['tumblr'] 		= get_theme_mod( 'tumblr', $sd['tumblr'] );
-$social['snapchat'] 	= get_theme_mod( 'snapchat', $sd['snapchat'] );
-$social['flickr'] 		= get_theme_mod( 'flickr', $sd['flickr'] );
-$social['site'] 		= get_theme_mod( 'site', $sd['site'] );
-$social['email'] 		= get_theme_mod( 'email', $sd['email'] );
-$social 				= array_filter( $social );
+	/**
+	 * Sessão Social
+	 */
 
-if ( is_array( $social ) ) : ?>
+	$social 				= array();
+	$social['facebook'] 	= get_theme_mod( 'facebook', $sd['facebook'] );
+	$social['instagram'] 	= get_theme_mod( 'instagram', $sd['instagram'] );
+	$social['twitter'] 		= get_theme_mod( 'twitter', $sd['twitter'] );
+	$social['tumblr'] 		= get_theme_mod( 'tumblr', $sd['tumblr'] );
+	$social['snapchat'] 	= get_theme_mod( 'snapchat', $sd['snapchat'] );
+	$social['flickr'] 		= get_theme_mod( 'flickr', $sd['flickr'] );
+	$social['site'] 		= get_theme_mod( 'site', $sd['site'] );
+	$social['email'] 		= get_theme_mod( 'email', $sd['email'] );
+	$social 				= array_filter( $social );
 
-	<div id="section-social">
-		<div class="container"></div>
+	if ( is_array( $social ) ) : ?>
 
-			<?php foreach ( $social as $key => $value ) : ?>
-				<a href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
-			<?php endforeach; ?>
+		<div id="section-social">
+			<div class="container"></div>
 
-		</div><!-- /.container -->
-	</div><!-- /#section-social -->
+				<?php foreach ( $social as $key => $value ) : ?>
+					<a href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
+				<?php endforeach; ?>
+
+			</div><!-- /.container -->
+		</div><!-- /#section-social -->
+		
+	<?php endif; ?>
 	
 <?php endif; ?>

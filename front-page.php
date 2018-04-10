@@ -16,15 +16,20 @@ get_header(); ?>
 	 */
 	$sd = get_transient( 'strings_default' ); ?>
 
-	<?php $titulo_section_sobre = get_theme_mod( 'titulo_section_sobre', $sd['titulo_section_sobre'] ); ?>
-	<?php $editor_section_sobre = get_theme_mod( 'editor_section_sobre', $sd['editor_section_sobre'] ); ?>
+	<?php $use_sobre = get_theme_mod( 'use_sobre', '1' ); ?>
+	<?php if ( $use_sobre ) : ?>
 
-	<div id="section-sobre">
-		<div class="container">
-			<h2><?php echo apply_filters( 'the_title', $titulo_section_sobre ); ?></h2>
-			<?php echo apply_filters( 'the_content', $editor_section_sobre ); ?>
-		</div>
-	</div><!-- /#section-sobre -->
+		<?php $titulo_section_sobre = get_theme_mod( 'titulo_section_sobre', $sd['titulo_section_sobre'] ); ?>
+		<?php $editor_section_sobre = get_theme_mod( 'editor_section_sobre', $sd['editor_section_sobre'] ); ?>
+
+		<div id="section-sobre">
+			<div class="container">
+				<h2><?php echo apply_filters( 'the_title', $titulo_section_sobre ); ?></h2>
+				<?php echo apply_filters( 'the_content', $editor_section_sobre ); ?>
+			</div>
+		</div><!-- /#section-sobre -->
+
+	<?php endif; ?>
 
 	<?php $titulo_section_acao = get_theme_mod( 'titulo_section_acao', $sd['titulo_section_acao'] ); ?>
 	<?php $editor_section_acao = get_theme_mod( 'editor_section_acao', $sd['editor_section_acao'] ); ?>
@@ -48,15 +53,20 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	<?php $titulo_section_diferenciais = get_theme_mod( 'titulo_section_diferenciais', $sd['titulo_section_diferenciais'] ); ?>
-	<?php $editor_section_diferenciais = get_theme_mod( 'editor_section_diferenciais', $sd['editor_section_diferenciais'] ); ?>
+	<?php $use_diferenciais = get_theme_mod( 'use_diferenciais', '1' ); ?>
+	<?php if ( $use_diferenciais ) : ?>
 
-	<div id="section-diferenciais">
-		<div class="container">
-			<h2><?php echo apply_filters( 'the_title', $titulo_section_diferenciais ); ?></h2>
-			<?php echo apply_filters( 'the_content', $editor_section_diferenciais ); ?>
-		</div>
-	</div><!-- /#section-diferenciais -->
+		<?php $titulo_section_diferenciais = get_theme_mod( 'titulo_section_diferenciais', $sd['titulo_section_diferenciais'] ); ?>
+		<?php $editor_section_diferenciais = get_theme_mod( 'editor_section_diferenciais', $sd['editor_section_diferenciais'] ); ?>
+
+		<div id="section-diferenciais">
+			<div class="container">
+				<h2><?php echo apply_filters( 'the_title', $titulo_section_diferenciais ); ?></h2>
+				<?php echo apply_filters( 'the_content', $editor_section_diferenciais ); ?>
+			</div>
+		</div><!-- /#section-diferenciais -->
+
+	<?php endif; ?>
 
 	<?php $use_doacoes = get_theme_mod( 'use_doacoes', '1' ); ?>
 	<?php if ( $use_doacoes ) : ?>

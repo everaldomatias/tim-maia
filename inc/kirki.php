@@ -121,12 +121,34 @@ Kirki::add_field( 'kirki_custom_config', array(
 
 /* Sobre */
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'custom',
-	'settings'    => 'section_sobre',
-	'label'       => '',
-	'section'     => 'sobre',
+	'type'			=> 'custom',
+	'settings'		=> 'section_sobre',
+	'label'			=> '',
+	'section'		=> 'sobre',
 	'default'		=> '<h1 style="text-align: center">Sessão Sobre</h1><hr>',
-	'priority'    => 10,
+	'priority'		=> 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'		=> 'switch',
+	'settings'	=> 'use_sobre',
+	'label'		=> __( 'Usar sessão Sobre', 'model' ),
+	'section'	=> 'sobre',
+	'default'	=> '1',
+	'priority'	=> 10,
+	'transport'	=> 'refresh',
+	'choices'	=> array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'menu_section_sobre',
+	'label'			=> __( 'Título para o menu', 'model' ),
+	'section'		=> 'sobre',
+	'default'		=> esc_attr__( 'Sobre', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'text',
@@ -171,43 +193,52 @@ Kirki::add_field( 'kirki_custom_config', array(
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'titulo_section_acao',
-	'label'       => __( 'Título', 'model' ),
-	'description' => esc_attr__( 'Título para a sessão Call to Action.', 'model' ),
-	'section'     => 'acao',
-	'default'     => esc_attr__( 'Call to Action', 'model' ),
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'menu_section_acao',
+	'label'			=> __( 'Título para o menu', 'model' ),
+	'section'		=> 'acao',
+	'default'		=> esc_attr__( 'Ação', 'model' ),
+	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'editor',
-	'settings'    => 'editor_section_acao',
-	'label'       => __( 'Texto', 'model' ),
-	'description' => esc_attr__( 'Faça uma chamada para o botão de ação.', 'model' ),
-	'section'     => 'acao',
-	'default'     => esc_attr__( 'Aqui é um espaço para você criar uma chamada para o seu serviço/produto ou para outro objetivo em que deseja obter resultados.', 'model' ),
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'titulo_section_acao',
+	'label'			=> __( 'Título', 'model' ),
+	'description'	=> esc_attr__( 'Título para a sessão Call to Action.', 'model' ),
+	'section'		=> 'acao',
+	'default'		=> esc_attr__( 'Call to Action', 'model' ),
+	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'text',
-	'settings'    => 'titulo_botao_section_acao',
-	'label'       => __( 'Título do Botão de Ação', 'model' ),
-	'description' => esc_attr__( 'Título para o botão da sessão Call to Action.', 'model' ),
-	'section'     => 'acao',
-	'default'     => esc_attr__( 'Veja o repositório do Tema Model no Github!', 'model' ),
-	'priority'    => 10,
+	'type'			=> 'editor',
+	'settings'		=> 'editor_section_acao',
+	'label'			=> __( 'Texto', 'model' ),
+	'description' 	=> esc_attr__( 'Faça uma chamada para o botão de ação.', 'model' ),
+	'section'		=> 'acao',
+	'default'		=> esc_attr__( 'Aqui é um espaço para você criar uma chamada para o seu serviço/produto ou para outro objetivo em que deseja obter resultados.', 'model' ),
+	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'        => 'link',
-	'settings'    => 'link_botao_section_acao',
-	'label'       => __( 'Link do Botão de Ação', 'model' ),
-	'description' => esc_attr__( 'Link para o botão da sessão Call to Action.', 'model' ),
-	'section'     => 'acao',
-	'default'     => esc_url( 'https://github.com/everaldomatias/model/' ),
-	'priority'    => 10,
+	'type'			=> 'text',
+	'settings'		=> 'titulo_botao_section_acao',
+	'label'			=> __( 'Título do Botão de Ação', 'model' ),
+	'description'	=> esc_attr__( 'Título para o botão da sessão Call to Action.', 'model' ),
+	'section'		=> 'acao',
+	'default'		=> esc_attr__( 'Veja o repositório do Tema Model no Github!', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'link',
+	'settings'		=> 'link_botao_section_acao',
+	'label'			=> __( 'Link do Botão de Ação', 'model' ),
+	'description'	=> esc_attr__( 'Link para o botão da sessão Call to Action.', 'model' ),
+	'section'		=> 'acao',
+	'default'		=> esc_url( 'https://github.com/everaldomatias/model/' ),
+	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -217,6 +248,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'section'		=> 'acao',
 	'description'	=> esc_attr__( 'Imagem de fundo para a sessão Ação.', 'model' ),
 	'priority'		=> 10,
+	'default'		=> esc_url( 'https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&h=960&w=1960' ),
 	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -253,6 +285,28 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
+	'type'		=> 'switch',
+	'settings'	=> 'use_diferenciais',
+	'label'		=> __( 'Usar sessão Diferenciais', 'model' ),
+	'section'	=> 'diferenciais',
+	'default'	=> '1',
+	'priority'	=> 10,
+	'transport'	=> 'refresh',
+	'choices'	=> array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'menu_section_diferenciais',
+	'label'			=> __( 'Título para o menu', 'model' ),
+	'section'		=> 'diferenciais',
+	'default'		=> esc_attr__( 'Diferenciais', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
 	'settings'    => 'titulo_section_diferenciais',
 	'label'       => __( 'Título da Sessão Diferenciais', 'model' ),
@@ -281,6 +335,28 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'default'	=> '<h1 style="text-align: center">Sessão Doações</h1><hr>',
 	'priority'	=> 10,
 	'transport'	=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'		=> 'switch',
+	'settings'	=> 'use_doacoes',
+	'label'		=> __( 'Usar sessão Doações', 'model' ),
+	'section'	=> 'doacoes',
+	'default'	=> '1',
+	'priority'	=> 10,
+	'transport'	=> 'refresh',
+	'choices'	=> array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'menu_section_doacoes',
+	'label'			=> __( 'Título para o menu', 'model' ),
+	'section'		=> 'doacoes',
+	'default'		=> esc_attr__( 'Colabore', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'image',
@@ -321,19 +397,6 @@ Kirki::add_field( 'kirki_custom_config', array(
 			'element'  => '#section-doacoes a.btn:hover',
 			'property' => 'border-color'
 		),
-	),
-) );
-Kirki::add_field( 'kirki_custom_config', array(
-	'type'		=> 'switch',
-	'settings'	=> 'use_doacoes',
-	'label'		=> __( 'Usar sessão Doações', 'model' ),
-	'section'	=> 'doacoes',
-	'default'	=> '1',
-	'priority'	=> 10,
-	'transport'	=> 'refresh',
-	'choices'	=> array(
-		'on'  => esc_attr__( 'Sim', 'model' ),
-		'off' => esc_attr__( 'Não', 'model' ),
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -406,6 +469,19 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'default'		=> '<h1 style="text-align: center">Sessão Redes Sociais</h1><hr>',
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'		=> 'switch',
+	'settings'	=> 'use_social',
+	'label'		=> __( 'Usar sessão Social', 'model' ),
+	'section'	=> 'social',
+	'default'	=> '1',
+	'priority'	=> 10,
+	'transport'	=> 'refresh',
+	'choices'	=> array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'text',
