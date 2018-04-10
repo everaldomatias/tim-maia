@@ -69,7 +69,12 @@
 
 			<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
 				<div class="container text-center">
-					<h1><?php bloginfo( 'name' ); ?></h1>
+					<?php if ( is_page() || is_single() ) : ?>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					<?php else: ?>
+						<h1><?php bloginfo( 'name' ); ?></h1>
+					<?php endif; ?>
+					
 				</div>
 			</div><!-- /#section-nome -->
 
