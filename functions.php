@@ -6,7 +6,7 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 if ( class_exists( 'Kirki' ) ) {
 	require 'inc/kirki.php';
 }
-
+require_once get_template_directory() . '/inc/hooks.php';
 require_once get_template_directory() . '/inc/strings-default.php';
 
 /*
@@ -97,3 +97,23 @@ function model_body_class( $classes ) {
 
 }
 add_filter( 'body_class', 'model_body_class' );
+
+/**
+ * 
+ * Retorna o template da Sessão Social caso
+ * esteja definida no Customizer para ser ebinida.
+ *
+ * @author 		Everaldo Matias <http://everaldomatias.github.io>
+ * @version 	0.1
+ * @since 		10/04/2018
+ * @see 		inc/hooks.php
+ * @link 		https://codex.wordpress.org/Plugin_API/Hooks_2.0.x
+ * @return 		template file
+ * 
+ */
+function get_template_section_social() {
+	$use_social = get_theme_mod( 'use_social', '1' );
+	if ( $use_social ) {
+		get_template_part( 'template-parts/section/section', 'social' );
+	}
+}

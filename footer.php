@@ -14,6 +14,8 @@
 
 ?>
 
+	<?php do_action( 'before-footer' ); ?>
+
 		</div><!-- #content -->
 
 		<?php

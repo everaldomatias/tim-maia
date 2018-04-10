@@ -103,7 +103,7 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	<?php get_template_part( 'template-parts/section/section', 'social' ); ?>
+	<?php do_action( 'main-front-page' ); ?>
 
 </main>
 
