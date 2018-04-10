@@ -22,7 +22,5 @@ get_header(); ?>
 
 </main>
 
-<?php get_template_part( 'template-parts/section/section', 'social' ); ?>
-
 <?php
 get_footer();
