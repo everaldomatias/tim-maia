@@ -16,20 +16,28 @@
 
 		</div><!-- #content -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php
+		if ( has_nav_menu( 'footer' ) ) : ?>
+
+		<div class="footer-menu">
 			<div class="container">
-				<?php
-				if ( has_nav_menu( 'footer' ) ) : ?>
-					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'footer',
-								'menu_class'     => 'footer-menu',
-								'depth'          => 1
-							) );
-						?>
-					</nav><!-- .social-navigation -->
-				<?php endif; ?>
+				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'model' ); ?>">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'footer',
+							'menu_class'     => 'footer-menu',
+							'depth'          => 1
+						) );
+					?>
+				</nav><!-- .social-navigation -->
+			</div>
+		</div>
+			
+		<?php endif; ?>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			<div class="container">
 				<div class="info">
 					<?php bloginfo('name'); ?> © <?php echo date( 'Y' ); ?> • Todos os direitos reservados.<br>
                 	Desenvolvido por <a href="https://everaldomatias.github.io/" target="_blank" title="Everaldo Matias">Everaldo Matias</a>.

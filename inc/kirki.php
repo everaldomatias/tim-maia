@@ -313,6 +313,14 @@ Kirki::add_field( 'kirki_custom_config', array(
 			'element'  => '#section-doacoes a.btn',
 			'property' => 'border-color'
 		),
+		array(
+			'element'  => '#section-doacoes a.btn:hover',
+			'property' => 'color'
+		),
+		array(
+			'element'  => '#section-doacoes a.btn:hover',
+			'property' => 'border-color'
+		),
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(

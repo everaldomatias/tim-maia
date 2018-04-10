@@ -67,14 +67,8 @@ img {
 
 /* Header */
 .site-header {
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 100%;
-	position: fixed;
-	top: 56px;
-	width: 100%;
-	//z-index: 999	z;
 	.navbar.fixed-top {
+		background-color: #222222;
 	}
 	@media ( min-width: 1040px ) {
 		-webkit-background-size: cover;

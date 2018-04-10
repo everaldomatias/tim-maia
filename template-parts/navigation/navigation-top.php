@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark" role="navigation">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
