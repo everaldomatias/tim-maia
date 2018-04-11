@@ -11,14 +11,17 @@
  */
 $sd = get_transient( 'strings_default' ); ?>
 
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark" role="navigation">
+<nav class="navbar fixed-top navbar-dark navbar-expand-md" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+      
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+
         <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
-        <ul class="nav navbar-nav float-left">
+        <ul class="nav navbar-nav float-left anchor-menu">
             <?php
             $use_sobre = get_theme_mod( 'use_sobre', '1' );
             $menu_section_sobre = get_theme_mod( 'menu_section_sobre', $sd['menu_section_sobre'] );
@@ -53,9 +56,9 @@ $sd = get_transient( 'strings_default' ); ?>
             array(
                 'theme_location'    => 'top',
                 'depth'             => 2,
-                'container'         => '',
+                'container'         => 'div',
                 'container_class'   => 'collapse navbar-collapse float-right',
-                'container_id'      => 'bs-example-navbar-collapse-1',
+                'container_id'      => 'collapseExample',
                 'menu_class'        => 'nav navbar-nav float-right',
                 'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                 'walker'            => new WP_Bootstrap_Navwalker()

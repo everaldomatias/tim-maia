@@ -75,6 +75,11 @@ header.site-header {
 			.navbar-brand {
 				float: left;
 			}
+			.anchor-menu {
+				@media( max-width: 768px ) {
+					display: none;
+				}
+			}
 		}
 	}
 	@media ( min-width: 1040px ) {
