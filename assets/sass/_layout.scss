@@ -72,12 +72,31 @@ header.site-header {
 		background-color: #222222;
 		&>.container-fluid {
 			display: block !important;
+			.navbar-toggler {
+				border: 0 !important;
+				float: right;
+				&:focus {
+					background-color: #222222 !important;
+					border: 0 !important;
+					outline: 0 !important;	
+				}
+			}
 			.navbar-brand {
 				float: left;
 			}
 			.anchor-menu {
 				@media( max-width: 768px ) {
 					display: none;
+				}
+			}
+			.navbar-collapse {
+				@media( max-width: 768px ) {
+					width: 100%;
+				}
+			}
+			.navbar-nav {
+				@media( max-width: 768px ) {
+					float: none !important;
 				}
 			}
 		}
