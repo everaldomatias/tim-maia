@@ -491,6 +491,20 @@ Kirki::add_field( 'kirki_custom_config', array(
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'background_section_social',
+	'label'       => __( 'Cor de fundo da sessão Social', 'model' ),
+	'section'     => 'social',
+	'default'     => '#ffffff',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => '#section-social',
+			'property' => 'background-color'
+		),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'text',
 	'settings'		=> 'facebook',
 	'label'			=> __( 'Facebook', 'model' ),
