@@ -79,6 +79,13 @@ Kirki::add_section( 'social', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+Kirki::add_section( 'rodape', array(
+    'title'          => __( 'Rodapé' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 
 /**
  * Campos (separados por Sessões)
@@ -562,4 +569,40 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'default'		=> '',
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
+) );
+
+/* Rodapé */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'background_color_section_rodape',
+	'label'       => __( 'Cor de fundo', 'model' ),
+	'description' => esc_attr__( 'Cor de fundo do Rodapé.', 'model' ),
+	'section'     => 'rodape',
+	'default'     => '#000000',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => 'footer.site-footer',
+			'property' => 'background-color'
+		),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'color_section_rodape',
+	'label'       => __( 'Cor das fontes', 'model' ),
+	'description' => esc_attr__( 'Cores para os textos do Rodapé.', 'model' ),
+	'section'     => 'rodape',
+	'default'     => '#ffffff',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => 'footer.site-footer',
+			'property' => 'color'
+		),
+		array(
+			'element'  => 'footer.site-footer a',
+			'property' => 'color'
+		),
+	),
 ) );
