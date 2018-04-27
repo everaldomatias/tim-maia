@@ -34,6 +34,19 @@ function model_setup() {
 }
 add_action( 'after_setup_theme', 'model_setup' );
 
+add_action( 'widgets_init', 'model_widgets_init' );
+function model_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Main Sidebar', 'model' ),
+        'id' => 'sidebar-main',
+        'description' => __( 'Widgets in this area will be shown on all posts.', 'model' ),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => '</h2>',
+    ) );
+}
+
 /**
  * Enqueue scripts and styles.
  */
