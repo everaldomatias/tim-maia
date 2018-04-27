@@ -4,23 +4,39 @@ get_header(); ?>
 
 	<div class="container">
 
-		<?php if ( have_posts() ) : the_post(); ?>
+		<div class="row">
 
-			<div class="entry-content">
-				<?php the_content(); ?>				
-			</div><!-- /.entry-content -->
+			<?php if ( have_posts() ) : the_post(); ?>
 
-		<?php else : ?>
+				<div class="col-sm-8 entry-content">
+					<?php the_content(); ?>
+					
+					<?php
+					/**
+					 * 
+					 * Comentários.
+					 * @see  comments.php
+					 * 
+					 */
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+					?>
+				</div><!-- /.entry-content -->
 
-			<div class="entry-content">
-				<?php _e( 'Nada para exibir aqui!', 'model' ); ?>
-			</div><!-- /.entry-content -->
+			<?php else : ?>
 
-		<?php endif; ?>
+				<div class="col-sm-8 entry-content">
+					<?php _e( 'Nada para exibir aqui!', 'model' ); ?>
+				</div><!-- /.entry-content -->
 
-		<div id="sidebar">
-			<?php dynamic_sidebar( 'sidebar-main' ); ?>
-		</div><!-- /#sidebar -->
+			<?php endif; ?>
+
+			<div class="col-sm-4" id="sidebar">
+				<?php dynamic_sidebar( 'sidebar-main' ); ?>
+			</div><!-- /#sidebar -->
+
+		</div><!-- /.row -->
 		
 	</div><!-- /.container -->
 
