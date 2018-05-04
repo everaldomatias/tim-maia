@@ -130,3 +130,9 @@ function get_template_section_social() {
 		get_template_part( 'template-parts/section/section', 'social' );
 	}
 }
+
+function thumbnail_bg( $tamanho = 'thumbnail' ) {
+	global $post;
+	$get_post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $tamanho, false, '' );
+	echo 'style="background: url(' . esc_url( $get_post_thumbnail[0] ) . ' )"';
+}
