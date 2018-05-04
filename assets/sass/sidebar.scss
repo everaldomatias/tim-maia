@@ -1,0 +1,28 @@
+#sidebar {
+	padding-bottom: 50px;
+	padding-top: 50px;
+	.widget {
+		border-bottom: 1px solid $cinza-claro;
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		table {
+			line-height: 2;
+			width: 100%;
+		}
+		ul {
+			padding-left: 20px;
+			li {
+				list-style-position: outside;
+				list-style-type: circle;
+				margin-bottom: 5px;
+			}
+		}
+		.widget-title {
+			margin-bottom: 15px;
+		}
+		.post-date {
+			display: block;
+			font-size: 0.8em;
+		}
+	}
+}

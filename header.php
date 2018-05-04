@@ -46,8 +46,10 @@
 					if ( has_custom_logo() ) {
 						$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 					    echo '<img class="logo" src="'. esc_url( $logo[0] ) .'">';
+					} elseif( is_home() ) {
+					    echo '<h1>'. __( 'Blog', 'model' ) .'</h1>';
 					} else {
-					    echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+						echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
 					}
 					?>
 				</div>
