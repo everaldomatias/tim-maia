@@ -8,7 +8,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php $count == 0; ?>
+				<?php $count = 0; ?>
 
 				<div class="col-sm-8 loop">
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -17,22 +17,39 @@ get_header(); ?>
 
 						<?php if ( $count == 1 ) : ?>
 
-							<div <?php thumbnail_bg( 'full' ); ?> class="each each-1">
+							<a href="<?php the_permalink(); ?>">
 
-								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								
-							</div><!-- /.each-1 -->
+								<div <?php thumbnail_bg( 'full' ); ?> class="each each-1">
+
+									<div class="inner">
+										<span>cat</span>
+										<h2><?php the_title(); ?></h2>
+										<div class="meta">
+											Add comments here with icon
+										</div>
+									</div>									
+									
+								</div><!-- /.each-1 -->
+
+							</a>
 
 						<?php else: ?>
 
-							<div class="each">
+							<a href="<?php the_permalink(); ?>">
 
-								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<div class="entry-sumary">
-									<?php the_excerpt(); ?>								
-								</div><!-- /.entry-sumary -->
-								
-							</div><!-- /.each -->
+								<div <?php thumbnail_bg( 'full' ); ?> class="each each-<?php echo $count; ?>">
+
+									<div class="inner">
+										<span>cat</span>
+										<h2><?php the_title(); ?></h2>
+										<div class="meta">
+											Add comments here with icon
+										</div>
+									</div>									
+									
+								</div><!-- /.each-1 -->
+
+							</a>
 
 						<?php endif; ?>
 
