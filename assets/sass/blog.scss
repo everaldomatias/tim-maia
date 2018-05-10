@@ -8,47 +8,59 @@
 				text-decoration: none;
 			}
 			.each {
+				color: #ffffff;
 				margin-bottom: 30px;
+				min-height: 200px;
+				overflow: hidden;
+				padding: 0;
 				position: relative;
 				.inner {
 					background: #333333; /* For browsers that do not support gradients */
 				    background: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.7));
 				    background: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
 				    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); /* Standard syntax (must be last) */
-					bottom: 0;
+					bottom: -45px;
 					height: auto;
 					padding: 15px;
 					position: absolute;
-					@include transition( all 1s ease-in-out );
+					@include transition( all .3s ease-in-out );
 					width: 100%;
 					h2 {
-						top: 15px;
-						padding-bottom: 30px;
+						margin-bottom: 0;
+						padding-bottom: 25px;
+						padding-top: 10px;
 						position: relative;
 					}
+					.cat {
+						opacity: 0.8;
+						a {
+							display: inherit;
+						}
+					}
 					.meta {
-						margin-bottom: -52.5px;
-						padding: 15px 0 0 0;
+						@include transition( all .45s ease-in-out );
+						opacity: 0;
 					}
 				}
 				&:hover {
 					.inner {
+						bottom: -10px;
 						h2 {
-							padding-bottom: 0; 
 						}
 						.meta {
-							margin-bottom: 0px;
+							margin-bottom: 15px;
+							margin-top: -15px;
+							opacity: 0.8;
 						}
 					}
 				}
 			}
-			.each-1,
-			.each-3 {
-				min-height: 500px;
+			.each-1 {
+				min-height: 550px;
 			}
-			.each-2 {
-				min-height: 350px;
-				width: 50%;
+			.each-2,
+			.each-3 {
+				min-height: 400px;				
 			}
 		}
 	}

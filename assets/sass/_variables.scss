@@ -14,7 +14,6 @@ $cinza-medio: #cccccc;
 $cinza-escuro: #444444;
 $preto: #000000;
 
-
 @mixin transition( $transition ) {
 	transition: $transition;
 	-o-transition: $transition;

@@ -9,6 +9,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : the_post(); ?>
 
 				<div class="col-sm-8 entry-content">
+
 					<?php the_content(); ?>
 					
 					<?php

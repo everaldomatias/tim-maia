@@ -10,61 +10,92 @@ get_header(); ?>
 
 				<?php $count = 0; ?>
 
-				<div class="col-sm-8 loop">
-					<?php while ( have_posts() ) : the_post(); ?>
+				<div class="col-sm-9 loop">
 
-						<?php $count++; ?>
+					<div class="row">
+						<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php if ( $count == 1 ) : ?>
+							<?php $count++; ?>
 
-							<a href="<?php the_permalink(); ?>">
+							<?php if ( has_post_thumbnail() ) : ?>
+							
+								<?php if ( $count == 1 ) : ?>
 
-								<div <?php thumbnail_bg( 'full' ); ?> class="each each-1">
+									<div class="col-sm-12">
 
-									<div class="inner">
-										<span>cat</span>
-										<h2><?php the_title(); ?></h2>
-										<div class="meta">
-											Add comments here with icon
-										</div>
-									</div>									
-									
-								</div><!-- /.each-1 -->
+										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-1">
 
-							</a>
+											<div class="inner">
+												<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
+												<a href="<?php the_permalink(); ?>">
+													<h2><?php the_title(); ?></h2>
+												</a>
+												<div class="meta">
+													Add comments here with icon
+												</div><!-- /.meta -->
+											</div><!-- /.inner -->
+											
+										</div><!-- /.each-1 -->
 
-						<?php else: ?>
+									</div>
 
-							<a href="<?php the_permalink(); ?>">
+								<?php elseif( $count == 2 || $count == 3 ) : ?>
 
-								<div <?php thumbnail_bg( 'full' ); ?> class="each each-<?php echo $count; ?>">
+									<div class="col-sm-6">
 
-									<div class="inner">
-										<span>cat</span>
-										<h2><?php the_title(); ?></h2>
-										<div class="meta">
-											Add comments here with icon
-										</div>
-									</div>									
-									
-								</div><!-- /.each-1 -->
+										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
 
-							</a>
+											<div class="inner">
+												<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
+												<a href="<?php the_permalink(); ?>">
+													<h2><?php the_title(); ?></h2>
+												</a>
+												<div class="meta">
+													Add comments here with icon
+												</div><!-- /.meta -->
+											</div><!-- /.inner -->
+											
+										</div><!-- /.each-<?php echo $count; ?> -->
 
-						<?php endif; ?>
+									</div>
 
-					<?php endwhile; ?>
+								<?php else: ?>
+
+									<div class="col-sm-12">
+
+										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
+
+											<div class="inner">
+												<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
+												<a href="<?php the_permalink(); ?>">
+													<h2><?php the_title(); ?></h2>
+												</a>
+												<div class="meta">
+													Add comments here with icon
+												</div><!-- /.meta -->
+											</div><!-- /.inner -->
+											
+										</div><!-- /.each-<?php echo $count; ?> -->
+
+									</div>
+
+								<?php endif; ?>
+
+							<?php endif; ?>
+
+						<?php endwhile; ?>
+					</div>
 				</div><!-- /.loop -->
 
 			<?php else : ?>
 
-				<div class="col-sm-8 entry-content">
+				<div class="col-sm-9 entry-content">
 					<?php _e( 'Nada para exibir aqui!', 'model' ); ?>
 				</div><!-- /.entry-content -->
 
 			<?php endif; ?>
 
-			<div class="col-sm-4" id="sidebar">
+			<div class="col-sm-3" id="sidebar">
 				<?php dynamic_sidebar( 'sidebar-main' ); ?>
 			</div><!-- /#sidebar -->
 
