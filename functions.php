@@ -136,3 +136,77 @@ function thumbnail_bg( $tamanho = 'thumbnail' ) {
 	$get_post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $tamanho, false, '' );
 	echo 'style="background: url(' . esc_url( $get_post_thumbnail[0] ) . ' )"';
 }
+
+/**
+ *
+ * Define valores e configurações iniciais ao ativar o tema.
+ * 
+ * @author 		Everaldo Matias <http://everaldomatias.github.io>
+ * @version 	0.1
+ * @since 		15/05/2018
+ *
+ */
+function initial_config_theme() {
+    
+    $initial_config_theme = get_option( 'initial_config_theme', false );
+
+    if ( $initial_config_theme == false ) {
+        
+        /* Home */
+        $page_title = 'Home';
+        $page_check = get_page_by_title( $page_title );
+        $page = array(
+            'post_type'     => 'page',
+            'post_title'    => $page_title,
+            'post_status'   => 'publish',
+            'post_author'   => 1,
+        );
+
+        if ( ! isset( $page_check->ID ) ) {
+            $page_id = wp_insert_post( $page );
+            update_option( 'page_on_front', $page_id );
+            update_option( 'show_on_front', 'page' );
+            update_option( 'initial_config_theme', true );
+        } elseif( get_post_status( $page_check->ID ) != false ) {
+            update_option( 'page_on_front', $page_check->ID );
+            update_option( 'show_on_front', 'page' );
+            update_option( 'initial_config_theme', true );
+        }
+
+        /* Blog */
+        $page_blog_title = 'Blog';
+        $page_blog_check = get_page_by_title( $page_blog_title );
+        $page_blog = array(
+            'post_type'     => 'page',
+            'post_title'    => $page_blog_title,
+            'post_status'   => 'publish',
+            'post_author'   => 1,
+        );
+
+        if ( ! isset( $page_blog_check->ID ) ) {
+            $page_blog_id = wp_insert_post( $page_blog );
+            update_option( '', $page_blog_id );
+        } elseif( get_post_status( $page_blog_check->ID ) != false ) {
+            update_option( 'page_for_posts', $page_blog_check->ID );
+        }
+
+    }
+}
+add_action( 'after_switch_theme', 'initial_config_theme' );
+
+/**
+ *
+ * Remove valores e configurações iniciais ao desativar o tema.
+ * 
+ * @author 		Everaldo Matias <http://everaldomatias.github.io>
+ * @version 	0.1
+ * @since 		15/05/2018
+ *
+ */
+function remove_config_theme () {
+    delete_option( 'page_on_front' );
+    delete_option( 'page_for_posts' );
+    update_option( 'show_on_front', 'posts' );
+    update_option( 'initial_config_theme', false );
+}
+add_action( 'switch_theme', 'remove_config_theme' );
