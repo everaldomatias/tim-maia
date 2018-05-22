@@ -51,19 +51,21 @@ $sd = get_transient( 'strings_default' ); ?>
             <?php endif; ?>
         </ul>
 
-        <?php
-        wp_nav_menu(
-            array(
-                'theme_location'    => 'top',
-                'depth'             => 2,
-                'container'         => 'div',
-                'container_class'   => 'collapse navbar-collapse float-right',
-                'container_id'      => 'collapseExample',
-                'menu_class'        => 'nav navbar-nav float-right',
-                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                'walker'            => new WP_Bootstrap_Navwalker()
-            )
-        );
-        ?>
+        <?php if ( has_nav_menu( 'top' ) ) : ?>
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location'    => 'top',
+                    'depth'             => 2,
+                    'container'         => 'div',
+                    'container_class'   => 'collapse navbar-collapse float-right',
+                    'container_id'      => 'collapseExample',
+                    'menu_class'        => 'nav navbar-nav float-right',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker()
+                )
+            );
+            ?>
+        <?php endif; ?>
     </div><!-- /.container-fluid -->
 </nav>
