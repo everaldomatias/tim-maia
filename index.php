@@ -25,15 +25,15 @@ get_header(); ?>
 
 										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-1">
 
-											<div class="inner">
-												<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
-												<a href="<?php the_permalink(); ?>">
+											<a href="<?php the_permalink(); ?>">
+												<div class="inner">
+													<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
 													<h2><?php the_title(); ?></h2>
-												</a>
-												<div class="meta">
-													Add comments here with icon
-												</div><!-- /.meta -->
-											</div><!-- /.inner -->
+													<div class="meta">
+														Add comments here with icon
+													</div><!-- /.meta -->
+												</div><!-- /.inner -->
+											</a>
 											
 										</div><!-- /.each-1 -->
 
@@ -45,15 +45,15 @@ get_header(); ?>
 
 										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
 
-											<div class="inner">
-												<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
-												<a href="<?php the_permalink(); ?>">
+											<a href="<?php the_permalink(); ?>">
+												<div class="inner">
+													<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
 													<h2><?php the_title(); ?></h2>
-												</a>
-												<div class="meta">
-													Add comments here with icon
-												</div><!-- /.meta -->
-											</div><!-- /.inner -->
+													<div class="meta">
+														Add comments here with icon
+													</div><!-- /.meta -->
+												</div><!-- /.inner -->
+											</a>
 											
 										</div><!-- /.each-<?php echo $count; ?> -->
 
@@ -65,15 +65,15 @@ get_header(); ?>
 
 										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
 
-											<div class="inner">
-												<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
-												<a href="<?php the_permalink(); ?>">
+											<a href="<?php the_permalink(); ?>">
+												<div class="inner">
+													<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
 													<h2><?php the_title(); ?></h2>
-												</a>
-												<div class="meta">
-													Add comments here with icon
-												</div><!-- /.meta -->
-											</div><!-- /.inner -->
+													<div class="meta">
+														Add comments here with icon
+													</div><!-- /.meta -->
+												</div><!-- /.inner -->
+											</a>
 											
 										</div><!-- /.each-<?php echo $count; ?> -->
 
@@ -84,13 +84,13 @@ get_header(); ?>
 							<?php endif; ?>
 
 						<?php endwhile; ?>
-					</div>
+					</div><!-- /.row -->
 				</div><!-- /.loop -->
 
 			<?php else : ?>
 
 				<div class="col-sm-9 entry-content">
-					<?php _e( 'Nada para exibir aqui!', 'model' ); ?>
+					<?php _e( 'Sinto muito, não temos nada para exibir aqui!', 'model' ); ?>
 				</div><!-- /.entry-content -->
 
 			<?php endif; ?>
