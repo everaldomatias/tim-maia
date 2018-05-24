@@ -53,7 +53,11 @@ function model_widgets_init() {
 function model_scripts() {
 
 	$template_url = get_template_directory_uri();
-	
+
+    // Font Awesome
+    // https://fontawesome.com/get-started
+	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
+
 	// Theme stylesheet.
 	wp_enqueue_style( 'model-style', get_stylesheet_uri() );
 

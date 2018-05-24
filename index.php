@@ -15,71 +15,49 @@ get_header(); ?>
 					<div class="row">
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php $count++; ?>
-
 							<?php if ( has_post_thumbnail() ) : ?>
+
+								<?php $count++; ?>
+								<?php $class = ''; ?>
 							
 								<?php if ( $count == 1 ) : ?>
-
-									<div class="col-sm-12">
-
-										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-1">
-
-											<a href="<?php the_permalink(); ?>">
-												<div class="inner">
-													<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
-													<h2><?php the_title(); ?></h2>
-													<div class="meta">
-														Add comments here with icon
-													</div><!-- /.meta -->
-												</div><!-- /.inner -->
-											</a>
-											
-										</div><!-- /.each-1 -->
-
-									</div>
-
-								<?php elseif( $count == 2 || $count == 3 ) : ?>
-
-									<div class="col-sm-6">
-
-										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
-
-											<a href="<?php the_permalink(); ?>">
-												<div class="inner">
-													<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
-													<h2><?php the_title(); ?></h2>
-													<div class="meta">
-														Add comments here with icon
-													</div><!-- /.meta -->
-												</div><!-- /.inner -->
-											</a>
-											
-										</div><!-- /.each-<?php echo $count; ?> -->
-
-									</div>
-
+									<?php $class = 'col-sm-12'; ?>
+								<?php elseif ( $count == 2 || $count == 3 ) : ?>
+									<?php $class = 'col-sm-6'; ?>
 								<?php else: ?>
-
-									<div class="col-sm-12">
-
-										<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
-
-											<a href="<?php the_permalink(); ?>">
-												<div class="inner">
-													<span class="cat"><?php the_category( '•' ); ?></span><!-- /.cat -->
-													<h2><?php the_title(); ?></h2>
-													<div class="meta">
-														Add comments here with icon
-													</div><!-- /.meta -->
-												</div><!-- /.inner -->
-											</a>
-											
-										</div><!-- /.each-<?php echo $count; ?> -->
-
-									</div>
-
+									<?php $class = 'col-sm-12'; ?>
 								<?php endif; ?>
+
+								<div class="<?php echo $class; ?>">
+
+									<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
+
+										<a href="<?php the_permalink(); ?>">
+											<div class="inner">
+												<span class="cat"><?php the_category( ' • ' ); ?></span><!-- /.cat -->
+												<h2><?php the_title(); ?></h2>
+
+												<?php $comments_number = get_comments_number(); ?>
+
+												<div class="meta">
+													<?php if ( '1' === $comments_number ) : ?>
+														<span class="comments">
+															<i class="far fa-comment-dots"></i>
+															<?php _e( 'One reply', 'model' ); ?>
+														</span><!-- /.comments -->
+													<?php elseif( $comments_number >= 2 ) : ?>
+														<span class="comments">
+															<i class="far fa-comment-dots"></i>
+															<?php echo $comments_number . ' ' . _e( 'replys', 'model' ); ?>
+														</span><!-- /.comments -->
+													<?php endif; ?>
+												</div><!-- /.meta -->
+											</div><!-- /.inner -->
+										</a>
+										
+									</div><!-- /.each-<?php echo $count; ?> -->
+
+								</div><!-- /.<?php echo $class; ?> -->
 
 							<?php endif; ?>
 
