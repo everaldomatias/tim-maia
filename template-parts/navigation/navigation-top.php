@@ -44,6 +44,13 @@ $sd = get_transient( 'strings_default' ); ?>
             <?php endif; ?>
 
             <?php
+            $use_blog = get_theme_mod( 'use_blog', '1' );
+            $menu_section_blog = get_theme_mod( 'menu_section_blog', $sd['menu_section_blog'] );
+            if ( $use_blog && ! empty( $menu_section_blog ) ) : ?>
+                <li class="menu-item nav-item"><a class="nav-link" href="<?php echo home_url( '#section-blog' ); ?>"><?php echo apply_filters( 'the_title', $menu_section_blog ); ?></a></li>
+            <?php endif; ?>
+
+            <?php
             $use_doacoes = get_theme_mod( 'use_doacoes', '1' );
             $menu_section_doacoes = get_theme_mod( 'menu_section_doacoes', $sd['menu_section_doacoes'] );
             if ( $use_doacoes && ! empty( $menu_section_doacoes ) ) : ?>

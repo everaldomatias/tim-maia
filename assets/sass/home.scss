@@ -21,4 +21,80 @@
 	    padding-top: 80px;
 	    text-align: center;
 	}
+	/* Blog */
+	#section-blog {
+		padding-bottom: 30px;
+		padding-top: 60px;
+		h2.home-title {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		a {
+			color: #ffffff;
+			text-decoration: none;
+		}
+		.each {
+			background-color: #cccccc;
+			background-blend-mode: multiply;
+			color: #ffffff;
+			margin-bottom: 30px;
+			min-height: 350px;
+			overflow: hidden;
+			padding: 0;
+			position: relative;
+			@include transition( all .45s ease-in-out );
+			& > a {
+				height: 100%;
+				position: absolute;
+				width: 100%;
+				z-index: 9999;
+			}
+			.inner {
+				bottom: -45px;
+				height: auto;
+				opacity: 0.9;
+				padding: 15px;
+				position: absolute;
+				@include transition( all .3s ease-in-out );
+				width: 100%;
+				h2 {
+					margin-bottom: 0;
+					padding-bottom: 25px;
+					padding-top: 10px;
+					position: relative;
+				}
+				.cat {
+					opacity: 0.8;
+					a {
+						display: inherit;
+					}
+				}
+				.meta {
+					min-height: 25px;
+					@include transition( all .45s ease-in-out );
+					opacity: 0;
+				}
+			}
+			&:hover {
+				background-color: #333333;
+				.inner {
+					bottom: -10px;
+					h2 {
+					}
+					.meta {
+						margin-bottom: 15px;
+						margin-top: -15px;
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+		.each-1 {
+			min-height: 550px;
+		}
+		.each-2,
+		.each-3 {
+			min-height: 400px;				
+		}
+	}
 }

@@ -40,6 +40,9 @@ function string_default() {
 	$default['titulo_section_diferenciais']	= 'Simples, direto e elegante.';
 	$default['editor_section_diferenciais']	= 'Esse tema foi desenvolvido com o objetivo de apresentar as informações mais importantes de forma simples, elegante e de fácil manutenção. Tudo ao seu controle, edite em poucos minutos, pelo celular, de onde estiver.';
 
+	/* Sessão Blog */
+	$default['titulo_section_blog'] 	= 'Blog';
+
 	/* Sessão Doações */
 	$default['menu_section_doacoes']			= 'Colabore';
 	$default['image_section_doacoes']			= 'https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&h=960&w=1960';

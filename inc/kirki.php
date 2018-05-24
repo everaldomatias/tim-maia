@@ -65,6 +65,13 @@ Kirki::add_section( 'diferenciais', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+Kirki::add_section( 'blog', array(
+    'title'          => __( 'Blog' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 Kirki::add_section( 'doacoes', array(
     'title'          => __( 'Doações' ),
     'panel'          => 'sessoes', // Not typically needed.
@@ -330,6 +337,47 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'description'	=> esc_attr__( 'Esse tema foi desenvolvido com o objetivo de apresentar as informações mais importantes de forma simples, elegante e de fácil manutenção. Tudo ao seu controle, edite em poucos minutos, pelo celular, de onde estiver.', 'model' ),
 	'section'		=> 'diferenciais',
 	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+/* Blog */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'custom',
+	'settings'		=> 'section_blog',
+	'label'			=> '',
+	'section'		=> 'blog',
+	'default'		=> '<h1 style="text-align: center">Sessão Blog</h1><hr>',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'		=> 'switch',
+	'settings'	=> 'use_blog',
+	'label'		=> __( 'Usar sessão Blog', 'model' ),
+	'section'	=> 'blog',
+	'default'	=> '1',
+	'priority'	=> 10,
+	'transport'	=> 'refresh',
+	'choices'	=> array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'menu_section_blog',
+	'label'			=> __( 'Título para o menu', 'model' ),
+	'section'		=> 'blog',
+	'default'		=> esc_attr__( 'Blog', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'titulo_section_blog',
+	'label'			=> __( 'Título para a sessão', 'model' ),
+	'section'		=> 'blog',
+	'default'		=> esc_attr__( 'Blog', 'model' ),
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
