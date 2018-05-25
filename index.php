@@ -2,6 +2,19 @@
 get_header(); ?>
 <main>
 
+	<?php
+	/**
+	 *
+	 * Retorna as strings padrões do tema no array $sd
+	 * 
+ 	 * @author 		Everaldo Matias <http://everaldomatias.github.io>
+ 	 * @version 	0.1
+ 	 * @since 		09/04/2018
+ 	 * @see 		https://codex.wordpress.org/Transients_API
+ 	 * 
+	 */
+	$sd = get_transient( 'strings_default' ); ?>
+
 	<div class="container">
 
 		<div class="row">
@@ -13,6 +26,11 @@ get_header(); ?>
 				<div class="col-sm-9 loop">
 
 					<div class="row">
+
+						<?php $titulo_section_blog = get_theme_mod( 'titulo_section_blog', $sd['titulo_section_blog'] ); ?>
+
+						<h1 class="entry-title"><?php echo apply_filters( 'the_title', $titulo_section_blog ); ?></h1>
+
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<?php if ( has_post_thumbnail() ) : ?>
