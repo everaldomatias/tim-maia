@@ -43,6 +43,9 @@
 			padding: 0;
 			position: relative;
 			@include transition( all .45s ease-in-out );
+			@media ( max-width: 768px ) {
+				background-color: #333333;
+			}
 			& > a {
 				height: 100%;
 				position: absolute;
@@ -73,6 +76,14 @@
 					min-height: 25px;
 					@include transition( all .45s ease-in-out );
 					opacity: 0;
+					@media ( max-width: 768px ) {
+						margin-bottom: 15px;
+						margin-top: -15px;
+						opacity: 0.8;
+					}
+				}
+				@media ( max-width: 768px ) {
+					bottom: -10px;
 				}
 			}
 			&:hover {

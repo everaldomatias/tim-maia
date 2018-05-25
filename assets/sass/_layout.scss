@@ -15,7 +15,9 @@
 // 		# Comments
 // # Footer
 //
-
+html {
+	overflow: auto;
+}
 html,
 body {
 	font-family: 'Open Sans', sans-serif;
