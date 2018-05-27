@@ -381,6 +381,40 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'background_section_blog',
+	'label'       => __( 'Cor de fundo da sessão Blog', 'model' ),
+	'section'     => 'blog',
+	'default'     => '#000000',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => '#section-blog',
+			'property' => 'background-color'
+		),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'color_section_blog',
+	'label'       => __( 'Cor das fontes', 'model' ),
+	'description' => esc_attr__( 'Cores para os textos da sessão Blog.', 'model' ),
+	'section'     => 'rodape',
+	'default'     => '#ffffff',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => '#section-blog h2',
+			'property' => 'color'
+		),
+		array(
+			'element'  => '#section-blog a.more',
+			'property' => 'color'
+		)
+	),
+) );
+
 /* Doações */
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'		=> 'custom',
