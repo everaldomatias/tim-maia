@@ -400,7 +400,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'settings'    => 'color_section_blog',
 	'label'       => __( 'Cor das fontes', 'model' ),
 	'description' => esc_attr__( 'Cores para os textos da sessão Blog.', 'model' ),
-	'section'     => 'rodape',
+	'section'     => 'blog',
 	'default'     => '#ffffff',
 	'transport'   => 'auto',
 	'output'    	=> array(
