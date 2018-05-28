@@ -32,7 +32,7 @@
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
 
-		<?php if ( is_home() || is_front_page() ) : ?>
+		<?php if ( is_front_page() ) : ?>
 
 			<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
 
@@ -41,11 +41,9 @@
 					<?php
 					if ( has_custom_logo() ) {
 						$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-					    echo '<img class="logo" src="'. esc_url( $logo[0] ) .'">';
-					} elseif( is_home() ) {
-					    echo '<h1>'. __( 'Blog', 'model' ) .'</h1>';
+					    echo '<img class="logo" src="' . esc_url( $logo[0] ) . '">';
 					} else {
-						echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+						echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
 					}
 					?>
 				</div>
@@ -69,11 +67,16 @@
 				<div class="container text-center">
 					<?php if ( is_page() || is_single() ) : ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-					<?php else: ?>
-						<h1><?php bloginfo( 'name' ); ?></h1>
+					<?php elseif( is_home() ) : ?>
+						<?php
+						// Blog
+						$titulo_section_blog = get_theme_mod( 'titulo_section_blog', $sd['titulo_section_blog'] ); ?>
+						<h1 class="entry-title"><?php echo apply_filters( 'the_title', $titulo_section_blog ); ?></h1>
+					<?php else : ?>
+						<h1 class="entry-title"><?php bloginfo( 'name' ); ?></h1>
 					<?php endif; ?>
 					
-				</div>
+				</div><!-- /.text-center -->
 			</div><!-- /#section-nome -->
 
 		<?php endif; ?>

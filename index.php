@@ -27,10 +27,6 @@ get_header(); ?>
 
 					<div class="row">
 
-						<?php $titulo_section_blog = get_theme_mod( 'titulo_section_blog', $sd['titulo_section_blog'] ); ?>
-
-						<h1 class="entry-title"><?php echo apply_filters( 'the_title', $titulo_section_blog ); ?></h1>
-
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<?php if ( has_post_thumbnail() ) : ?>
