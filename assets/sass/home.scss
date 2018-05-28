@@ -36,6 +36,8 @@
 		.each {
 			background-color: #cccccc;
 			background-blend-mode: multiply;
+			background-size: cover;
+			background-position: center;
 			color: #ffffff;
 			margin-bottom: 30px;
 			min-height: 350px;
