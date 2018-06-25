@@ -23,6 +23,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 }
+body {
+	overflow-x: hidden;
+}
 body.logged-in.admin-bar {
 	//margin-top: 32px;
 	.navbar.fixed-top {

@@ -1,7 +1,14 @@
 .parallax-window {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-heigth: 100%;
   	position: relative;
 	@media ( min-width: 768px ) {
 		min-height: 450px;
+	}
+	.container {
+		
 	}
 	.overlay {
 		background-color: rgba(0,0,0,0.25);
