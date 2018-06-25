@@ -59,7 +59,7 @@ img {
 	padding-right: 0;
 }
 .site {
-	margin-top: 52px;
+	//margin-top: 52px;
 }
 .hfeed.site {
 	overflow: hidden;
@@ -72,71 +72,6 @@ img {
 	width: 100%;
 }
 
-/* Header */
-header.site-header {
-	.navbar.fixed-top {
-		background-color: #222222;
-		&>.container-fluid {
-			display: block !important;
-			.navbar-toggler {
-				border: 0 !important;
-				float: right;
-				&:focus {
-					background-color: #222222 !important;
-					border: 0 !important;
-					outline: 0 !important;	
-				}
-			}
-			.navbar-brand {
-				float: left;
-			}
-			.anchor-menu {
-				@media( max-width: 768px ) {
-					display: none;
-				}
-			}
-			.navbar-collapse {
-				@media( max-width: 768px ) {
-					width: 100%;
-				}
-			}
-			.navbar-nav {
-				@media( max-width: 768px ) {
-					float: none !important;
-				}
-			}
-		}
-	}
-	@media ( min-width: 1040px ) {
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-	}
-	&.blurred-image {
-		-webkit-transition: all 0.3 ease-in-out;
-		-o-transition: all 0.3 ease-in-out;
-		transition: all 0.3 ease-in-out;
-		opacity: 0;
-		-webkit-filter: blur(5px) brightness(0.5);
-		-ms-filter: blur(5px) brightness(0.5);
-		-o-filter: blur(5px) brightness(0.5);
-		filter: blur(5px) brightness(0.5);
-	}
-}
-.wrap-logo {
-	padding: 15px;
-	position: relative;
-	text-align: center;
-	width: 100%;
-	z-index: 99;
-	img {
-		max-width: 200px;
-	}
-}
-.logo {
-	max-width: 200px;
-}
 body.home {
 	.wrap-logo {
 		//padding: 290px 15px;

@@ -37,6 +37,13 @@ Kirki::add_panel( 'sessoes', array(
  * Sessões
  * ==============================================================================
  */
+Kirki::add_section( 'menu', array(
+    'title'          => __( 'Menu' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 Kirki::add_section( 'nome', array(
     'title'          => __( 'Nome' ),
     'panel'          => 'sessoes', // Not typically needed.
@@ -92,6 +99,47 @@ Kirki::add_section( 'rodape', array(
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
+) );
+
+
+/**
+ * Campos (separados por Sessões)
+ * ==============================================================================
+ */
+
+/* Menu */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'color_section_menu',
+	'label'       => __( 'Cor de fundo', 'model' ),
+	'description' => esc_attr__( 'Cor para fundo do menu superior.', 'model' ),
+	'section'     => 'menu',
+	'default'     => 'rgba(34,34,34,0.85)',
+	'transport'   => 'auto',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'output'    	=> array(
+		array(
+			'element'  => 'header.site-header .navbar.fixed-top',
+			'property' => 'background-color'
+		),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'color_section_menu_fonts',
+	'label'       => __( 'Cor das fontes', 'model' ),
+	'description' => esc_attr__( 'Cor das fontes do menu superior.', 'model' ),
+	'section'     => 'menu',
+	'default'     => '#FFFFFF',
+	'transport'   => 'auto',
+	'output'    	=> array(
+		array(
+			'element'  => 'header.site-header .navbar-dark .navbar-nav .nav-link',
+			'property' => 'color'
+		),
+	),
 ) );
 
 /**
