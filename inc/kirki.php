@@ -405,7 +405,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'transport'   => 'auto',
 	'output'    	=> array(
 		array(
-			'element'  => '#section-blog h2',
+			'element'  => '#section-blog h2.home-title',
 			'property' => 'color'
 		),
 		array(
