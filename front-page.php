@@ -41,6 +41,7 @@ get_header(); ?>
 	<?php if ( $use_acao ) : ?>
 
 		<div id="section-acao" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_acao ); ?>">
+			<div class="overlay"></div>
 			<div class="container">
 				<h2><?php echo apply_filters( 'the_title', $titulo_section_acao ); ?></h2>
 				<span><?php echo apply_filters( 'the_title', $editor_section_acao ); ?></span>
@@ -145,6 +146,8 @@ get_header(); ?>
 		<?php $link_botao_section_doacoes_2 = get_theme_mod( 'link_botao_section_doacoes_2', $sd['link_botao_section_doacoes_2'] ); ?>
 
 		<div id="section-doacoes" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_doacoes ); ?>">
+
+			<div class="overlay"></div>
 
 			<div class="container">
 

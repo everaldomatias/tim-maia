@@ -32,7 +32,6 @@ Kirki::add_panel( 'sessoes', array(
     'capability'  => 'edit_theme_options'
 ) );
 
-
 /**
  * Sessões
  * ==============================================================================
@@ -100,7 +99,13 @@ Kirki::add_section( 'rodape', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-
+Kirki::add_section( 'outros', array(
+    'title'          => __( 'Outros' ),
+    'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
 
 /**
  * Campos (separados por Sessões)
@@ -319,7 +324,7 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'			=> __( 'Cor', 'model' ),
 	'description'	=> esc_attr__( 'Cores para os textos da sessão Ação.', 'model' ),
 	'section'		=> 'acao',
-	'default'		=> '#333333',
+	'default'		=> '#FFFFFF',
 	'transport'		=> 'refresh',
 	'output'		=> array(
 		array(
@@ -747,6 +752,25 @@ Kirki::add_field( 'kirki_custom_config', array(
 		array(
 			'element'  => 'footer.site-footer a',
 			'property' => 'color'
+		),
+	),
+) );
+
+/* Outros */
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'color',
+	'settings'    => 'background_color_overlay',
+	'label'       => __( 'Cor das camadas de transparência', 'model' ),
+	'section'     => 'outros',
+	'default'     => 'rgba(0,0,0,0.25)',
+	'transport'   => 'auto',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'output'    	=> array(
+		array(
+			'element'  => '.parallax-window .overlay',
+			'property' => 'background-color'
 		),
 	),
 ) );
