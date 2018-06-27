@@ -24,4 +24,14 @@ footer.site-footer {
 	padding-bottom: 80px;
     padding-top: 80px;
 	text-align: center;
+	.info {
+		> p {
+			margin-bottom: 0;
+		}
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }

@@ -755,6 +755,15 @@ Kirki::add_field( 'kirki_custom_config', array(
 		),
 	),
 ) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'textarea',
+	'settings'		=> 'frase_rodape',
+	'label'			=> __( 'Frase personalizada do Rodapé', 'model' ),
+	'section'		=> 'rodape',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'auto'
+) );
 
 /* Outros */
 Kirki::add_field( 'kirki_custom_config', array(
