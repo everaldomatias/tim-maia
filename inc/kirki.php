@@ -31,6 +31,12 @@ Kirki::add_panel( 'sessoes', array(
     'description' => esc_attr__( 'Configurações das Sessões.', 'odin' ),
     'capability'  => 'edit_theme_options'
 ) );
+Kirki::add_panel( 'rodape', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'Rodapé', 'odin' ),
+    'description' => esc_attr__( 'Configurações do Rodapé.', 'odin' ),
+    'capability'  => 'edit_theme_options'
+) );
 
 /**
  * Sessões
@@ -92,17 +98,16 @@ Kirki::add_section( 'social', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-Kirki::add_section( 'rodape', array(
-    'title'          => __( 'Rodapé' ),
+Kirki::add_section( 'outros', array(
+    'title'          => __( 'Outros' ),
     'panel'          => 'sessoes', // Not typically needed.
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-Kirki::add_section( 'outros', array(
-    'title'          => __( 'Outros' ),
-    'panel'          => 'sessoes', // Not typically needed.
-    'priority'       => 10,
+Kirki::add_section( 'rodape', array(
+    'title'          => __( 'Rodapé' ),
+    'priority'       => 150,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
