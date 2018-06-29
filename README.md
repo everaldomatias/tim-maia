@@ -1,0 +1,53 @@
+# Tim Maia #
+
+* [Demo](http://dev.eve14.com.br/)
+* [GitLab](https://gitlab.com/everaldomatias/tim-maia)
+
+## Project Description ##
+
+Loading..
+
+## Installation ##
+
+Send the folder "tim-maia" to the default themes folder from WordPress `wp-content/themes` or send the zip file using the WordPress Theme Installer.
+
+## Documentation ##
+
+Loading..
+
+## Plugins Support Dependences ##
+
+* [Kirki](https://br.wordpress.org/plugins/kirki/)
+
+## Plugins Support ##
+
+Loading..
+
+## References ##
+
+* [Odin](https://github.com/wpbrasil/odin)
+* [Bootstrap](http://getbootstrap.com/)
+* [Sass](http://sass-lang.com/)
+* [Grunt.js](http://gruntjs.com/)
+* [EditorConfig](http://editorconfig.org/)
+
+## Bugs and Sugestions ##
+
+The Tim Maia is an **Open Source** project. Anyone can (and should) help us to improve it.
+
+Report bugs or do suggestions using the [Issues/Project Forum](https://gitlab.com/everaldomatias/tim-maia/issues)
+
+## Contribute to the Project ##
+
+To contribute, just click on the **Fork** button, create a *Branch*, improve the code and send it with a **Pull Request**.
+
+## Changelog ##
+
+1.0 Initial stable version
+
+## Copyright and License ##
+
+Copyright 2018 - Everaldo Matias.
+
+The PHP code is licensed with [GPLv2](http://www.gnu.org/licenses/gpl-2.0.txt).
+All the CSS, SCSS, JS, images files and others, not including the PHP files is licensed with [MIT](http://opensource.org/licenses/MIT) or by the license specified inside the file.
