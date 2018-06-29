@@ -25,6 +25,19 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
+	<?php
+	/**
+	 *
+	 * Retorna as strings padrões do tema no array $sd
+	 * 
+ 	 * @author 		Everaldo Matias <http://everaldomatias.github.io>
+ 	 * @version 	0.1
+ 	 * @since 		09/04/2018
+ 	 * @see 		https://codex.wordpress.org/Transients_API
+ 	 * 
+	 */
+	$sd = get_transient( 'strings_default' ); ?>
+
 	<header id="masthead" class="site-header" role="banner">
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 	</header><!-- #masthead -->
@@ -32,7 +45,7 @@
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
 
-		<?php if ( is_front_page() ) : ?>
+		<?php if ( is_front_page() || is_home() ) : ?>
 
 			<?php $image_section_nome = get_theme_mod( 'image_section_nome', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
 
@@ -40,7 +53,10 @@
 				<div class="overlay"></div>
 				<div class="container text-center">
 					<?php
-					if ( has_custom_logo() ) {
+					if ( is_home() ) {
+						$titulo_section_blog = get_theme_mod( 'titulo_section_blog', $sd['titulo_section_blog'] );
+						echo '<h1>' . apply_filters( 'the_title', $titulo_section_blog ) . '</h1>';
+					} elseif ( has_custom_logo() ) {
 						$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 					    echo '<img class="logo" src="' . esc_url( $logo[0] ) . '">';
 					} else {
@@ -50,11 +66,11 @@
 				</div>
 			</div><!-- /#section-nome -->
 
-		<?php elseif( has_post_thumbnail() ) : ?>
+		<?php elseif ( has_post_thumbnail() ) : ?>
 
 			<?php $image_section_nome = get_the_post_thumbnail_url(); ?>
 
-			<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+			<div id="section-nome" class="parallax-window t" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
 				<div class="container text-center">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</div>
