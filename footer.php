@@ -47,8 +47,7 @@
 					<?php if ( $frase_rodape ) : ?>
 						<?php echo apply_filters( 'the_content', $frase_rodape ); ?>
 					<?php else : ?>
-						<?php bloginfo('name'); ?> © <?php echo date( 'Y' ); ?> • Todos os direitos reservados.<br>
-	                	Desenvolvido por <a href="https://everaldomatias.github.io/" target="_blank" title="Everaldo Matias">Everaldo Matias</a>.
+						<?php bloginfo('name'); ?> • Copyright © <?php echo date( 'Y' ); ?> • Desenvolvido por <a href="https://everaldomatias.github.io/" target="_blank" title="Desenvolvido por Everaldo Matias">Everaldo Matias</a>
 					<?php endif ?>
 
 				</div><!-- info -->
