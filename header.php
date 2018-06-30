@@ -71,6 +71,7 @@
 			<?php $image_section_nome = get_the_post_thumbnail_url(); ?>
 
 			<div id="section-nome" class="parallax-window t" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+				<div class="overlay"></div>
 				<div class="container text-center">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</div>
@@ -81,6 +82,7 @@
 			<?php $image_section_nome = 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960'; ?>
 
 			<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+				<div class="overlay"></div>
 				<div class="container text-center">
 					<?php if ( is_page() || is_single() ) : ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
