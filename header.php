@@ -60,7 +60,16 @@
 						$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 					    echo '<img class="logo" src="' . esc_url( $logo[0] ) . '">';
 					} else {
+						/* Título do Site */
 						echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
+
+						/* Descrição do Site */
+						$desc = get_bloginfo( 'description' );
+						if ( ! empty( $desc ) ) {
+							echo '<div class="description">';
+							echo apply_filters( 'the_content', $desc );
+							echo '</div>';
+						}
 					}
 					?>
 				</div>

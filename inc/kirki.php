@@ -188,6 +188,10 @@ Kirki::add_field( 'kirki_custom_config', array(
 			'element'  => '#section-nome .container h1',
 			'property' => 'color'
 		),
+		array(
+			'element'  => '#section-nome .container .description p',
+			'property' => 'color'
+		),
 	),
 ) );
 
