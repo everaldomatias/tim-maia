@@ -776,6 +776,15 @@ Kirki::add_field( 'kirki_custom_config', array(
 
 /* Outros */
 Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'image',
+	'settings'		=> 'image_parallax_default',
+	'label'			=> __( 'Imagem padrão para o Parallax', 'model' ),
+	'section'		=> 'outros',
+	'description'	=> esc_attr__( 'Imagem padrão de fundo para o Parallax.', 'model' ),
+	'default'		=> esc_url( 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ),
+	'priority'		=> 10,
+) );
+Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'color',
 	'settings'    => 'background_color_overlay',
 	'label'       => __( 'Cor das camadas de transparência', 'model' ),
