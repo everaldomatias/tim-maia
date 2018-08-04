@@ -241,7 +241,8 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'label'       	=> __( 'Sobre', 'model' ),
 	'description' 	=> esc_attr__( 'Descreva em poucos parágrafos quem é você, o que deseja e outras informações que julgar necessário.', 'model' ),
 	'section'     	=> 'sobre',
-	'default'     	=> esc_attr__( 'Com ele, artistas, modelos, figuras públicas e muitas outras pessoas poderão criar um site simples e direto para se apresentarem ao mundo através da internet. Altere todos os textos e imagens que tem no menu à esquerda e clique em <strong>Publicar</strong>', 'model' ),
+	'default'     	=> esc_attr__( 'Com ele, artistas, modelos, figuras públicas e muitas outras pessoas poderão criar um site simples e direto para se apresentarem ao mundo através da internet. Altere todos os textos e imagens que tem no 
+	 à esquerda e clique em <strong>Publicar</strong>', 'model' ),
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
@@ -447,6 +448,15 @@ Kirki::add_field( 'kirki_custom_config', array(
 			'property' => 'color'
 		)
 	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'titulo_botao_blog',
+	'label'			=> __( 'Título para o botao de acesso ao Blog', 'model' ),
+	'section'		=> 'blog',
+	'default'		=> esc_attr__( 'Ver o Blog', 'model' ),
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
 ) );
 
 /* Doações */

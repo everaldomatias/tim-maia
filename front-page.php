@@ -124,6 +124,15 @@ get_header(); ?>
 							</div><!-- /.col-sm-4 -->
 
 			            <?php endwhile; ?>
+
+			            <?php
+			            /* Link para o Blog */
+			            $titulo_botao_blog = get_theme_mod( 'titulo_botao_blog', __( 'Ver o Blog', 'model' ) );
+			            if ( $posts->post_count >= 3 && ! empty( $titulo_botao_blog ) ) {
+			            	echo '<a class="btn" href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) . '">' . esc_attr( $titulo_botao_blog ) . '</a>';
+			            }
+			            ?>
+
 			            <?php wp_reset_postdata(); ?>
 		        	<?php endif; ?>
 
