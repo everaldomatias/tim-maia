@@ -134,6 +134,14 @@ Kirki::add_field( 'kirki_custom_config', array(
 			'element'  => 'header.site-header .navbar.fixed-top',
 			'property' => 'background-color'
 		),
+		array(
+			'element'  => 'header.site-header .navbar.fixed-top .dropdown-menu',
+			'property' => 'background-color'
+		),
+		array(
+			'element'  => 'header.site-header .navbar.fixed-top .dropdown-menu .dropdown-item:hover',
+			'property' => 'background-color'
+		),
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
@@ -219,15 +227,6 @@ Kirki::add_field( 'kirki_custom_config', array(
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'text',
-	'settings'		=> 'menu_section_sobre',
-	'label'			=> __( 'Título para o menu', 'model' ),
-	'section'		=> 'sobre',
-	'default'		=> esc_attr__( 'Sobre', 'model' ),
-	'priority'		=> 10,
-	'transport'		=> 'refresh'
-) );
-Kirki::add_field( 'kirki_custom_config', array(
-	'type'			=> 'text',
 	'settings'		=> 'titulo_section_sobre',
 	'label'			=> __( 'Título', 'model' ),
 	'description'	=> esc_attr__( 'Título para a sessão Sobre.', 'model' ),
@@ -267,15 +266,6 @@ Kirki::add_field( 'kirki_custom_config', array(
 		'on'  => esc_attr__( 'Sim', 'model' ),
 		'off' => esc_attr__( 'Não', 'model' ),
 	),
-) );
-Kirki::add_field( 'kirki_custom_config', array(
-	'type'			=> 'text',
-	'settings'		=> 'menu_section_acao',
-	'label'			=> __( 'Título para o menu', 'model' ),
-	'section'		=> 'acao',
-	'default'		=> esc_attr__( 'Ação', 'model' ),
-	'priority'		=> 10,
-	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'text',
@@ -374,15 +364,6 @@ Kirki::add_field( 'kirki_custom_config', array(
 	),
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
-	'type'			=> 'text',
-	'settings'		=> 'menu_section_diferenciais',
-	'label'			=> __( 'Título para o menu', 'model' ),
-	'section'		=> 'diferenciais',
-	'default'		=> esc_attr__( 'Diferenciais', 'model' ),
-	'priority'		=> 10,
-	'transport'		=> 'refresh'
-) );
-Kirki::add_field( 'kirki_custom_config', array(
 	'type'        => 'text',
 	'settings'    => 'titulo_section_diferenciais',
 	'label'       => __( 'Título da Sessão Diferenciais', 'model' ),
@@ -424,15 +405,6 @@ Kirki::add_field( 'kirki_custom_config', array(
 		'on'  => esc_attr__( 'Sim', 'model' ),
 		'off' => esc_attr__( 'Não', 'model' ),
 	),
-) );
-Kirki::add_field( 'kirki_custom_config', array(
-	'type'			=> 'text',
-	'settings'		=> 'menu_section_blog',
-	'label'			=> __( 'Título para o menu', 'model' ),
-	'section'		=> 'blog',
-	'default'		=> esc_attr__( 'Blog', 'model' ),
-	'priority'		=> 10,
-	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'text',
@@ -499,15 +471,6 @@ Kirki::add_field( 'kirki_custom_config', array(
 		'on'  => esc_attr__( 'Sim', 'model' ),
 		'off' => esc_attr__( 'Não', 'model' ),
 	),
-) );
-Kirki::add_field( 'kirki_custom_config', array(
-	'type'			=> 'text',
-	'settings'		=> 'menu_section_doacoes',
-	'label'			=> __( 'Título para o menu', 'model' ),
-	'section'		=> 'doacoes',
-	'default'		=> esc_attr__( 'Colabore', 'model' ),
-	'priority'		=> 10,
-	'transport'		=> 'refresh'
 ) );
 Kirki::add_field( 'kirki_custom_config', array(
 	'type'			=> 'image',

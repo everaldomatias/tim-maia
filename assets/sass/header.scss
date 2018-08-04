@@ -36,6 +36,21 @@ header.site-header {
 						opacity: 0.8;
 					}
 				}
+				.dropdown-toggle::after {
+					margin-left: 10px;
+				}
+				.dropdown-menu {
+					border: 0;
+					border-radius: 0;
+					margin-top: 7px;
+					padding: 0;
+					li {
+						a {
+							color: #ffffff;
+							padding: 10px 15px;
+						}
+					}
+				}
 			}
 		}
 	}
