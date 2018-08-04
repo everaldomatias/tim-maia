@@ -48,6 +48,13 @@ function model_widgets_init() {
 }
 
 /**
+ * Sets content width.
+ */
+if ( ! isset( $content_width ) ) {
+    $content_width = 760;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function model_scripts() {
