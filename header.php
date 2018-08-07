@@ -93,7 +93,7 @@
 			<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
 				<div class="overlay"></div>
 				<div class="container text-center">
-					<?php if ( is_page() || is_single() ) : ?>
+					<?php if ( is_page() || is_single() || is_archive() ) : ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					<?php elseif( is_home() ) : ?>
 						<?php
