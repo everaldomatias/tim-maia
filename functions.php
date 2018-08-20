@@ -45,13 +45,22 @@ function model_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
     ) );
+    register_sidebar( array(
+        'name'          => __( 'Footer Bar', 'model' ),
+        'id'            => 'footerbar',
+        'description'   => __( 'Widgets in this area will be shown on footer website.', 'model' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s ' . get_widgets_class_by_qtd( 'footerbar' ) . ' ">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 
 /**
  * Sets content width.
  */
 if ( ! isset( $content_width ) ) {
-    $content_width = 760;
+    $content_width = 1100;
 }
 
 /**
@@ -121,6 +130,48 @@ function model_body_class( $classes ) {
 
 }
 add_filter( 'body_class', 'model_body_class' );
+
+
+/**
+ *
+ */
+
+/**
+ * 
+ * Retorna quantidade de colunas nos widgets com Bootstrap grid
+ * de acordo com a quantidade de widgets ativos.
+ *
+ * @author      Everaldo Matias <http://everaldomatias.github.io>
+ * @version     1.0.2
+ * @since       20/08/2018
+ * @return      sting class
+ * 
+ */
+function get_widgets_class_by_qtd( $sidebar_name ) {
+    
+    global $sidebars_widgets;
+    $count = count ( $sidebars_widgets[$sidebar_name] );
+    
+    switch ( $count ) {
+        case '1':
+            $class = 'col-sm-12';
+            break;
+        case '2':
+            $class = 'col-sm-6';
+            break;
+        case '3':
+            $class = 'col-sm-4';
+            break;
+        case '4':
+            $class = 'col-sm-3';
+            break;
+        default:
+            $class = '';
+            break;
+    }
+    if ( $class )
+        return $class;
+}
 
 /**
  * 

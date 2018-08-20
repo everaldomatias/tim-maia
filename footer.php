@@ -40,6 +40,17 @@
 		<footer id="colophon" class="site-footer" role="contentinfo">
 
 			<div class="container">
+
+				<?php if ( is_active_sidebar( 'footerbar' ) ): ?>
+
+					<div class="footer-widgets">
+						<div class="row">
+							<?php dynamic_sidebar( 'footerbar' ); ?>
+						</div>
+					</div><!-- .footer-widgets -->
+					
+				<?php endif; ?>
+
 				<div class="info">
 
 					<?php $frase_rodape = get_theme_mod( 'frase_rodape' ); ?>
