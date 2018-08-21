@@ -43,11 +43,15 @@ To contribute, just click on the **Fork** button, create a *Branch*, improve the
 
 ## Changelog ##
 
-1.0.2 [20/08/2018] Adiciona widgets no rodapé
+1.0.2
+[20/08/2018] Adiciona widgets no rodapé
+[20/08/2018] Adiciona opção de botão flutuante do WhatsApp
 
-1.0.1 [03/08/2018] Remove menu de âncoras
+1.0.1
+[03/08/2018] Remove menu de âncoras
 
-1.0 Initial stable version
+1.0
+Initial stable version
 
 ## Copyright and License ##
 

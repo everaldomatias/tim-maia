@@ -31,6 +31,12 @@ Kirki::add_panel( 'sessoes', array(
     'description' => esc_attr__( 'Configurações das Sessões.', 'odin' ),
     'capability'  => 'edit_theme_options'
 ) );
+Kirki::add_panel( 'whatsapp', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'WhatsApp', 'odin' ),
+    'description' => esc_attr__( 'Configurações do WhatsApp.', 'odin' ),
+    'capability'  => 'edit_theme_options'
+) );
 Kirki::add_panel( 'rodape', array(
     'priority'    => 10,
     'title'       => esc_attr__( 'Rodapé', 'odin' ),
@@ -101,6 +107,12 @@ Kirki::add_section( 'social', array(
 Kirki::add_section( 'outros', array(
     'title'          => __( 'Outros' ),
     'panel'          => 'sessoes', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+Kirki::add_section( 'whatsapp', array(
+    'title'          => __( 'WhatsApp' ),
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
@@ -701,6 +713,59 @@ Kirki::add_field( 'kirki_custom_config', array(
 	'priority'		=> 10,
 	'transport'		=> 'refresh'
 ) );
+
+/**
+ * WhatsApp >> Campos (separados por Sessões)
+ * ==============================================================================
+ */
+
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'        => 'switch',
+	'settings'    => 'use_whatsapp',
+	'label'       => __( 'Usar o balão flutuante do WhatsApp', 'model' ),
+	'section'     => 'whatsapp',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => array(
+		'on'  => esc_attr__( 'Sim', 'model' ),
+		'off' => esc_attr__( 'Não', 'model' ),
+	),
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'whatsapp',
+	'label'			=> __( 'Nº do WhatsApp (Cód. País + DDD + Número)', 'model' ),
+	'description'	=> esc_attr__( 'Adicione o número do WhatsApp.', 'model' ),
+	'section'		=> 'whatsapp',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'text',
+	'settings'		=> 'titulo_whatsapp',
+	'label'			=> __( 'Botão', 'model' ),
+	'description'	=> esc_attr__( 'Título para o botão do WhatsApp. Deixem em branco para usar apenas o ícone.', 'model' ),
+	'section'		=> 'whatsapp',
+	'default'		=> 'WhatsApp',
+	'priority'		=> 10,
+	'transport'		=> 'refresh'
+) );
+Kirki::add_field( 'kirki_custom_config', array(
+	'type'			=> 'textarea',
+	'settings'		=> 'frase_whatsapp',
+	'label'			=> __( 'Frase personalizada para a mensagem inicial do WhatsApp', 'model' ),
+	'section'		=> 'whatsapp',
+	'default'		=> '',
+	'priority'		=> 10,
+	'transport'		=> 'auto'
+) );
+
+
+/**
+ * Campos (separados por Sessões)
+ * ==============================================================================
+ */
 
 /* Rodapé */
 Kirki::add_field( 'kirki_custom_config', array(

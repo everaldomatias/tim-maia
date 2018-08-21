@@ -113,8 +113,39 @@ body.home {
 	}
 }
 
-// # Footer
+// # WhatsApp
+.float-whatsapp {
+	background: url( '../images/icon-whatsapp.png' ) center center no-repeat #00A700;
+	background-size: auto 100%;
+	bottom: 30px;
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	height: 60px;
+	left: 30px;
+	position: fixed;
+	transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -webkit-transition: all .2s ease-in-out;
+	width: 60px;
+	z-index: 999;
+	-webkit-box-shadow: -3px 3px 8px 0px rgba(110,110,110,0.5);
+	-moz-box-shadow: -3px 3px 8px 0px rgba(110,110,110,0.5);
+	box-shadow: -3px 3px 8px 0px rgba(110,110,110,0.5);
+	&:hover {
+		bottom: 40px;
+		text-decoration: none;
+	}
+	&.title-whatsapp-active {
+		background-position: left center;
+		background-size: auto 100%;
+		color: $branco;
+		padding: 18px 10px 10px 60px;
+		width: auto;
+	}
+}
 
+// # Footer
 #footer {
 	.container {
 		color: $cinza-claro;

@@ -272,3 +272,37 @@ function remove_config_theme () {
     update_option( 'initial_config_theme', false );
 }
 add_action( 'switch_theme', 'remove_config_theme' );
+
+
+/**
+ *
+ * Imprime o botão flutuante do WhatsApp
+ * com as informações configuradas no Customizer.
+ *
+ * @author      Everaldo Matias <http://everaldomatias.github.io>
+ * @version     1.1.2
+ * @since       20/08/2018
+ * @see         inc/hooks.php
+ * @link        https://codex.wordpress.org/Plugin_API/Hooks_2.0.x
+ * @return      HTML
+ *
+ */
+function show_whatsapp() {
+    $use_whatsapp = get_theme_mod( 'use_whatsapp', '1' );
+    $whatsapp = get_theme_mod( 'whatsapp' );
+
+    if ( $use_whatsapp && ! empty ( $whatsapp ) ) {
+        $titulo_whatsapp = get_theme_mod( 'titulo_whatsapp', 'WhatsApp' );
+        $frase_whatsapp = get_theme_mod( 'frase_whatsapp' );
+        if ( ! empty( $frase_whatsapp ) ) {
+            echo '<a target="_blank" href="https://wa.me/' . esc_html( $whatsapp ) . '?text=' . urlencode( $frase_whatsapp ) . '" class="float-whatsapp title-whatsapp-active" title=" ' . esc_html( $titulo_whatsapp ) . '">';         
+            echo esc_html( $titulo_whatsapp );
+            
+        } else {
+            echo '<a target="_blank" href="https://wa.me/' . esc_html( $whatsapp ) . '" class="float-whatsapp" title="WhatsApp">';
+        }
+
+        echo '</a><!-- .float-whatsapp -->';
+
+    }
+}
