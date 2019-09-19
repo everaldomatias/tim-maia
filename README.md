@@ -43,6 +43,9 @@ To contribute, just click on the **Fork** button, create a *Branch*, improve the
 
 ## Changelog ##
 
+1.0.3
+[19/09/2019] Adiciona tipo de post Produtos
+
 1.0.2
 [20/08/2018] Adiciona widgets no rodapé
 [20/08/2018] Adiciona opção de botão flutuante do WhatsApp

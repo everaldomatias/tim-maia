@@ -51,6 +51,7 @@ module.exports = function( grunt ) {
 					sourcemap: 'none'
 				},
 				files: {
+					//'<%= dirs.css %>/model.css': '<%= dirs.sass %>/style.scss'
 					'<%= dirs.css %>/model.css': '<%= dirs.sass %>/style.scss'
 				}
 			}

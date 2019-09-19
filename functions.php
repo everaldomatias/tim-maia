@@ -3,11 +3,18 @@
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
+// Class Custom Post Type
+require_once get_template_directory() . '/inc/class-post-type.php';
+
+// Custom Post Types
+require_once get_template_directory() . '/inc/post-types.php';
+
 if ( class_exists( 'Kirki' ) ) {
 	require 'inc/kirki.php';
 }
-require_once get_template_directory() . '/inc/hooks.php';
+
 require_once get_template_directory() . '/inc/strings-default.php';
+require_once get_template_directory() . '/inc/hooks.php';
 
 /*
  * Let WordPress manage the document title.

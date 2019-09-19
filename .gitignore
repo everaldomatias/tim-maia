@@ -36,3 +36,5 @@ sftp-config.json
 .ftppass
 *.zip
 src/node_modules/*
+.vscode
+/.vscode

@@ -76,7 +76,7 @@
 			</div><!-- /#section-nome -->
 		
 		<?php elseif ( is_category() ) : ?>
-
+		
 			<?php $image_parallax_default = get_theme_mod( 'image_parallax_default', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
 			
 			<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
@@ -85,6 +85,17 @@
 						<h1 class="entry-title"><?php echo single_term_title("", false); ?></h1>
 				</div><!-- /.text-center -->
 			</div><!-- /#section-nome -->
+			
+		<?php elseif ( is_archive() ) : ?>
+		
+			<?php $image_parallax_default = get_theme_mod( 'image_parallax_default', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
+			
+			<div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
+				<div class="overlay"></div>
+				<div class="container text-center">
+					<?php the_archive_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</div><!-- /.text-center -->
+			</div><!-- /#section-nome -->		
 		
 		<?php elseif ( has_post_thumbnail() ) : ?>
 
