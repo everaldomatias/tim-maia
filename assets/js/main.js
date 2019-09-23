@@ -1,20 +1,44 @@
 jQuery(document).ready(function() {
 
-	var parallax = jQuery( '.parallax-window' );
+	var parallax = jQuery('.parallax-window');
 	var height = window.innerHeight;
 	var resizeTimer;
-	
-	jQuery( parallax ).css( 'height', height );
 
-	jQuery( window ).on( 'resize', function() {
+	if ( jQuery( 'body.home' ).length ) {
 
-		clearTimeout( resizeTimer );
-		resizeTimer = setTimeout( function() {
+		jQuery(parallax).css('height', height);
 
-			jQuery( parallax ).css( 'height', height );
+		jQuery(window).on('resize', function () {
 
-		}, 200);
-	});
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+
+				jQuery(parallax).css('height', height);
+
+			}, 200);
+		});
+
+	} else {
+
+		height = height / 2;
+		
+		if ( height <= 450 ) {
+			height = 450;
+		}
+
+		jQuery(parallax).css('height', height);
+
+		jQuery(window).on('resize', function () {
+
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+
+				jQuery(parallax).css('height', height);
+
+			}, 200);
+		});
+
+	}
 
 	jQuery(function() {
 	  jQuery('a[href*=#]:not([href=#])').click(function() {

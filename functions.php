@@ -36,26 +36,30 @@ function tm_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Add support to Custom Logo
-	add_theme_support( 'custom-logo' );
+    add_theme_support( 'custom-logo' );
+    
+    
+        
+        // Add supports to WooCommerce
+        add_theme_support( 'woocommerce', array(
+            'thumbnail_image_width' => 400,
+            'single_image_width'    => 800,
+
+            'product_grid'          => array(
+                'default_rows'    => 4,
+                'min_rows'        => 2,
+                'max_rows'        => 8,
+                'default_columns' => 4,
+                'min_columns'     => 2,
+                'max_columns'     => 4,
+            ),
+        ) );
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
+
+    
 	
-	// Add support to WooCommerce
-	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width' => 400,
-		'single_image_width'    => 800,
-
-        'product_grid'          => array(
-            'default_rows'    => 4,
-            'min_rows'        => 2,
-            'max_rows'        => 8,
-            'default_columns' => 4,
-            'min_columns'     => 2,
-            'max_columns'     => 4,
-        ),
-	) );
-	add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
-
 }
 add_action( 'after_setup_theme', 'tm_setup' );
 
@@ -282,8 +286,10 @@ function initial_config_theme() {
 add_action( 'after_switch_theme', 'initial_config_theme' );
 
 /**
+ * 
  * Add WooCommerce support
  * @todo Enviar essas informações para um arquivo externo, que será iniciado apenas quando o WooCommerce estiver ativo.
+ * 
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
@@ -293,10 +299,25 @@ add_action( 'woocommerce_after_main_content', 'tm_wc_wrapper_end', 10 );
 
 function tm_wc_wrapper_start() {
     echo '<section id="main" class="tm-wc-main">';
+    echo '<div class="container">';
 }
 
 function tm_wc_wrapper_end() {
+    echo '</div><!-- /.container -->';
     echo '</section><!-- /.tm-wc-main -->';
+}
+
+/**
+ * 
+ * Check if WooCommerce is activated
+ * 
+ * @see https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
+ * 
+ */
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	function is_woocommerce_activated() {
+		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+	}
 }
 
 /**
