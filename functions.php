@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * 
+ * Check if WooCommerce is activated
+ * 
+ * @see https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
+ * 
+ */
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	function is_woocommerce_activated() {
+		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+	}
+}
+
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
@@ -8,6 +21,10 @@ require_once get_template_directory() . '/inc/class-post-type.php';
 
 // Custom Post Types
 require_once get_template_directory() . '/inc/post-types.php';
+
+if ( is_woocommerce_activated() ) {
+    require_once get_template_directory() . '/inc/woocommerce.php';
+}
 
 if ( class_exists( 'Kirki' ) ) {
 	require 'inc/kirki.php';
@@ -305,19 +322,6 @@ function tm_wc_wrapper_start() {
 function tm_wc_wrapper_end() {
     echo '</div><!-- /.container -->';
     echo '</section><!-- /.tm-wc-main -->';
-}
-
-/**
- * 
- * Check if WooCommerce is activated
- * 
- * @see https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
- * 
- */
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-	function is_woocommerce_activated() {
-		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
-	}
 }
 
 /**
