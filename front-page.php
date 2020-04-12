@@ -16,6 +16,8 @@ get_header(); ?>
 	 */
 	$sd = get_transient( 'strings_default' ); ?>
 
+	<?php echo tm_get_sections( get_theme_mod('tm_sections_order') ); ?>
+
 	<?php $use_sobre = get_theme_mod( 'use_sobre', '1' ); ?>
 	<?php if ( $use_sobre ) : ?>
 

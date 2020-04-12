@@ -1,5 +1,7 @@
 <?php
 
+$get_template_directory = get_template_directory();
+
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
@@ -10,8 +12,10 @@ require_once get_template_directory() . '/inc/class-post-type.php';
 require_once get_template_directory() . '/inc/post-types.php';
 
 if ( class_exists( 'Kirki' ) ) {
-	require 'inc/kirki.php';
+	//require 'inc/kirki.php';
 }
+
+require_once $get_template_directory . '/inc/customizer.php';
 
 require_once get_template_directory() . '/inc/strings-default.php';
 require_once get_template_directory() . '/inc/hooks.php';
@@ -63,7 +67,7 @@ function tm_setup() {
 }
 add_action( 'after_setup_theme', 'tm_setup' );
 
-add_action( 'widgets_init', 'model_widgets_init' );
+//add_action( 'widgets_init', 'model_widgets_init' );
 function model_widgets_init() {
     register_sidebar( array(
         'name'			=> __( 'Main Sidebar', 'model' ),
@@ -114,7 +118,7 @@ function model_scripts() {
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 	// Grunt main file with Bootstrap and others libs.
-	wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+	//wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'model_scripts' );
@@ -370,3 +374,57 @@ function show_whatsapp() {
 
     }
 }
+
+//
+
+function my_customizer_scripts() {
+    wp_enqueue_script( 'tm_customizer_js', trailingslashit( get_template_directory_uri() ) . 'assets/js/my-customizer.js', array(), '1.0', 'all' );
+}
+add_action('customize_controls_print_scripts', 'my_customizer_scripts');
+
+function my_customizer_styles() {
+    wp_enqueue_style( 'tm_customizer_css', trailingslashit( get_template_directory_uri() ) . 'assets/css/my-customizer.css', array(), '1.0', 'all' );
+}
+add_action('customize_controls_print_styles', 'my_customizer_styles');
+
+if ( !function_exists( 'tm_get_sections' ) ):
+    function tm_get_sections( $sections ) {
+
+        $sections = explode(',', $sections);
+
+        $output = '';
+
+        if ( empty( $sections ) ) {
+            return $output;
+        }
+
+        foreach( $sections as $section ) {
+
+            switch ( $section ) {
+
+            case 'tm_section_sectionname1':
+                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e1e1e1;">Section 1</div>';
+                break;
+
+            case 'tm_section_sectionname2':
+                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e3e3e3;">Section 2</div>';
+                break;
+
+            case 'tm_section_sectionname3':
+                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e5e5e5;">Section 3</div>';
+                break;
+
+            case 'tm_section_sectionname4':
+                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e7e7e7;">Section 4</div>';
+                break;
+
+            default:
+                break;
+            }
+
+        }
+
+        return $output;
+
+    }
+endif;
