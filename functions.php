@@ -387,10 +387,10 @@ function my_customizer_styles() {
 }
 add_action('customize_controls_print_styles', 'my_customizer_styles');
 
-if ( !function_exists( 'tm_get_sections' ) ):
+if ( ! function_exists( 'tm_get_sections' ) ):
     function tm_get_sections( $sections ) {
 
-        $sections = explode(',', $sections);
+        $sections = explode( ',', $sections );
 
         $output = '';
 
@@ -402,12 +402,13 @@ if ( !function_exists( 'tm_get_sections' ) ):
 
             switch ( $section ) {
 
-            case 'tm_section_sectionname1':
-                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e1e1e1;">Section 1</div>';
+            case 'tm_section_hero':
+
+                $output .= tm_load_template_part( 'template-parts/section/section-hero' );
                 break;
 
-            case 'tm_section_sectionname2':
-                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e3e3e3;">Section 2</div>';
+            case 'tm_section_about':
+                $output .= tm_load_template_part( 'template-parts/section/section-about' );
                 break;
 
             case 'tm_section_sectionname3':
@@ -428,3 +429,13 @@ if ( !function_exists( 'tm_get_sections' ) ):
 
     }
 endif;
+
+function tm_load_template_part( $template_name, $part_name = null ) {
+    
+    ob_start();
+        get_template_part( $template_name, $part_name );
+        $var = ob_get_contents();
+    ob_end_clean();
+    return $var;
+
+}

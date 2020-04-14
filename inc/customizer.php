@@ -48,13 +48,13 @@ function tm_customizer_sections( $wp_customize ) {
      */
     
     $default_sections = array (
-        'tm_section_name' => array (
-            'title'       => esc_html__( 'Nome', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir o título/nome do site', 'tim-maia' ),
+        'tm_section_hero' => array (
+            'title'       => esc_html__( 'Hero', 'tim-maia' ),
+            'description' => esc_html__( 'Seção hero para exibir o título/nome do site com uma imagem de fundo.', 'tim-maia' ),
         ),
-        'tm_section_sectionname2' => array (
-            'title'       => esc_html__( 'Section 2', 'tim-maia' ),
-            'description' => esc_html__( 'Section 2 Description', 'tim-maia' ),
+        'tm_section_about' => array (
+            'title'       => esc_html__( 'Sobre', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para detalhar e explicar melhor do que se trata o site', 'tim-maia' ),
         ),
         'tm_section_sectionname3' => array (
             'title'       => esc_html__( 'Section 3', 'tim-maia' ),
@@ -90,12 +90,12 @@ function tm_customizer_sections( $wp_customize ) {
      */
 
     /**
-     * Section Name
+     * Section Hero
      * 
      * @todo Sanitize function to image field
      */
     $wp_customize->add_setting(
-        'tm_setting_background_section_name', array(
+        'tm_setting_background_section_hero', array(
             'default'           => 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960',
             'sanitize_callback' => ''
         )
@@ -103,32 +103,104 @@ function tm_customizer_sections( $wp_customize ) {
     $wp_customize->add_control(
         new WP_Customize_Media_Control(
             $wp_customize,
-            'tm_background_section_name',
+            'tm_background_section_hero',
             array(
-                'settings'  => 'tm_setting_background_section_name',
+                'settings'  => 'tm_setting_background_section_hero',
                 'mime_type' => 'image',
                 'label'     => esc_html__( 'Background da seção', 'tim-maia' ),
-                'section'   => 'tm_section_name'
+                'section'   => 'tm_section_hero'
             )
         )
     );
 
     $wp_customize->add_setting(
-        'tm_setting_color_section_name', array(
+        'tm_setting_color_section_hero', array(
             'default'           => '#FFFFFF'
         )
     );
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'tm_color_section_name',
+            'tm_color_section_hero',
             array(
-                'settings' => 'tm_setting_color_section_name',
+                'settings' => 'tm_setting_color_section_hero',
                 'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
-                'section'  => 'tm_section_name'
+                'section'  => 'tm_section_hero'
             )
         )
     );
+
+    /**
+     * Section About
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_about', array(
+            'default'           => '1',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_about',
+            array(
+                'settings' => 'tm_use_section_about',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Sobre?', 'tim-maia' ),
+                'section'  => 'tm_section_about'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_title_section_about', array(
+            'default'           => esc_html__( 'Sobre', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_title_section_about',
+            array(
+                'settings' => 'tm_title_section_about',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Título para a seção Sobre', 'tim-maia' ),
+                'section'  => 'tm_section_about'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_description_section_about', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_description_section_about',
+            array(
+                'settings' => 'tm_description_section_about',
+                'type'     => 'textarea',
+                'label'    => esc_html__( 'Descrição para a seção Sobre', 'tim-maia' ),
+                'description' 	=> esc_attr__( 'Descreva em poucos parágrafos quem é você, o que deseja e outras informações que julgar necessário.', 'model' ),
+                'section'  => 'tm_section_about'
+            )
+        )
+    );
+
+
+
+
+
+
+
+
+
+
+
 
     $wp_customize->add_setting(
         'myprefix_section2_layout2', array(

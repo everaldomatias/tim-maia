@@ -16,22 +16,7 @@ get_header(); ?>
 	 */
 	$sd = get_transient( 'strings_default' ); ?>
 
-	<?php echo tm_get_sections( get_theme_mod('tm_sections_order') ); ?>
-
-	<?php $use_sobre = get_theme_mod( 'use_sobre', '1' ); ?>
-	<?php if ( $use_sobre ) : ?>
-
-		<?php $titulo_section_sobre = get_theme_mod( 'titulo_section_sobre', $sd['titulo_section_sobre'] ); ?>
-		<?php $editor_section_sobre = get_theme_mod( 'editor_section_sobre', $sd['editor_section_sobre'] ); ?>
-
-		<div id="section-sobre">
-			<div class="container">
-				<h2><?php echo apply_filters( 'the_title', $titulo_section_sobre ); ?></h2>
-				<?php echo apply_filters( 'the_content', $editor_section_sobre ); ?>
-			</div>
-		</div><!-- /#section-sobre -->
-
-	<?php endif; ?>
+	<?php echo tm_get_sections( get_theme_mod( 'tm_sections_order' ) ); ?>
 
 	<?php $titulo_section_acao = get_theme_mod( 'titulo_section_acao', $sd['titulo_section_acao'] ); ?>
 	<?php $editor_section_acao = get_theme_mod( 'editor_section_acao', $sd['editor_section_acao'] ); ?>
