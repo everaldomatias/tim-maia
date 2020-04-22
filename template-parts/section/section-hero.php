@@ -1,8 +1,13 @@
 <?php if ( is_front_page() || is_home() ) : ?>
 
-    <?php $image_section_nome = get_theme_mod( 'image_section_nome', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
+    <?php
+        // Get image background
+        $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_section_hero', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' );
+        $tm_setting_background_section_hero = wp_get_attachment_image_src( $tm_setting_background_section_hero, 'full' );
+        $tm_setting_background_section_hero = $tm_setting_background_section_hero[0];
+    ?>
 
-    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
             <?php
@@ -61,9 +66,9 @@
 
 <?php elseif ( has_post_thumbnail() ) : ?>
 
-    <?php $image_section_nome = get_the_post_thumbnail_url(); ?>
+    <?php $tm_setting_background_section_hero = get_the_post_thumbnail_url(); ?>
 
-    <div id="section-nome" class="parallax-window t" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_nome ); ?>">
+    <div id="section-nome" class="parallax-window t" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
             <h1 class="entry-title"><?php the_title(); ?></h1>

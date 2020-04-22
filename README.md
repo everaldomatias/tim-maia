@@ -23,6 +23,10 @@ Loading..
 
 Loading..
 
+## External Libs ##
+
+* [Alpha Color Picker Customizer Control](https://github.com/BraadMartin/components/tree/master/customizer/alpha-color-picker)
+
 ## References ##
 
 * [Odin](https://github.com/wpbrasil/odin)

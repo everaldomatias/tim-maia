@@ -5,6 +5,11 @@
  */
 require_once get_template_directory() . '/inc/customizer-sanitization.php';
 
+/**
+ * Inlcude the Alpha Color Picker control file.
+ */
+require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
+
 function tm_customizer_sections( $wp_customize ) {
     
     /**
@@ -67,7 +72,7 @@ function tm_customizer_sections( $wp_customize ) {
     );
 
     $sortable_sections = get_theme_mod('tm_sections_order');
-    if( !isset( $sortable_sections ) || empty( $sortable_sections ) ){
+    if( ! isset( $sortable_sections ) || empty( $sortable_sections ) ){
     //if( isset( $sortable_sections ) || !empty( $sortable_sections ) ){
         set_theme_mod( 'tm_sections_order', implode(',', array_keys( $default_sections ) ) );
     }
@@ -273,6 +278,143 @@ function tm_customizer_sections( $wp_customize ) {
             )
         )
     );
+
+
+
+
+
+
+
+    /**
+     * Adiciona o painel Configurações Gerais
+     */
+    $wp_customize->add_panel( 'tm_panel_general_settings', array(
+        'title'    => esc_html__( 'Configurações Gerais', 'tim-maia' ),
+        'priority' => 10
+    ) );
+
+    /**
+     * Adiciona a seção Cores no painel Configurações Gerais
+     */
+    $wp_customize->add_section( 'tm_section_general_settings_colors', array(
+        'title'       => esc_html__( 'Cores do Site', 'tim-maia' ),
+        'panel'       => 'tm_panel_general_settings',
+        'priority'    => 1
+    ) );
+
+    /**
+     * Cor primária
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_primary_color', array(
+            'default' => '#D56C37'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_general_settings_primary_color',
+            array(
+                'settings' => 'tm_general_settings_primary_color',
+                'label'    => esc_html__( 'Cor primária', 'tim-maia' ),
+                'section'  => 'tm_section_general_settings_colors'
+            )
+        )
+    );
+
+    /**
+     * Cor secundária
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_secondary_color', array(
+            'default' => '#A43628'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_general_settings_secondary_color',
+            array(
+                'settings' => 'tm_general_settings_secondary_color',
+                'label'    => esc_html__( 'Cor secundária', 'tim-maia' ),
+                'section'  => 'tm_section_general_settings_colors'
+            )
+        )
+    );
+
+    /**
+     * Cor terciária
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_tertiary_color', array(
+            'default' => '#221D1C'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_general_settings_tertiary_color',
+            array(
+                'settings' => 'tm_general_settings_tertiary_color',
+                'label'    => esc_html__( 'Cor terciária', 'tim-maia' ),
+                'section'  => 'tm_section_general_settings_colors'
+            )
+        )
+    );
+
+    /**
+     * Cor quaternária
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_quaternary_color', array(
+            'default' => '#CACE88'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_general_settings_quaternary_color',
+            array(
+                'settings' => 'tm_general_settings_quaternary_color',
+                'label'    => esc_html__( 'Cor quaternária', 'tim-maia' ),
+                'section'  => 'tm_section_general_settings_colors'
+            )
+        )
+    );
+
+    /**
+     * Cor de over layer
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_over_layer_color', 
+        array(
+            'default'     => 'rgba(50,50,50,0.7)',
+            'type'        => 'theme_mod',
+            'capability'  => 'edit_theme_options',
+            'transport'   => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new Customize_Alpha_Color_Control(
+            $wp_customize,
+            'tm_general_over_layer_color_control',
+            array(
+                'settings' => 'tm_general_settings_over_layer_color',
+                'label'    => esc_html__( 'Cor do over layer', 'tim-maia' ),
+                'description' => esc_html__( 'Cor utilizada para a camada transparente das seções', 'tim-maia' ),
+                'section'  => 'tm_section_general_settings_colors',
+                'show_opacity'  => false, // Optional.
+                'palette'	=> array(
+					'rgba(10,10,10,0.5)',
+                    'rgba(10,10,10,0.7)',
+                    'rgba(10,10,10,0.9)',
+                    'rgba(213,108,55,0.7)',
+					'rgba(164,54,40,0.7)',
+				)
+            )
+        )
+    );
+
 }
 
 add_action( 'customize_register', 'tm_customizer_sections' );
