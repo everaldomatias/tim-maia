@@ -19,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this Alpha Color Picker. If not, see <http://www.gnu.org/licenses/>.
  */
+
+include_once ABSPATH . 'wp-includes/class-wp-customize-control.php';
+
 class Customize_Alpha_Color_Control extends WP_Customize_Control {
 
 	/**
