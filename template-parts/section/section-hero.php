@@ -2,12 +2,17 @@
 
     <?php
         // Get image background
-        $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_section_hero', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' );
+        $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_section_hero' );
         $tm_setting_background_section_hero = wp_get_attachment_image_src( $tm_setting_background_section_hero, 'full' );
-        $tm_setting_background_section_hero = $tm_setting_background_section_hero[0];
+
+        if ( $tm_setting_background_section_hero ) {
+            $tm_setting_background_section_hero = $tm_setting_background_section_hero[0];
+        } else {
+            $tm_setting_background_section_hero = '';
+        }        
     ?>
 
-    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
+    <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
             <?php
@@ -31,55 +36,55 @@
             }
             ?>
         </div>
-    </div><!-- /#section-nome -->
+    </div><!-- /#section-hero -->
 
 <?php elseif ( is_category() ) : ?>
 
     <?php $image_parallax_default = get_theme_mod( 'image_parallax_default', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
     
-    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
+    <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
                 <h1 class="entry-title"><?php echo single_term_title( '', false ); ?></h1>
         </div><!-- /.text-center -->
-    </div><!-- /#section-nome -->
+    </div><!-- /#section-hero -->
     
 <?php elseif ( is_woocommerce_activated() && is_shop() ) : ?>
 
-    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
+    <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
                 <h1 class="entry-title"><?php woocommerce_page_title(); ?></h1>
         </div><!-- /.text-center -->
-    </div><!-- /#section-nome -->
+    </div><!-- /#section-hero -->
 
 <?php elseif ( is_archive() ) : ?>
 
     <?php $image_parallax_default = get_theme_mod( 'image_parallax_default', 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960' ); ?>
     
-    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
+    <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
             <?php the_archive_title( '<h1 class="entry-title">', '</h1>' ); ?>
         </div><!-- /.text-center -->
-    </div><!-- /#section-nome -->		
+    </div><!-- /#section-hero -->		
 
 <?php elseif ( has_post_thumbnail() ) : ?>
 
     <?php $tm_setting_background_section_hero = get_the_post_thumbnail_url(); ?>
 
-    <div id="section-nome" class="parallax-window t" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
+    <div id="section-hero" class="parallax-window t" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
             <h1 class="entry-title"><?php the_title(); ?></h1>
         </div>
-    </div><!-- /#section-nome -->
+    </div><!-- /#section-hero -->
     
 <?php else : ?>
 
     <?php $image_parallax_default = get_theme_mod( 'image_parallax_default' ); ?>
 
-    <div id="section-nome" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
+    <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_parallax_default ); ?>">
         <div class="overlay"></div>
         <div class="container text-center">
             <?php if ( is_page() || is_single() ) : ?>
@@ -94,6 +99,6 @@
             <?php endif; ?>
             
         </div><!-- /.text-center -->
-    </div><!-- /#section-nome -->
+    </div><!-- /#section-hero -->
 
 <?php endif; ?>

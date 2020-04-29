@@ -95,14 +95,17 @@ function tm_customizer_sections( $wp_customize ) {
      */
 
     /**
+     * 
      * Section Hero
      * 
      * @todo Sanitize function to image field
+     * 
      */
     $wp_customize->add_setting(
         'tm_setting_background_section_hero', array(
-            'default'           => 'https://images.pexels.com/photos/830858/pexels-photo-830858.png?auto=compress&cs=tinysrgb&h=960&w=1960',
-            'sanitize_callback' => ''
+            'default'           => get_stylesheet_directory_uri() . '/assets/images/default/tim-maia-1.jpg',
+            'sanitize_callback' => '',
+            'transport'         => 'postMessage'
         )
     );
     $wp_customize->add_control(
@@ -120,7 +123,8 @@ function tm_customizer_sections( $wp_customize ) {
 
     $wp_customize->add_setting(
         'tm_setting_color_section_hero', array(
-            'default'           => '#FFFFFF'
+            'default'   => '#FFFFFF',
+            'transport' => 'postMessage'
         )
     );
     $wp_customize->add_control(
@@ -399,12 +403,12 @@ function tm_customizer_sections( $wp_customize ) {
             $wp_customize,
             'tm_general_over_layer_color_control',
             array(
-                'settings' => 'tm_general_settings_over_layer_color',
-                'label'    => esc_html__( 'Cor do over layer', 'tim-maia' ),
-                'description' => esc_html__( 'Cor utilizada para a camada transparente das seções', 'tim-maia' ),
-                'section'  => 'tm_section_general_settings_colors',
-                'show_opacity'  => false, // Optional.
-                'palette'	=> array(
+                'settings'     => 'tm_general_settings_over_layer_color',
+                'label'        => esc_html__( 'Cor do over layer', 'tim-maia' ),
+                'description'  => esc_html__( 'Cor utilizada para a camada transparente das seções', 'tim-maia' ),
+                'section'      => 'tm_section_general_settings_colors',
+                'show_opacity' => false, // Optional.
+                'palette'      => array(
 					'rgba(10,10,10,0.5)',
                     'rgba(10,10,10,0.7)',
                     'rgba(10,10,10,0.9)',
@@ -418,3 +422,23 @@ function tm_customizer_sections( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'tm_customizer_sections' );
+
+
+/**
+ * 
+ * EnqueueJS to customizer live preview
+ * Used by hook: 'customize_preview_init'
+ * 
+ * @see add_action( 'customize_preview_init', $func )
+ * 
+ */
+function tm_customizer_live_preview() {
+	wp_enqueue_script( 
+		  'tm-customizer',			//Give the script an ID
+		  get_template_directory_uri() . '/inc/customizer/theme-customizer.js',//Point to file
+		  array( 'jquery', 'customize-preview' ),	//Define dependencies
+		  '',						//Define a version (optional) 
+		  true						//Put script in footer?
+	);
+}
+add_action( 'customize_preview_init', 'tm_customizer_live_preview' );
