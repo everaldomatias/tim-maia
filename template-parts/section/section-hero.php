@@ -2,14 +2,7 @@
 
     <?php
         // Get image background
-        $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_section_hero' );
-        $tm_setting_background_section_hero = wp_get_attachment_image_src( $tm_setting_background_section_hero, 'full' );
-
-        if ( $tm_setting_background_section_hero ) {
-            $tm_setting_background_section_hero = $tm_setting_background_section_hero[0];
-        } else {
-            $tm_setting_background_section_hero = '';
-        }        
+        $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_section_hero' );     
     ?>
 
     <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">

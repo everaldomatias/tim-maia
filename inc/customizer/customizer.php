@@ -104,17 +104,16 @@ function tm_customizer_sections( $wp_customize ) {
     $wp_customize->add_setting(
         'tm_setting_background_section_hero', array(
             'default'           => get_stylesheet_directory_uri() . '/assets/images/default/tim-maia-1.jpg',
-            'sanitize_callback' => '',
-            'transport'         => 'postMessage'
+            'sanitize_callback' => 'esc_url_raw',
+            //'transport'         => 'postMessage'
         )
     );
     $wp_customize->add_control(
-        new WP_Customize_Media_Control(
+        new WP_Customize_Image_Control(
             $wp_customize,
             'tm_background_section_hero',
             array(
                 'settings'  => 'tm_setting_background_section_hero',
-                'mime_type' => 'image',
                 'label'     => esc_html__( 'Background da seção', 'tim-maia' ),
                 'section'   => 'tm_section_hero'
             )
@@ -442,3 +441,19 @@ function tm_customizer_live_preview() {
 	);
 }
 add_action( 'customize_preview_init', 'tm_customizer_live_preview' );
+
+/**
+ * 
+ * Output CSS on the wp_head hook
+ * 
+ */
+function tm_customizer_output_css() {
+    ?>
+
+        <style type="text/css">
+            #section-hero h1, #section-hero .description { color: <?php echo get_theme_mod( 'tm_setting_color_section_hero', '#FFFFFF' ); ?>; }
+         </style>
+
+    <?php
+}
+add_action( 'wp_head', 'tm_customizer_output_css' );

@@ -6,12 +6,20 @@
  */
 (function ($) {
 
+    // wp.customize('tm_setting_background_section_hero', function (value) {
+    //     value.bind(function (newval) {
+    //         //$('#section-hero').css('background-image', 'url( ' + newval + ')');
+    //         $('#section-hero').parallax({ imageSrc: newval });
+    //         $('#section-hero').attr('data-image-src', newval);
+    //     });
+    // });
+
     // Hero
-    wp.customize('tm_setting_background_section_hero', function (value) {
-        value.bind(function (newval) {
-            $('#section-hero').attr('data-image-src', newval);
-        });
-    });
+    // wp.customize('tm_setting_background_section_hero', function (value) {
+    //     value.bind(function (newval) {
+    //         $('#section-hero').attr('data-image-src', newval);
+    //     });
+    // });
     
     wp.customize('tm_setting_color_section_hero', function (value) {
         value.bind(function (newval) {
