@@ -2,6 +2,7 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
+	align-content: center;
 	min-heigth: 100%;
   	position: relative;
   	@media ( max-width: 767px ) {
@@ -11,7 +12,6 @@
 		min-height: 450px;
 	}
 	.container {
-		
 	}
 	.overlay {
 		background-color: rgba(50,50,50,0.7);

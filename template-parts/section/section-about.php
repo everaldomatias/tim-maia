@@ -6,9 +6,8 @@
     <?php $tm_description_section_about = get_theme_mod( 'tm_description_section_about' ); ?>
 
     <?php
-        // Get image background
-        $tm_background_section_about = get_theme_mod( 'tm_background_section_about' );     
-    ?>
+    // Get image background
+    $tm_background_section_about = get_theme_mod( 'tm_background_section_about' ); ?>
 
     <div id="section-about" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_background_section_about ); ?>">
         
@@ -29,7 +28,7 @@
         if ( $tm_about_button_1 || $tm_about_button_2 ) : ?>
 
             <div class="buttons">
-                <div class="container">
+                <div class="container text-center">
 
                     <?php echo tm_print_button( 'tm_about_button_1', 'tm_about_button_url_1' ); ?>
                     <?php echo tm_print_button( 'tm_about_button_2', 'tm_about_button_url_2' ); ?>

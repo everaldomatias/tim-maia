@@ -3,6 +3,12 @@
 	#content {
 		max-width: 100%;
 	}
+	/* All Sections */
+	[id*="section"] {
+		h2 {
+			margin-bottom: 30px;
+		}
+	}
 	/* Sobre */
 	#section-sobre {
 		background-color: #ffffff;

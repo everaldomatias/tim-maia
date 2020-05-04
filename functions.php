@@ -463,15 +463,19 @@ function tm_print_button( $button, $link = '' ) {
     $html = '';
 
     $button = get_theme_mod( $button );
-    
-    if ( ! empty( $link ) ) {
-        $link = get_theme_mod( $link );
-    }
 
-    if ( $link ) {
-        $html = '<a href="' . esc_url( $link ) . '">' . apply_filters( 'the_title', $button ) . '</a>';
-    } else {
-        $html = '<button>' . apply_filters( 'the_title', $button ) . '</button>';
+    if ( ! empty( $button ) ) {
+
+        if ( ! empty( $link ) ) {
+            $link = get_theme_mod( $link );
+        }
+
+        if ( $link ) {
+            $html = '<a class="btn" href="' . esc_url( $link ) . '">' . apply_filters( 'the_title', $button ) . '</a>';
+        } else {
+            $html = '<button class="btn">' . apply_filters( 'the_title', $button ) . '</button>';
+        }
+        
     }
 
     return $html;
