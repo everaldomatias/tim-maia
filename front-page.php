@@ -3,26 +3,7 @@ get_header(); ?>
 
 <main>
 
-	<?php
-	/**
-	 *
-	 * Retorna as strings padrões do tema no array $sd
-	 * 
- 	 * @author 		Everaldo Matias <http://everaldomatias.github.io>
- 	 * @version 	0.1
- 	 * @since 		09/04/2018
- 	 * @see 		https://codex.wordpress.org/Transients_API
- 	 * 
-	 */
-	$sd = get_transient( 'strings_default' ); ?>
-
 	<?php echo tm_get_sections( get_theme_mod( 'tm_sections_order' ) ); ?>
-
-	<?php $titulo_section_acao = get_theme_mod( 'titulo_section_acao', $sd['titulo_section_acao'] ); ?>
-	<?php $editor_section_acao = get_theme_mod( 'editor_section_acao', $sd['editor_section_acao'] ); ?>
-	<?php $titulo_botao_section_acao = get_theme_mod( 'titulo_botao_section_acao', $sd['titulo_botao_section_acao'] ); ?>
-	<?php $link_botao_section_acao = get_theme_mod( 'link_botao_section_acao', $sd['link_botao_section_acao'] ); ?>
-	<?php $image_section_acao = get_theme_mod( 'image_section_acao', $sd['image_section_acao'] ); ?>
 
 	<?php $use_acao = get_theme_mod( 'use_acao', '1' ); ?>
 	<?php if ( $use_acao ) : ?>

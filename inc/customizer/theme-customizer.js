@@ -21,14 +21,22 @@
     //     });
     // });
     
-    wp.customize('tm_setting_color_section_hero', function (value) {
+    // Body
+    wp.customize('tm_general_settings_background_color', function (value) {
         value.bind(function (newval) {
-            $('#section-hero h1, #section-hero .description').css('color', newval);
+            $('body').css('background-color', newval);
+        });
+    });
+
+    
+    wp.customize( 'tm_setting_color_section_hero', function ( value ) {
+        value.bind( function ( newval ) {
+            $( '#section-hero h1, #section-hero .description' ).css( 'color', newval );
         });
     });
     
     //
-    wp.customize('tm_general_settings_over_layer_color', function (value) {
+    wp.customize( 'tm_general_settings_over_layer_color', function (value) {
         value.bind(function (newval) {
             $('.parallax-window .overlay').css('background-color', newval);
         });

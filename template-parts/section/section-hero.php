@@ -9,26 +9,30 @@
         <div class="overlay"></div>
         <div class="container text-center">
             <?php
-            if ( is_home() ) {
-                $titulo_section_blog = get_theme_mod( 'titulo_section_blog', $sd['titulo_section_blog'] );
-                echo '<h1>' . apply_filters( 'the_title', $titulo_section_blog ) . '</h1>';
-            } elseif ( has_custom_logo() ) {
+
+            /* Logo or site title */
+            if ( has_custom_logo() ) {
+
                 $logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
                 echo '<img class="logo" src="' . esc_url( $logo[0] ) . '">';
-            } else {
-                /* Título do Site */
-                echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
 
-                /* Descrição do Site */
-                $desc = get_bloginfo( 'description' );
-                if ( ! empty( $desc ) ) {
-                    echo '<div class="description">';
-                    echo apply_filters( 'the_content', $desc );
-                    echo '</div>';
-                }
+            } else {
+
+                /* The site title */
+                echo '<h1>' . apply_filters( 'the_title', get_bloginfo( 'name' ) ) . '</h1>';
+
             }
+
+            /* The site description */
+            $desc = get_bloginfo( 'description' );
+            if ( ! empty( $desc ) ) {
+                echo '<div class="description">';
+                echo apply_filters( 'the_content', $desc );
+                echo '</div><!-- /.description -->';
+            }
+
             ?>
-        </div>
+        </div><!-- /.container -->
     </div><!-- /#section-hero -->
 
 <?php elseif ( is_category() ) : ?>

@@ -439,3 +439,42 @@ function tm_load_template_part( $template_name, $part_name = null ) {
     return $var;
 
 }
+
+/**
+ * 
+ * Print buttons by customizer
+ * 
+ * @author      Everaldo Matias <https://everaldo.dev>
+ * @version     1.0.0
+ * @since       03/05/2020
+ * @see         inc/customizer.php
+ * 
+ * @todo        Add filter hook
+ * 
+ * @param       string $button
+ * @param       string $link
+ * 
+ * @return      HTML
+ * 
+ */
+
+function tm_print_button( $button, $link = '' ) {
+
+    $html = '';
+
+    $button = get_theme_mod( $button );
+    
+    if ( ! empty( $link ) ) {
+        $link = get_theme_mod( $link );
+    }
+
+    if ( $link ) {
+        $html = '<a href="' . esc_url( $link ) . '">' . apply_filters( 'the_title', $button ) . '</a>';
+    } else {
+        $html = '<button>' . apply_filters( 'the_title', $button ) . '</button>';
+    }
+
+    return $html;
+
+}
+
