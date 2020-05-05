@@ -3,13 +3,23 @@
 /**
  * Include the sanitization functions
  */
-require_once get_template_directory() . '/inc/customizer-sanitization.php';
+require_once( dirname( __FILE__ ) . '/customizer-sanitization.php' );
 
 /**
  * Inlcude the Alpha Color Picker control file.
  */
 require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
 
+/**
+ * Inlcude the CSS function print by customizer.
+ */
+require_once( dirname( __FILE__ ) . '/customizer-css.php' );
+
+/**
+ * 
+ * 
+ * 
+ */
 function tm_customizer_sections( $wp_customize ) {
     
     /**
@@ -61,6 +71,10 @@ function tm_customizer_sections( $wp_customize ) {
             'title'       => esc_html__( 'Sobre', 'tim-maia' ),
             'description' => esc_html__( 'Seção para detalhar e explicar melhor do que se trata o site', 'tim-maia' ),
         ),
+        'tm_section_action' => array (
+            'title'       => esc_html__( 'Ação', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para adicionar uma chamada de ação', 'tim-maia' ),
+        ),
         'tm_section_sectionname3' => array (
             'title'       => esc_html__( 'Section 3', 'tim-maia' ),
             'description' => esc_html__( 'Section 3 Description', 'tim-maia' ),
@@ -71,7 +85,7 @@ function tm_customizer_sections( $wp_customize ) {
         ),
     );
 
-    $sortable_sections = get_theme_mod('tm_sections_order');
+    $sortable_sections = get_theme_mod( 'tm_sections_order' );
     if( ! isset( $sortable_sections ) || empty( $sortable_sections ) ){
     //if( isset( $sortable_sections ) || !empty( $sortable_sections ) ){
         set_theme_mod( 'tm_sections_order', implode(',', array_keys( $default_sections ) ) );
@@ -192,7 +206,7 @@ function tm_customizer_sections( $wp_customize ) {
             array(
                 'settings' => 'tm_color_section_about',
                 'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
-                'section'  => 'tm_section_hero'
+                'section'  => 'tm_section_about'
             )
         )
     );
@@ -325,6 +339,202 @@ function tm_customizer_sections( $wp_customize ) {
             )
         )
     );
+
+    /**
+     * 
+     * Section Call to Action
+     * 
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_action', array(
+            'default'           => '1',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_action',
+            array(
+                'settings' => 'tm_use_section_action',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Call to Action?', 'tim-maia' ),
+                'section'  => 'tm_section_action'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_background_section_action', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            //'transport'         => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'tm_background_section_action_control',
+            array(
+                'settings'  => 'tm_background_section_action',
+                'label'     => esc_html__( 'Background da seção', 'tim-maia' ),
+                'section'   => 'tm_section_action'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_color_section_action', array(
+            'default'   => '#FFFFFF',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_color_section_action_control',
+            array(
+                'settings' => 'tm_color_section_action',
+                'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
+                'section'  => 'tm_section_about'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_title_section_action', array(
+            'default'           => esc_attr__( 'Call to Action, o passo final!', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_title_section_action_control',
+            array(
+                'settings' => 'tm_title_section_action',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Título para a seção Call to Action', 'tim-maia' ),
+                'section'  => 'tm_section_action'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_description_section_action', array(
+            'default' 	=> esc_attr__( 'Depois de apresentar todos os benefícios do seu produto/serviço, chegou a hora da oferta incrível para o fechamento da venda. Este é o Call to Action (CTA).', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_description_section_action',
+            array(
+                'settings' => 'tm_description_section_action',
+                'type'     => 'textarea',
+                'label'    => esc_html__( 'Descrição para a seção Call to Action', 'tim-maia' ),
+                'section'  => 'tm_section_action'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_action_button_1', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_action_button_1_control',
+            array(
+                'settings' => 'tm_action_button_1',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Botão', 'tim-maia' ),
+                'description' => esc_html__( 'Caso precise utilizar um botão na seção, preencha os campos abaixo.', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => esc_html__( 'Baixe nosso E-book', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_action'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_action_button_url_1', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_action_button_url_1_control',
+            array(
+                'settings' => 'tm_action_button_url_1',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do botão', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( home_url() . '/example' ),
+                ),
+                'section'  => 'tm_section_action',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_action_button_2', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_action_button_2_control',
+            array(
+                'settings' => 'tm_action_button_2',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Botão (secundário)', 'tim-maia' ),
+                'description' => esc_html__( 'Caso precise utilizar um segundo botão na seção, preencha os campos abaixo.', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => esc_html__( 'Cadastre-se e receba novidades!', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_action'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_action_button_url_2', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_action_button_url_2_control',
+            array(
+                'settings' => 'tm_action_button_url_2',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do botão (secundário)', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( home_url() . '/second-example' ),
+                ),
+                'section'  => 'tm_section_action',
+            )
+        )
+    );
+
+
+
+
+
+
+
 
 
 
@@ -588,35 +798,3 @@ function tm_customizer_live_preview() {
 	);
 }
 add_action( 'customize_preview_init', 'tm_customizer_live_preview' );
-
-/**
- * 
- * Output CSS on the wp_head hook
- * 
- */
-function tm_customizer_output_css() {
-    ?>
-
-        <style type="text/css">
-
-            /* Body */
-            body {
-                background-color: <?php echo get_theme_mod( 'tm_general_settings_background_color', '#DDDDDD    ' ); ?>;
-            }
-
-            /* Section About */
-            #section-about {
-                color: <?php echo get_theme_mod( 'tm_color_section_about', '#FFFFFF' ); ?>;
-            }
-
-            /* Over layer */
-            .parallax-window .overlay {
-                background-color: <?php echo get_theme_mod( 'tm_general_settings_over_layer_color', 'rgba(50,50,50,0.7)' ); ?>;
-            }
-
-            #section-hero h1, #section-hero .description { color: <?php echo get_theme_mod( 'tm_setting_color_section_hero', '#FFFFFF' ); ?>; }
-        </style>
-
-    <?php
-}
-add_action( 'wp_head', 'tm_customizer_output_css' );
