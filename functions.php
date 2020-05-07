@@ -415,8 +415,8 @@ if ( ! function_exists( 'tm_get_sections' ) ):
                 $output .= tm_load_template_part( 'template-parts/section/section-action' );
                 break;
 
-            case 'tm_section_sectionname3':
-                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e5e5e5;">Section 3</div>';
+            case 'tm_section_features':
+                $output .= tm_load_template_part( 'template-parts/section/section-features' );
                 break;
 
             case 'tm_section_sectionname4':
