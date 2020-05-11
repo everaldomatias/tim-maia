@@ -29,16 +29,6 @@
 	}
 	/* Blog */
 	#section-blog {
-		padding-bottom: 30px;
-		padding-top: 60px;
-		h2.home-title {
-			margin-bottom: 30px;
-			text-align: center;
-		}
-		a {
-			color: #ffffff;
-			text-decoration: none;
-		}
 		.each {
 			background-color: #cccccc;
 			background-blend-mode: multiply;
@@ -116,7 +106,6 @@
 			min-height: 400px;				
 		}
 		.btn {
-			margin: 0 auto;
 			&:hover {
 				opacity: 0.7;
 			}

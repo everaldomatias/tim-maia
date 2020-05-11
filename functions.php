@@ -226,10 +226,17 @@ function get_template_section_social() {
 	}
 }
 
-function thumbnail_bg( $tamanho = 'thumbnail' ) {
-	global $post;
-	$get_post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $tamanho, false, '' );
-	echo 'style="background-image: url(' . esc_url( $get_post_thumbnail[0] ) . ' )"';
+function tm_background_thumbnail( $size = 'thumbnail' ) {
+    
+    global $post;
+    
+    if ( has_post_thumbnail( $post->ID ) ) {
+
+        $get_post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size, false, '' );
+	    echo 'style="background-image: url(' . esc_url( $get_post_thumbnail[0] ) . ' )"';
+
+    }
+
 }
 
 /**
@@ -419,6 +426,10 @@ if ( ! function_exists( 'tm_get_sections' ) ):
                 $output .= tm_load_template_part( 'template-parts/section/section-features' );
                 break;
 
+            case 'tm_section_blog':
+                $output .= tm_load_template_part( 'template-parts/section/section-blog' );
+                break;
+
             case 'tm_section_sectionname4':
                 $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e7e7e7;">Section 4</div>';
                 break;
@@ -486,3 +497,37 @@ function tm_print_button( $button, $link = '' ) {
 
 }
 
+
+/**
+ * 
+ * Print comments counter
+ * 
+ * @author      Everaldo Matias <https://everaldo.dev>
+ * @version     1.0.0
+ * @since       10/05/2020
+ * 
+ * @return      HTML
+ * 
+ */
+
+function tm_print_comments_counter() {
+
+    $comments_number = get_comments_number();
+
+    if ( '1' === $comments_number ) : ?>
+
+        <span class="comments">
+            <i class="far fa-comment-dots"></i>
+            <?php _e( 'One reply', 'model' ); ?>
+        </span><!-- /.comments -->
+
+    <?php elseif( $comments_number >= 2 ) : ?>
+
+        <span class="comments">
+            <i class="far fa-comment-dots"></i>
+            <?php echo $comments_number . ' ' . _e( 'replys', 'model' ); ?>
+        </span><!-- /.comments -->
+
+    <?php endif;
+
+}

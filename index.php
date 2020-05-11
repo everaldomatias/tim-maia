@@ -44,7 +44,7 @@ get_header(); ?>
 
 								<div class="<?php echo $class; ?>">
 
-									<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
+									<div <?php tm_background_thumbnail( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
 
 										<a href="<?php the_permalink(); ?>">
 											<div class="inner">

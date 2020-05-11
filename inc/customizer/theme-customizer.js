@@ -49,7 +49,19 @@
             $('#section-features').css('color', newval);
         });
     });
-    
+
+    // Blog
+    wp.customize('tm_color_section_blog', function (value) {
+        value.bind(function (newval) {
+            $('#section-blog').css('color', newval);
+        });
+    });
+    wp.customize('tm_background_color_section_blog', function (value) {
+        value.bind(function (newval) {
+            $('#section-blog').css('background-color', newval);
+        });
+    });
+
     //
     wp.customize( 'tm_general_settings_over_layer_color', function (value) {
         value.bind(function (newval) {

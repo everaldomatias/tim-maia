@@ -1,3 +1,25 @@
+#section-blog {
+	color: #ffffff;
+    padding-bottom: 100px;
+	padding-top: 100px;
+	.container-blog {
+        align-items: stretch;
+        display: flex;
+        @media ( max-width: 768px ) {
+            flex-direction: column;
+        }
+        .each {
+            flex: 1;
+            margin: auto 15px;
+            text-align: center;
+            h3 {
+                padding-bottom: 15px;
+                padding-top: 15px;
+            }
+        }
+    }
+}
+
 .blog,
 .category {
 	#content {

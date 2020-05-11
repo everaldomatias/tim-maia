@@ -79,6 +79,10 @@ function tm_customizer_sections( $wp_customize ) {
             'title'       => esc_html__( 'Recursos', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir recursos do seu produto/serviço na Home do site.', 'tim-maia' ),
         ),
+        'tm_section_blog' => array (
+            'title'       => esc_html__( 'Blog', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para exibir os últimos posts do blog.', 'tim-maia' ),
+        ),
         'tm_section_sectionname4' => array (
             'title'       => esc_html__( 'Section 4', 'tim-maia' ),
             'description' => esc_html__( 'Section 4 Description', 'tim-maia' ),
@@ -824,6 +828,105 @@ function tm_customizer_sections( $wp_customize ) {
         )
     );
 
+    /**
+     * 
+     * Section Blog
+     * 
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_blog', array(
+            'default'           => '1',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_blog_control',
+            array(
+                'settings' => 'tm_use_section_blog',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Blog?', 'tim-maia' ),
+                'section'  => 'tm_section_blog'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_color_section_blog', array(
+            'default'   => '#FFFFFF',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_color_section_blog_control',
+            array(
+                'settings' => 'tm_color_section_blog',
+                'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
+                'section'  => 'tm_section_blog'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_background_color_section_blog', array(
+            'default'   => '#333333',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_background_color_section_blog_control',
+            array(
+                'settings' => 'tm_background_color_section_blog',
+                'label'    => esc_html__( 'Cor de fundo da seção', 'tim-maia' ),
+                'section'  => 'tm_section_blog'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_title_section_blog', array(
+            'default'           => esc_attr__( 'Blog!', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_title_section_blog_control',
+            array(
+                'settings' => 'tm_title_section_blog',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Título para a seção Blog.', 'tim-maia' ),
+                'section'  => 'tm_section_blog'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_blog_button', array(
+            'default'           => esc_html__( 'Veja mais!', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_blog_button_control',
+            array(
+                'settings'    => 'tm_blog_button',
+                'type'        => 'text',
+                'label'       => esc_html__( 'Botão', 'tim-maia' ),
+                'description' => esc_html__( 'Título do botão para acessar o blog.', 'tim-maia' ),
+                'section'     => 'tm_section_blog'
+            )
+        )
+    );
+
 
 
 
@@ -832,6 +935,9 @@ function tm_customizer_sections( $wp_customize ) {
 
 
     
+
+
+
 
 
 
