@@ -29,9 +29,24 @@
     });
 
     
+    // Hero
     wp.customize( 'tm_setting_color_section_hero', function ( value ) {
         value.bind( function ( newval ) {
             $( '#section-hero h1, #section-hero .description' ).css( 'color', newval );
+        });
+    });
+
+    // Action
+    wp.customize('tm_color_section_action', function (value) {
+        value.bind(function (newval) {
+            $('#section-action').css('color', newval);
+        });
+    });
+
+    // Features
+    wp.customize('tm_color_section_features', function (value) {
+        value.bind(function (newval) {
+            $('#section-features').css('color', newval);
         });
     });
     

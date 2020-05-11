@@ -4,7 +4,7 @@
 
     <?php $tm_title_section_features = get_theme_mod( 'tm_title_section_features' ); ?>
 
-    <div id="section-action">
+    <div id="section-features">
         
         <div class="overlay"></div>
         
@@ -12,43 +12,45 @@
             <h2><?php echo apply_filters( 'the_title', $tm_title_section_features ); ?></h2>
         </div><!-- /.container -->
 
-        <?php
+        <div class="container container-features">
 
-        for ( $i=1; $i <= 3; $i++ ) {
-            
-            // Get features infos
-            $tm_features_icon = get_theme_mod( 'tm_features_icon_' . $i );
-            $tm_features_title = get_theme_mod( 'tm_features_title_' . $i );
-            $tm_features_description = get_theme_mod( 'tm_features_description_' . $i );
+            <?php
 
-            if ( $tm_features_icon || $tm_features_title || $tm_features_description ) {
+            for ( $i=1; $i <= 3; $i++ ) {
+                
+                // Get features infos
+                $tm_features_icon = get_theme_mod( 'tm_features_icon_' . $i );
+                $tm_features_title = get_theme_mod( 'tm_features_title_' . $i );
+                $tm_features_description = get_theme_mod( 'tm_features_description_' . $i );
 
-                echo '<div class="each-feature">';
+                if ( $tm_features_icon || $tm_features_title || $tm_features_description ) {
 
-                    if ( $tm_features_icon ) {
-                        echo $tm_features_icon;
-                    }
+                    echo '<div class="each-feature">';
 
-                    if ( $tm_features_title ) {
-                        echo '<h3>' . apply_filters( 'the_title', $tm_features_title ) . '</h3>';
-                    }
+                        if ( $tm_features_icon ) {
+                            echo '<img src=' . esc_url( $tm_features_icon ) . '>';
+                        }
 
-                    if ( $tm_features_description ) {
-                        echo '<div class="description">';
-                            echo apply_filters( 'the_title', $tm_features_description );
-                        echo '</div><!-- /.description -->';
-                    }
+                        if ( $tm_features_title ) {
+                            echo '<h3>' . apply_filters( 'the_title', $tm_features_title ) . '</h3>';
+                        }
 
-                echo '</div><!-- /.each-feature -->';
+                        if ( $tm_features_description ) {
+                            echo '<div class="description">';
+                                echo apply_filters( 'the_title', $tm_features_description );
+                            echo '</div><!-- /.description -->';
+                        }
 
-            } else {
+                    echo '</div><!-- /.each-feature -->';
 
-                echo __( 'No resources registered', 'tim-maia' );
+                }            
 
-            }            
+            } ?>
 
-        }
+        </div><!-- /.container.container-features -->
         
+
+        <?php
         $tm_features_button = get_theme_mod( 'tm_features_button' );
         
         if ( $tm_features_button ) : ?>
@@ -63,6 +65,6 @@
 
         <?php endif; ?>
 
-    </div><!-- /#section-action -->
+    </div><!-- /#section-features -->
 
 <?php endif; ?>

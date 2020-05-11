@@ -396,7 +396,7 @@ function tm_customizer_sections( $wp_customize ) {
             array(
                 'settings' => 'tm_color_section_action',
                 'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
-                'section'  => 'tm_section_about'
+                'section'  => 'tm_section_action'
             )
         )
     );
@@ -548,6 +548,24 @@ function tm_customizer_sections( $wp_customize ) {
                 'settings' => 'tm_use_section_features',
                 'type'     => 'checkbox',
                 'label'    => esc_html__( 'Usar a seção Features (Recursos)?', 'tim-maia' ),
+                'section'  => 'tm_section_features'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_color_section_features', array(
+            'default'   => '#FFFFFF',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_color_section_features_control',
+            array(
+                'settings' => 'tm_color_section_features',
+                'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
                 'section'  => 'tm_section_features'
             )
         )

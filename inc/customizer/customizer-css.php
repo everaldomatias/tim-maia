@@ -24,6 +24,11 @@ function tm_customizer_output_css() {
                 color: <?php echo get_theme_mod( 'tm_color_section_action', '#FFFFFF' ); ?>;
             }
 
+            /* Section Features */
+            #section-features {
+                color: <?php echo get_theme_mod( 'tm_color_section_features', '#FFFFFF' ); ?>;
+            }
+
             /* Over layer */
             .parallax-window .overlay {
                 background-color: <?php echo get_theme_mod( 'tm_general_settings_over_layer_color', 'rgba(50,50,50,0.7)' ); ?>;
