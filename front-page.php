@@ -5,38 +5,6 @@ get_header(); ?>
 
 	<?php echo tm_get_sections( get_theme_mod( 'tm_sections_order' ) ); ?>
 
-	<?php $use_acao = get_theme_mod( 'use_acao', '1' ); ?>
-	<?php if ( $use_acao ) : ?>
-
-		<div id="section-acao" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_section_acao ); ?>">
-			<div class="overlay"></div>
-			<div class="container">
-				<h2><?php echo apply_filters( 'the_title', $titulo_section_acao ); ?></h2>
-				<span><?php echo apply_filters( 'the_title', $editor_section_acao ); ?></span>
-				<?php if ( ! empty( $titulo_botao_section_acao ) && ! empty( $link_botao_section_acao ) ): ?>
-					<div class="clearfix"></div>
-					<a class="btn" href="<?php echo esc_url( $link_botao_section_acao ); ?>" target="_blank"><?php echo esc_attr( $titulo_botao_section_acao ); ?></a>
-				<?php endif; ?>
-			</div>
-		</div><!-- /#section-acao -->
-
-	<?php endif; ?>
-
-	<?php $use_diferenciais = get_theme_mod( 'use_diferenciais', '1' ); ?>
-	<?php if ( $use_diferenciais ) : ?>
-
-		<?php $titulo_section_diferenciais = get_theme_mod( 'titulo_section_diferenciais', $sd['titulo_section_diferenciais'] ); ?>
-		<?php $editor_section_diferenciais = get_theme_mod( 'editor_section_diferenciais', $sd['editor_section_diferenciais'] ); ?>
-
-		<div id="section-diferenciais">
-			<div class="container">
-				<h2><?php echo apply_filters( 'the_title', $titulo_section_diferenciais ); ?></h2>
-				<?php echo apply_filters( 'the_content', $editor_section_diferenciais ); ?>
-			</div>
-		</div><!-- /#section-diferenciais -->
-
-	<?php endif; ?>
-
 	<?php $use_blog = get_theme_mod( 'use_blog', '1' ); ?>
 	<?php if ( $use_blog ) : ?>
 
