@@ -10,7 +10,7 @@ function tm_customizer_output_css() {
         <style type="text/css">
 
             /* Body */
-            body {
+            body.home {
                 background-color: <?php echo get_theme_mod( 'tm_general_settings_background_color', '#DDDDDD    ' ); ?>;
             }
 
