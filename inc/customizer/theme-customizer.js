@@ -62,6 +62,16 @@
         });
     });
 
+    // Social
+    wp.customize('tm_social_background_color', function (value) {
+        value.bind(function (newval) {
+            $('#section-social').css('background-color', newval);
+        });
+    });
+
+
+    
+
     //
     wp.customize( 'tm_general_settings_over_layer_color', function (value) {
         value.bind(function (newval) {

@@ -955,6 +955,27 @@ function tm_customizer_sections( $wp_customize ) {
         )
     );
 
+    /**
+     * Background color
+     */
+    $wp_customize->add_setting(
+        'tm_social_background_color', array(
+            'default'   => '#444444',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_social_background_color_control',
+            array(
+                'settings' => 'tm_social_background_color',
+                'label'    => esc_html__( 'Cor de fundo da seção', 'tim-maia' ),
+                'section'  => 'tm_section_social'
+            )
+        )
+    );
+
     $wp_customize->add_setting(
         'tm_social_facebook', array(
             'default'           => '',
@@ -1130,6 +1151,7 @@ function tm_customizer_sections( $wp_customize ) {
             )
         )
     );
+    
 
 
 
