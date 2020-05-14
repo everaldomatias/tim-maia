@@ -83,6 +83,10 @@ function tm_customizer_sections( $wp_customize ) {
             'title'       => esc_html__( 'Blog', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir os últimos posts do blog.', 'tim-maia' ),
         ),
+        'tm_section_social' => array (
+            'title'       => esc_html__( 'Social', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para exibir os ícones das redes sociais.', 'tim-maia' ),
+        ),
         'tm_section_sectionname4' => array (
             'title'       => esc_html__( 'Section 4', 'tim-maia' ),
             'description' => esc_html__( 'Section 4 Description', 'tim-maia' ),
@@ -926,6 +930,209 @@ function tm_customizer_sections( $wp_customize ) {
             )
         )
     );
+
+    /**
+     * 
+     * Social
+     * 
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_social', array(
+            'default'           => '1',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_social_control',
+            array(
+                'settings' => 'tm_use_section_social',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Social?', 'tim-maia' ),
+                'section'  => 'tm_section_social'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_facebook', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_facebook_control',
+            array(
+                'settings' => 'tm_social_facebook',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Facebook', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://facebook.com/yourID', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_instagram', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_instagram_control',
+            array(
+                'settings' => 'tm_social_instagram',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Instagram', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://instagram.com/yourID', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_twitter', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_twitter_control',
+            array(
+                'settings' => 'tm_social_twitter',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Twitter', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://twitter.com/yourID', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_tumblr', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_tumblr_control',
+            array(
+                'settings' => 'tm_social_tumblr',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Tumblr', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://tumblr.com/yourID', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_flickr', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_flickr_control',
+            array(
+                'settings' => 'tm_social_flickr',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Flickr', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://flickr.com/yourID', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_snapchat', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_snapchat_control',
+            array(
+                'settings' => 'tm_social_snapchat',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Snapchat', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://snapchat.com/yourID', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_site', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_site_control',
+            array(
+                'settings' => 'tm_social_site',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do Site', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'https://site.com/', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_social_email', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_social_email_control',
+            array(
+                'settings' => 'tm_social_email',
+                'type'     => 'url',
+                'label'    => esc_html__( 'Email', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( 'yourmail@host.com', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_social',
+            )
+        )
+    );
+
+
+
 
 
 
