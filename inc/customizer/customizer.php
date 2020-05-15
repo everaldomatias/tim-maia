@@ -123,7 +123,7 @@ function tm_customizer_sections( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_setting_background_section_hero', array(
-            'default'           => get_stylesheet_directory_uri() . '/assets/images/default/tim-maia-1.jpg',
+            'default'           => get_stylesheet_directory_uri() . '/assets/images/default/photo-of-person-holding-black-tablet-3740162.jpg',
             'sanitize_callback' => 'esc_url_raw',
             //'transport'         => 'postMessage'
         )
@@ -374,7 +374,7 @@ function tm_customizer_sections( $wp_customize ) {
 
     $wp_customize->add_setting(
         'tm_background_section_action', array(
-            'default'           => '',
+            'default'           => get_stylesheet_directory_uri() . '/assets/images/default/woman-in-white-tank-top-using-black-laptop-computer-with-vr-3861458.jpg',
             'sanitize_callback' => 'esc_url_raw',
             //'transport'         => 'postMessage'
         )
