@@ -69,6 +69,12 @@
         });
     });
 
+    // Donate
+    wp.customize('tm_color_section_donate', function (value) {
+        value.bind(function (newval) {
+            $('#section-donate').css('color', newval);
+        });
+    });
 
     
 

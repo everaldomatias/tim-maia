@@ -41,6 +41,16 @@ The Tim Maia is an **Open Source** project. Anyone can (and should) help us to i
 
 Report bugs or do suggestions using the [Issues/Project Forum](https://gitlab.com/everaldomatias/tim-maia/issues)
 
+## Credits ##
+
+### Images from Pexels ###
+
+[Startup Stock Photos](https://www.pexels.com/@startup-stock-photos?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)
+
+[ThisIsEngineering](https://www.pexels.com/@thisisengineering?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)
+
+[bongkarn thanyakij](https://www.pexels.com/@bongkarn-thanyakij-683719?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)
+
 ## Contribute to the Project ##
 
 To contribute, just click on the **Fork** button, create a *Branch*, improve the code and send it with a **Pull Request**.

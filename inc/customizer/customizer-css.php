@@ -35,6 +35,11 @@ function tm_customizer_output_css() {
                 color: <?php echo get_theme_mod( 'tm_color_section_blog', '#FFFFFF' ); ?>;
             }
 
+            /* Section Donate */
+            #section-donate {
+                color: <?php echo get_theme_mod( 'tm_color_section_donate', '#FFFFFF' ); ?>;
+            }
+
             /* Section Social */
             #section-social {
                 background-color: <?php echo get_theme_mod( 'tm_social_background_color', '#444444' ); ?>;

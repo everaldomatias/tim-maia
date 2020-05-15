@@ -87,9 +87,9 @@ function tm_customizer_sections( $wp_customize ) {
             'title'       => esc_html__( 'Social', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir os ícones das redes sociais.', 'tim-maia' ),
         ),
-        'tm_section_sectionname4' => array (
-            'title'       => esc_html__( 'Section 4', 'tim-maia' ),
-            'description' => esc_html__( 'Section 4 Description', 'tim-maia' ),
+        'tm_section_donate' => array (
+            'title'       => esc_html__( 'Doações', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para exibir pedir apoio e doações.', 'tim-maia' ),
         ),
     );
 
@@ -927,6 +927,195 @@ function tm_customizer_sections( $wp_customize ) {
                 'label'       => esc_html__( 'Botão', 'tim-maia' ),
                 'description' => esc_html__( 'Título do botão para acessar o blog.', 'tim-maia' ),
                 'section'     => 'tm_section_blog'
+            )
+        )
+    );
+
+    /**
+     * 
+     * Section Donate
+     * 
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_donate', array(
+            'default'           => '1',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_donate_control',
+            array(
+                'settings' => 'tm_use_section_donate',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção de Doações?', 'tim-maia' ),
+                'section'  => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_background_section_donate', array(
+            'default'           => get_stylesheet_directory_uri() . '/assets/images/default/silver-macbook-on-white-table-3740694.jpg',
+            'sanitize_callback' => 'esc_url_raw',
+            //'transport'         => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'tm_background_section_donate_control',
+            array(
+                'settings'  => 'tm_background_section_donate',
+                'label'     => esc_html__( 'Background da seção', 'tim-maia' ),
+                'section'   => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_color_section_donate', array(
+            'default'   => '#FFFFFF',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_color_section_donate_control',
+            array(
+                'settings' => 'tm_color_section_donate',
+                'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
+                'section'  => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_title_section_donate', array(
+            'default'           => esc_attr__( 'Doações', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_title_section_donate_control',
+            array(
+                'settings' => 'tm_title_section_donate',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Título para a seção Doações', 'tim-maia' ),
+                'section'  => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_description_section_donate', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_description_section_donate',
+            array(
+                'settings' => 'tm_description_section_donate',
+                'type'     => 'textarea',
+                'label'    => esc_html__( 'Descrição para a seção Doações', 'tim-maia' ),
+                'section'  => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_donate_button_1', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_donate_button_1_control',
+            array(
+                'settings' => 'tm_donate_button_1',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Botão', 'tim-maia' ),
+                'description' => esc_html__( 'Caso precise utilizar um botão na seção, preencha os campos abaixo.', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => esc_html__( 'Doe pelo PicPay', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_donate_button_url_1', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_donate_button_url_1_control',
+            array(
+                'settings' => 'tm_donate_button_url_1',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do botão', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( home_url() . '/example' ),
+                ),
+                'section'  => 'tm_section_donate',
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_donate_button_2', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_donate_button_2_control',
+            array(
+                'settings' => 'tm_donate_button_2',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Botão (secundário)', 'tim-maia' ),
+                'description' => esc_html__( 'Caso precise utilizar um segundo botão na seção, preencha os campos abaixo.', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => esc_html__( 'Patreon', 'tim-maia' ),
+                ),
+                'section'  => 'tm_section_donate'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_donate_button_url_2', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_donate_button_url_2_control',
+            array(
+                'settings' => 'tm_donate_button_url_2',
+                'type'     => 'url',
+                'label'    => esc_html__( 'URL do botão (secundário)', 'tim-maia' ),
+                'input_attrs' => array(
+                    'placeholder' => __( home_url() . '/second-example' ),
+                ),
+                'section'  => 'tm_section_donate',
             )
         )
     );

@@ -430,8 +430,8 @@ if ( ! function_exists( 'tm_get_sections' ) ):
                 $output .= tm_load_template_part( 'template-parts/section/section-blog' );
                 break;
 
-            case 'tm_section_sectionname4':
-                $output .= '<div style="width: 100%; height: 100px; padding: 40px; background: #e7e7e7;">Section 4</div>';
+            case 'tm_section_donate':
+                $output .= tm_load_template_part( 'template-parts/section/section-donate' );
                 break;
 
             default:
