@@ -1339,111 +1339,7 @@ function tm_customizer_sections( $wp_customize ) {
                 'section'  => 'tm_section_social',
             )
         )
-    );
-    
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    $wp_customize->add_setting(
-        'myprefix_section2_layout2', array(
-            'default'           => 'classic',
-            'sanitize_callback' => 'wp_kses_post'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'section2_layout',
-            array(
-                'settings' => 'myprefix_section2_layout2',
-                'type'     => 'radio',
-                'label'    => esc_html__( 'Section layout', 'tim-maia' ),
-                'section'  => 'tm_section_sectionname2',
-                'choices'  => array(
-                    'classic'          => esc_html__( 'Classic', 'tim-maia' ),
-                    'grid'             => esc_html__( 'Grid', 'tim-maia' ),
-                    'list'             => esc_html__( 'List', 'tim-maia' ),
-                )
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'myprefix_section3_layout', array(
-            'default'           => 'classic',
-            'sanitize_callback' => 'wp_kses_post'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'section3_layout',
-            array(
-                'settings' => 'myprefix_section3_layout',
-                'type'     => 'radio',
-                'label'    => esc_html__( 'Section layout', 'tim-maia' ),
-                'section'  => 'tm_section_sectionname3',
-                'choices'  => array(
-                    'classic'          => esc_html__( 'Classic', 'tim-maia' ),
-                    'grid'             => esc_html__( 'Grid', 'tim-maia' ),
-                    'list'             => esc_html__( 'List', 'tim-maia' ),
-                )
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'myprefix_section4_layout', array(
-            'default'           => 'classic',
-            'sanitize_callback' => 'wp_kses_post'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'section4_layout',
-            array(
-                'settings' => 'myprefix_section4_layout',
-                'type'     => 'radio',
-                'label'    => esc_html__( 'Section layout', 'tim-maia' ),
-                'section'  => 'tm_section_sectionname4',
-                'choices'  => array(
-                    'classic'          => esc_html__( 'Classic', 'tim-maia' ),
-                    'grid'             => esc_html__( 'Grid', 'tim-maia' ),
-                    'list'             => esc_html__( 'List', 'tim-maia' ),
-                )
-            )
-        )
-    );
-
-
-
-
-
-
+    );    
 
     /**
      * Adiciona o painel Configurações Gerais
@@ -1592,6 +1488,100 @@ function tm_customizer_sections( $wp_customize ) {
                     'rgba(213,108,55,0.7)',
 					'rgba(164,54,40,0.7)',
 				)
+            )
+        )
+    );
+
+    /*
+     * Footer
+     */
+
+    $wp_customize->add_section( 'tm_footer', array(
+        'title'       => esc_html__( 'Rodapé', 'tim-maia' ),
+        'panel'       => 'tm_panel_general_settings',
+        'priority'    => 1
+    ) );
+
+    /**
+     * Footer > Background color
+     */
+    $wp_customize->add_setting(
+        'tm_footer_background_color', array(
+            'default'   => '#111111',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_footer_background_color_control',
+            array(
+                'settings' => 'tm_footer_background_color',
+                'label'    => esc_html__( 'Cor de fundo do rodapé', 'tim-maia' ),
+                'section'  => 'tm_footer'
+            )
+        )
+    );
+
+    /**
+     * Footer > Color
+     */
+    $wp_customize->add_setting(
+        'tm_footer_color', array(
+            'default'   => '#888888',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_footer_color_control',
+            array(
+                'settings' => 'tm_footer_color',
+                'label'    => esc_html__( 'Cor das fontes', 'tim-maia' ),
+                'section'  => 'tm_footer'
+            )
+        )
+    );
+
+    /**
+     * Footer > Hover Color Link
+     */
+    $wp_customize->add_setting(
+        'tm_footer_hover', array(
+            'default'   => '#DDDDDD',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_footer_hover_control',
+            array(
+                'settings' => 'tm_footer_hover',
+                'label'    => esc_html__( 'Cor dos links ao passar o mouse', 'tim-maia' ),
+                'section'  => 'tm_footer'
+            )
+        )
+    );
+
+    /**
+     * Footer > Credit text
+     */
+    $wp_customize->add_setting(
+        'tm_footer_text', array(
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_footer_text_control',
+            array(
+                'settings' => 'tm_footer_text',
+                'type'     => 'textarea',
+                'label'    => esc_html__( 'Texto de crédito para o Rodapé.', 'tim-maia' ),
+                'section'  => 'tm_footer'
             )
         )
     );

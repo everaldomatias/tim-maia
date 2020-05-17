@@ -24,17 +24,27 @@
 	}
 }
 footer.site-footer {
-	background-color: $preto;
-	color: $branco;
     padding-top: 0;
     position: relative;
 	text-align: center;
 	z-index: 0;
 	&.footer-menu-active {
+		padding-bottom: 15px;
 		padding-top: 50px;
 	}
 	.footer-widgets {
 		padding-top: 50px;
+		align-items: stretch;
+		display: flex;
+		.widget {
+			flex: 1;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: left;
+		}
+		@media ( max-width: 768px ) {
+            flex-direction: column;
+        }
 	}
 	.info {
 		padding: 30px 0;

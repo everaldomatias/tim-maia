@@ -76,6 +76,24 @@
         });
     });
 
+    // Footer
+    wp.customize('tm_footer_background_color', function (value) {
+        value.bind(function (newval) {
+            $('footer.site-footer').css('background-color', newval);
+        });
+    });
+    wp.customize('tm_footer_color', function (value) {
+        value.bind(function (newval) {
+            $('footer.site-footer').css('color', newval);
+            $('footer.site-footer a').css('color', newval);
+        });
+    });
+    wp.customize('tm_footer_hover_control', function (value) {
+        value.bind(function (newval) {
+            $('footer.site-footer a:hover').css('color', newval);
+        });
+    });
+
     
 
     //

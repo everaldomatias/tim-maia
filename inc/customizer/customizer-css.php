@@ -50,6 +50,15 @@ function tm_customizer_output_css() {
                 background-color: <?php echo get_theme_mod( 'tm_general_settings_over_layer_color', 'rgba(50,50,50,0.7)' ); ?>;
             }
 
+            /* Footer */
+            footer.site-footer {
+                background-color: <?php echo get_theme_mod( 'tm_footer_background_color', '#111111' ); ?>;
+                color: <?php echo get_theme_mod( 'tm_footer_color', '#888888' ); ?>;
+            }
+            footer.site-footer a:hover {
+                color: <?php echo get_theme_mod( 'tm_footer_hover_control', '#DDDDDD' ); ?>;
+            }
+
             #section-hero h1, #section-hero .description { color: <?php echo get_theme_mod( 'tm_setting_color_section_hero', '#FFFFFF' ); ?>; }
         
         </style>
