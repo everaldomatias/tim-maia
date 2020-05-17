@@ -1,26 +1,13 @@
-<?php
-/**
- *
- * Retorna as strings padrões do tema no array $sd
- * 
-     * @author      Everaldo Matias <http://everaldomatias.github.io>
-     * @version     0.1
-     * @since       09/04/2018
-     * @see         https://codex.wordpress.org/Transients_API
-     * 
- */
-$sd = get_transient( 'strings_default' ); ?>
-
-<nav class="navbar fixed-top navbar-dark navbar-expand-md" role="navigation">
+<nav class="navbar fixed-top navbar-expand-md" role="navigation">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
       
+        <!-- Brand and toggle get grouped for better mobile display -->
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseClick" aria-expanded="false" aria-controls="collapseClick">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-
         <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+
         <?php if ( has_nav_menu( 'top' ) ) : ?>
             <?php
             wp_nav_menu(
@@ -37,5 +24,6 @@ $sd = get_transient( 'strings_default' ); ?>
             );
             ?>
         <?php endif; ?>
+
     </div><!-- /.container-fluid -->
 </nav>

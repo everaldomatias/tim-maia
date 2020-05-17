@@ -1,14 +1,12 @@
 /* Header */
 header.site-header {
 	.navbar.fixed-top {
-		background-color: #222222;
 		&>.container-fluid {
 			display: block !important;
 			.navbar-toggler {
 				border: 0 !important;
 				float: right;
 				&:focus {
-					background-color: #222222 !important;
 					border: 0 !important;
 					outline: 0 !important;	
 				}
@@ -46,8 +44,12 @@ header.site-header {
 					padding: 0;
 					li {
 						a {
-							color: #ffffff;
 							padding: 10px 15px;
+							&:hover,
+							&:focus {
+								background-color: transparent;
+								opacity: 0.8;
+							}
 						}
 					}
 				}

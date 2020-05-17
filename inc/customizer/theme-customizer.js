@@ -28,7 +28,23 @@
         });
     });
 
-    
+    // Menu Fixed & Menu Footer
+    wp.customize('tm_fixed_background_color', function (value) {
+        value.bind(function (newval) {
+            $('.fixed-top').css('background-color', newval);
+            $('.fixed-top .dropdown-menu').css('background-color', newval);
+            $('.footer-menu').css('background-color', newval);
+        });
+    });
+    wp.customize('tm_fixed_color', function (value) {
+        value.bind(function (newval) {
+            $('.fixed-top').css('color', newval);
+            $('.fixed-top a').css('color', newval);
+            $('.fixed-top .dropdown-menu a.dropdown-item').css('color', newval);
+            $('.footer-menu a').css('color', newval);
+        });
+    });
+
     // Hero
     wp.customize( 'tm_setting_color_section_hero', function ( value ) {
         value.bind( function ( newval ) {

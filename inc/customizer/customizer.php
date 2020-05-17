@@ -1493,6 +1493,58 @@ function tm_customizer_sections( $wp_customize ) {
     );
 
     /*
+     * Menu Fixed
+     */
+
+    $wp_customize->add_section( 'tm_fixed', array(
+        'title'       => esc_html__( 'Menu\'s', 'tim-maia' ),
+        'panel'       => 'tm_panel_general_settings',
+        'priority'    => 1
+    ) );
+
+    /**
+     * Menu Fixed > Background color
+     */
+    $wp_customize->add_setting(
+        'tm_fixed_background_color', array(
+            'default'   => '#111111',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_fixed_background_color_control',
+            array(
+                'settings' => 'tm_fixed_background_color',
+                'label'    => esc_html__( 'Cor de fundo dos menus', 'tim-maia' ),
+                'section'  => 'tm_fixed'
+            )
+        )
+    );
+
+    /**
+     * Menu Fixed > Color
+     */
+    $wp_customize->add_setting(
+        'tm_fixed_color', array(
+            'default'   => '#888888',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_fixed_color_control',
+            array(
+                'settings' => 'tm_fixed_color',
+                'label'    => esc_html__( 'Cor das fontes', 'tim-maia' ),
+                'section'  => 'tm_fixed'
+            )
+        )
+    );
+
+    /*
      * Footer
      */
 

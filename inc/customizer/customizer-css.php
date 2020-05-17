@@ -11,7 +11,21 @@ function tm_customizer_output_css() {
 
             /* Body */
             body.home {
-                background-color: <?php echo get_theme_mod( 'tm_general_settings_background_color', '#DDDDDD    ' ); ?>;
+                background-color: <?php echo get_theme_mod( 'tm_general_settings_background_color', '#DDDDDD' ); ?>;
+            }
+
+            /* Menu Fixed & Menu Footer */
+            .fixed-top,
+            .fixed-top .dropdown-menu,
+            .footer-menu {
+                background-color: <?php echo get_theme_mod( 'tm_fixed_background_color', '#111111' ); ?>;
+            }
+            .fixed-top,
+            .fixed-top a,
+            .fixed-top .dropdown-menu a.dropdown-item,
+            .footer-menu,
+            .footer-menu a {
+                color: <?php echo get_theme_mod( 'tm_fixed_color', '#888888' ); ?>;
             }
 
             /* Section About */
