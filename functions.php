@@ -67,27 +67,32 @@ function tm_setup() {
 }
 add_action( 'after_setup_theme', 'tm_setup' );
 
-//add_action( 'widgets_init', 'model_widgets_init' );
-function model_widgets_init() {
+/**
+ * Register Widgets
+ */
+function tm_widgets_init() {
     register_sidebar( array(
-        'name'			=> __( 'Main Sidebar', 'model' ),
+        'name'			=> __( 'Main Sidebar', 'tim-maia' ),
         'id'			=> 'sidebar-main',
-        'description'	=> __( 'Widgets in this area will be shown on all posts.', 'model' ),
+        'description'	=> __( 'Widgets in this area will be shown on all posts.', 'tim-maia' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
-        'name'          => __( 'Footer Bar', 'model' ),
-        'id'            => 'footerbar',
-        'description'   => __( 'Widgets in this area will be shown on footer website.', 'model' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s ' . get_widgets_class_by_qtd( 'footerbar' ) . ' ">',
+        'name'          => __( 'Footer Bar', 'tim-maia' ),
+        'id'            => 'footer-bar',
+        'description'   => __( 'Widgets in this area will be shown on footer website.', 'tim-maia' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
 }
+
+add_action( 'widgets_init', 'tm_widgets_init' );
+
 
 /**
  * Sets content width.
@@ -174,36 +179,43 @@ add_filter( 'body_class', 'model_body_class' );
  * Retorna quantidade de colunas nos widgets com Bootstrap grid
  * de acordo com a quantidade de widgets ativos.
  *
- * @author      Everaldo Matias <http://everaldomatias.github.io>
- * @version     1.0.2
+ * @author      Everaldo Matias <http://everaldo.dev>
+ * @version     2.0.0
  * @since       20/08/2018
  * @return      sting class
  * 
  */
 function get_widgets_class_by_qtd( $sidebar_name ) {
     
-    global $sidebars_widgets;
-    $count = count ( $sidebars_widgets[$sidebar_name] );
-    
-    switch ( $count ) {
-        case '1':
-            $class = 'col-sm-12';
-            break;
-        case '2':
-            $class = 'col-sm-6';
-            break;
-        case '3':
-            $class = 'col-sm-4';
-            break;
-        case '4':
-            $class = 'col-sm-3';
-            break;
-        default:
-            $class = '';
-            break;
+    if ( $sidebar_name ) {
+
+        global $sidebars_widgets;
+        $count = count( $sidebars_widgets[$sidebar_name] );
+        
+        switch ( $count ) {
+            case '1':
+                $class = 'col-sm-12';
+                break;
+            case '2':
+                $class = 'col-sm-6';
+                break;
+            case '3':
+                $class = 'col-sm-4';
+                break;
+            case '4':
+                $class = 'col-sm-3';
+                break;
+            default:
+                $class = '';
+                break;
+
+        }
+
     }
+
     if ( $class )
         return $class;
+
 }
 
 /**

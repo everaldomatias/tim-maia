@@ -9,7 +9,7 @@
  * @package WordPress
  * @subpackage Model
  * @since 0.1
- * @version 0.1
+ * @version 0.2
  */
 
 ?>
@@ -23,7 +23,7 @@
 
 			<div class="footer-menu">
 				<div class="container">
-					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'model' ); ?>">
+					<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'tim-maia' ); ?>">
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'footer',
@@ -31,38 +31,35 @@
 								'depth'          => 1
 							) );
 						?>
-					</nav><!-- .social-navigation -->
+					</nav><!-- /.footer-navigation -->
 				</div>
 			</div><!-- .footer-menu -->
 
-			<footer id="colophon" class="site-footer footer-menu-active" role="contentinfo">
-
-		<?php else : ?>
-
-			<footer id="colophon" class="site-footer" role="contentinfo">
-		
 		<?php endif; ?>
-
+		
+		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="container">
 
-				<?php if ( is_active_sidebar( 'footerbar' ) ): ?>
+				<?php if ( is_active_sidebar( 'footer-bar' ) ): ?>
 
 					<div class="footer-widgets">
-						<div class="row">
-							<?php dynamic_sidebar( 'footerbar' ); ?>
-						</div>
+						<?php dynamic_sidebar( 'footer-bar' ); ?>
 					</div><!-- .footer-widgets -->
 					
 				<?php endif; ?>
 
 				<div class="info">
 
-					<?php $frase_rodape = get_theme_mod( 'frase_rodape' ); ?>
+					<?php $tm_footer_text = get_theme_mod( 'tm_footer_text' ); ?>
 
-					<?php if ( $frase_rodape ) : ?>
-						<?php echo apply_filters( 'the_content', $frase_rodape ); ?>
+					<?php if ( $tm_footer_text ) : ?>
+
+						<?php echo apply_filters( 'the_content', $tm_footer_text ); ?>
+
 					<?php else : ?>
-						<?php bloginfo( 'name' ); ?> • Copyright © <?php echo date( 'Y' ); ?> • Desenvolvido por <a href="https://everaldomatias.gitlab.io/" target="_blank" title="Desenvolvido por Everaldo Matias">Everaldo Matias</a>
+
+						<?php bloginfo( 'name' ); ?> • Copyright © <?php echo date( 'Y' ); ?> • Desenvolvido por <a href="https://everald.dev/" target="_blank" title="Desenvolvido por Everaldo Matias">Everaldo Matias</a>
+						
 					<?php endif; ?>
 
 				</div><!-- info -->
