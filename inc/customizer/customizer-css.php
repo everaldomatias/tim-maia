@@ -64,6 +64,14 @@ function tm_customizer_output_css() {
                 background-color: <?php echo get_theme_mod( 'tm_general_settings_over_layer_color', 'rgba(50,50,50,0.7)' ); ?>;
             }
 
+            /* Heading Title */
+            .heading-title h1 {
+                color: <?php echo get_theme_mod( 'tm_heading_color' ); ?>;
+            }
+            .heading-title.heading-background-color {
+                background-color: <?php echo get_theme_mod( 'tm_heading_background_color' ); ?>;
+            }
+
             /* Footer */
             footer.site-footer {
                 background-color: <?php echo get_theme_mod( 'tm_footer_background_color', '#111111' ); ?>;

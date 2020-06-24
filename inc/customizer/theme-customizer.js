@@ -92,6 +92,21 @@
         });
     });
 
+    // Heading Title
+    wp.customize('tm_heading_background_color', function (value) {
+        value.bind(function (newval) {
+            $('.heading-title.heading-background-color').css('background-color', newval);
+        });
+    });
+    wp.customize('tm_heading_color', function (value) {
+        value.bind(function (newval) {
+            $('.heading-title').css('color', newval);
+        });
+    });
+
+
+    
+
     // Footer
     wp.customize('tm_footer_background_color', function (value) {
         value.bind(function (newval) {

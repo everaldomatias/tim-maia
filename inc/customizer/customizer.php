@@ -20,7 +20,7 @@ require_once( dirname( __FILE__ ) . '/customizer-css.php' );
  * 
  * 
  */
-function tm_customizer_sections( $wp_customize ) {
+function tm_customize_register( $wp_customize ) {
     
     /**
      * Adiciona o painel Seções da Home
@@ -94,11 +94,11 @@ function tm_customizer_sections( $wp_customize ) {
     );
 
     $sortable_sections = get_theme_mod( 'tm_sections_order' );
-    if( ! isset( $sortable_sections ) || empty( $sortable_sections ) ){
-    //if( isset( $sortable_sections ) || !empty( $sortable_sections ) ){
-        set_theme_mod( 'tm_sections_order', implode(',', array_keys( $default_sections ) ) );
+    if ( ! isset( $sortable_sections ) || empty( $sortable_sections ) ) {
+    //if ( isset( $sortable_sections ) || ! empty( $sortable_sections ) ) {
+        set_theme_mod( 'tm_sections_order', implode( ',', array_keys( $default_sections ) ) );
     }
-    $sortable_sections = explode(',', $sortable_sections );
+    $sortable_sections = explode( ',', $sortable_sections );
 
     foreach( $sortable_sections as $sortable_section ){
         $wp_customize->add_section( $sortable_section, array(
@@ -1545,9 +1545,59 @@ function tm_customizer_sections( $wp_customize ) {
     );
 
     /*
+     * Heading Title
+     */
+    $wp_customize->add_section( 'tm_heading_title', array(
+        'title'       => esc_html__( 'Cabeçalhos de Título', 'tim-maia' ),
+        'panel'       => 'tm_panel_general_settings',
+        'priority'    => 1
+    ) );
+
+    /**
+     * Heading Title > Background Color
+     */
+    $wp_customize->add_setting(
+        'tm_heading_background_color', array(
+            'default'   => '',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_heading_background_color_control',
+            array(
+                'settings' => 'tm_heading_background_color',
+                'label'    => esc_html__( 'Cor de fundo do cabeçalho de título', 'tim-maia' ),
+                'section'  => 'tm_heading_title'
+            )
+        )
+    );
+
+    /**
+     * Heading Title > Color
+     */
+    $wp_customize->add_setting(
+        'tm_heading_color', array(
+            'default'   => '#888888',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_heading_color_control',
+            array(
+                'settings' => 'tm_heading_color',
+                'label'    => esc_html__( 'Cor dos títulos', 'tim-maia' ),
+                'section'  => 'tm_heading_title'
+            )
+        )
+    );
+
+    /*
      * Footer
      */
-
     $wp_customize->add_section( 'tm_footer', array(
         'title'       => esc_html__( 'Rodapé', 'tim-maia' ),
         'panel'       => 'tm_panel_general_settings',
@@ -1640,7 +1690,7 @@ function tm_customizer_sections( $wp_customize ) {
 
 }
 
-add_action( 'customize_register', 'tm_customizer_sections' );
+add_action( 'customize_register', 'tm_customize_register' );
 
 
 /**
