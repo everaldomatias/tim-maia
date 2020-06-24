@@ -40,7 +40,9 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-	</header><!-- #masthead -->
+	</header><!-- /#masthead -->
+
+	<?php do_action( 'after-header' ); ?>
 
 	<div class="site-content-contain">
 		<div id="content" class="site-content">

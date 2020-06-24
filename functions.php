@@ -3,13 +3,16 @@
 $get_template_directory = get_template_directory();
 
 // Register Custom Navigation Walker
-require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+require_once $get_template_directory . '/inc/class-wp-bootstrap-navwalker.php';
 
 // Class Custom Post Type
-require_once get_template_directory() . '/inc/class-post-type.php';
+require_once $get_template_directory . '/inc/class-post-type.php';
 
 // Custom Post Types
-require_once get_template_directory() . '/inc/post-types.php';
+require_once $get_template_directory . '/inc/post-types.php';
+
+// Template Functions
+require_once $get_template_directory . '/inc/template-functions.php';
 
 if ( class_exists( 'Kirki' ) ) {
 	//require 'inc/kirki.php';
@@ -17,8 +20,8 @@ if ( class_exists( 'Kirki' ) ) {
 
 require_once $get_template_directory . '/inc/customizer/customizer.php';
 
-require_once get_template_directory() . '/inc/strings-default.php';
-require_once get_template_directory() . '/inc/hooks.php';
+require_once $get_template_directory . '/inc/strings-default.php';
+require_once $get_template_directory . '/inc/hooks.php';
 
 /*
  * Let WordPress manage the document title.
