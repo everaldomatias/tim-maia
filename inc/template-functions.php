@@ -13,7 +13,7 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
         if ( ! is_front_page() ) {
 
             // Returns background image
-            if ( is_page() || is_single() && has_post_thumbnail() ) {
+            if ( has_post_thumbnail( get_the_ID() ) && is_page() || is_single() ) {
 
                 $tm_heading_background_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 
