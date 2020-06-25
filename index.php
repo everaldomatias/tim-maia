@@ -87,9 +87,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<div class="col-sm-3" id="sidebar">
-				<?php dynamic_sidebar( 'sidebar-main' ); ?>
-			</div><!-- /#sidebar -->
+			<?php get_sidebar(); ?>
 
 		</div><!-- /.row -->
 		
