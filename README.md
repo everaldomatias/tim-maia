@@ -1,7 +1,7 @@
 # Tim Maia #
 
-* [Demo](http://dev.eve14.com.br/)
-* [GitLab](https://gitlab.com/everaldomatias/tim-maia)
+* [Demo](https://timmaia.everaldo.dev/)
+* [Github](https://github.com/everaldomatias/tim-maia/)
 
 ## Project Description ##
 
@@ -15,9 +15,9 @@ Send the folder "tim-maia" to the default themes folder from WordPress `wp-conte
 
 Loading..
 
-## Plugins Support Dependences ##
+## Plugins Dependences ##
 
-* [Kirki](https://br.wordpress.org/plugins/kirki/)
+Loading..
 
 ## Plugins Support ##
 
@@ -34,12 +34,13 @@ Loading..
 * [Sass](http://sass-lang.com/)
 * [Grunt.js](http://gruntjs.com/)
 * [EditorConfig](http://editorconfig.org/)
+* [WordPress](https://developer.wordpress.org/reference/)
 
 ## Bugs and Sugestions ##
 
 The Tim Maia is an **Open Source** project. Anyone can (and should) help us to improve it.
 
-Report bugs or do suggestions using the [Issues/Project Forum](https://gitlab.com/everaldomatias/tim-maia/issues)
+Report bugs or do suggestions using the [Issues/Project Forum](https://github.com/everaldomatias/tim-maia/issues)
 
 ## Credits ##
 
@@ -54,6 +55,9 @@ Report bugs or do suggestions using the [Issues/Project Forum](https://gitlab.co
 To contribute, just click on the **Fork** button, create a *Branch*, improve the code and send it with a **Pull Request**.
 
 ## Changelog ##
+
+2.0.0
+[2020] Em andamento...
 
 1.0.3
 [19/09/2019] Adiciona tipo de post Produtos
