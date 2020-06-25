@@ -28,6 +28,13 @@
         });
     });
 
+    // Body
+    wp.customize('tm_general_settings_sections_background_color', function (value) {
+        value.bind(function (newval) {
+            $('body.home').css('background-color', newval);
+        });
+    });
+
     // Menu Fixed & Menu Footer
     wp.customize('tm_fixed_background_color', function (value) {
         value.bind(function (newval) {
@@ -108,10 +115,6 @@
             $('.heading-title .container').css('text-align', newval);
         });
     });
-
-
-
-    
 
     // Footer
     wp.customize('tm_footer_background_color', function (value) {

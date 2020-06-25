@@ -65,4 +65,4 @@
 
     </div><!-- /#section-blog -->
 
-<?php endif; ?>
+<?php endif;

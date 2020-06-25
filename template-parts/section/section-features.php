@@ -6,8 +6,6 @@
 
     <div id="section-features">
         
-        <div class="overlay"></div>
-        
         <div class="container text-center">
             <h2><?php echo apply_filters( 'the_title', $tm_title_section_features ); ?></h2>
         </div><!-- /.container -->
@@ -48,7 +46,6 @@
             } ?>
 
         </div><!-- /.container.container-features -->
-        
 
         <?php
         $tm_features_button = get_theme_mod( 'tm_features_button' );
@@ -67,4 +64,4 @@
 
     </div><!-- /#section-features -->
 
-<?php endif; ?>
+<?php endif;

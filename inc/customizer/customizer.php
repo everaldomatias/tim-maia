@@ -1380,6 +1380,27 @@ function tm_customize_register( $wp_customize ) {
     );
 
     /**
+     * Background color to sections home
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_sections_background_color', array(
+            'default'   => '#508991',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_general_settings_sections_background_color_control',
+            array(
+                'settings' => 'tm_general_settings_sections_background_color',
+                'label'    => esc_html__( 'Cor de fundo das seções da home', 'tim-maia' ),
+                'section'  => 'tm_section_general_settings_colors'
+            )
+        )
+    );
+
+    /**
      * Cor primária
      */
     $wp_customize->add_setting(

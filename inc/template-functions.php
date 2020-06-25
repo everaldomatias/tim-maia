@@ -65,6 +65,14 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
                             $blog_title = get_the_title( get_option( 'page_for_posts', true ) );
                             echo apply_filters( 'the_title', $blog_title );
 
+                        } elseif( is_category() ) {
+
+                            echo single_term_title( '', false );
+                        
+                        } elseif ( is_woocommerce_activated() && is_shop() ) {
+
+                            woocommerce_page_title();
+
                         } elseif ( is_archive() ) {
 
                             the_archive_title();

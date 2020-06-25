@@ -1,18 +1,25 @@
-<?php $tm_use_section_about = get_theme_mod( 'tm_use_section_about', '1' ); ?>
+<?php $tm_use_section_about = get_theme_mod( 'tm_use_section_about', '1' );
 
-<?php if ( $tm_use_section_about ) : ?>
+if ( $tm_use_section_about ) :
 
-    <?php $tm_title_section_about = get_theme_mod( 'tm_title_section_about' ); ?>
-    <?php $tm_description_section_about = get_theme_mod( 'tm_description_section_about' ); ?>
+    $tm_title_section_about = get_theme_mod( 'tm_title_section_about' );
+    $tm_description_section_about = get_theme_mod( 'tm_description_section_about' );
 
-    <?php
     // Get image background
-    $tm_background_section_about = get_theme_mod( 'tm_background_section_about' ); ?>
+    $tm_background_section_about = get_theme_mod( 'tm_background_section_about' );
+    
+    if ( $tm_background_section_about ) : ?>
 
-    <div id="section-about" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_background_section_about ); ?>">
+        <div id="section-about" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_background_section_about ); ?>">
         
-        <div class="overlay"></div>
-        
+            <div class="overlay"></div><!-- /.overlay -->
+
+    <?php else : ?>
+
+        <div id="section-about">
+
+    <?php endif; ?>
+
         <div class="container text-center">
             <h2><?php echo apply_filters( 'the_title', $tm_title_section_about ); ?></h2>
             <?php echo apply_filters( 'the_content', $tm_description_section_about ); ?>
@@ -40,4 +47,4 @@
 
     </div><!-- /#section-about -->
 
-<?php endif; ?>
+<?php endif;

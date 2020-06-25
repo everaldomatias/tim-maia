@@ -10,8 +10,13 @@ function tm_customizer_output_css() {
         <style type="text/css">
 
             /* Body */
+            body {
+                background-color: <?php echo get_theme_mod( 'tm_general_settings_background_color', '#f1f1f1' ); ?>;
+            }
+
+            /* Body -> Home */
             body.home {
-                background-color: <?php echo get_theme_mod( 'tm_general_settings_background_color', '#DDDDDD' ); ?>;
+                background-color: <?php echo get_theme_mod( 'tm_general_settings_sections_background_color', '#508991' ); ?>;
             }
 
             /* Menu Fixed & Menu Footer */
