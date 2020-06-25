@@ -1554,6 +1554,29 @@ function tm_customize_register( $wp_customize ) {
     ) );
 
     /**
+     * Heading Title > Background Image Default
+     */
+    $wp_customize->add_setting(
+        'tm_heading_background_image_default', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            //'transport'       => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'tm_heading_background_image_default_control',
+            array(
+                'settings'  => 'tm_heading_background_image_default',
+                'label'     => esc_html__( 'Imagem de fundo dos cabeçalhos de título', 'tim-maia' ),
+                'description' => esc_html__( 'Essa imagem será usada nas páginas de listagens ou quando a página ou post não possuir uma imagem destacada definida.', 'tim-maia' ),
+                'section'   => 'tm_heading_title'
+            )
+        )
+    );
+
+    /**
      * Heading Title > Background Color
      */
     $wp_customize->add_setting(
@@ -1579,8 +1602,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_heading_color', array(
-            'default'   => '#888888',
-            'transport' => 'postMessage'
+            'default'   => '#888888'
         )
     );
     $wp_customize->add_control(
@@ -1591,6 +1613,33 @@ function tm_customize_register( $wp_customize ) {
                 'settings' => 'tm_heading_color',
                 'label'    => esc_html__( 'Cor dos títulos', 'tim-maia' ),
                 'section'  => 'tm_heading_title'
+            )
+        )
+    );
+
+    /**
+     * Heading Title > Alignment
+     */
+    $wp_customize->add_setting(
+        'tm_heading_text_alignment', array(
+            'sanitize_callback' => '',
+            'default'           => 'center',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_heading_text_alignment_control',
+            array(
+                'label'          => __( 'Alinhamento do texto', 'tim-maia' ),
+                'section'        => 'tm_heading_title',
+                'settings'       => 'tm_heading_text_alignment',
+                'type'           => 'select',
+                'choices'  => array(
+                    'center' => __( 'Centralizado', 'tim-maia' ),
+                    'left'   => __( 'Esquerdo', 'tim-maia' ),
+                    'right'  => __( 'Direito', 'tim-maia' ),
+                )
             )
         )
     );

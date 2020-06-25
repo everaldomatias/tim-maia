@@ -1,73 +1,87 @@
 <?php
 
-function tm_title_pages() {
+if ( ! function_exists( 'tm_title_pages' ) ) {
 
     /**
      * 
-     * @todo create models to Heading Title: 
-     * @todo background image (image default or customizable by pages and singles)
-     * @todo align text
+     * 
      * 
      */
+    function tm_title_pages() {
 
-    if ( ! is_front_page() ) {
+        // Not print the heading title on front page
+        if ( ! is_front_page() ) {
 
-        // Returns background image
-        $heading_background_image = get_theme_mod( 'heading_background_image' );
+            // Returns background image
+            if ( is_page() || is_single() && has_post_thumbnail() ) {
 
-        // Returns background color
-        $tm_heading_background_color = get_theme_mod( 'tm_heading_background_color' );
+                $tm_heading_background_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 
-        if ( $heading_background_image ) {
+            } else {
 
-            echo '<section class="heading-title heading-background-image parallax-window" data-image-src="' . esc_url( $heading_background_image ) . '">';
+                $tm_heading_background_image = get_theme_mod( 'tm_heading_background_image_default' );
 
-        } elseif ( $tm_heading_background_color ) {
+            }
 
-            echo '<section class="heading-title heading-background-color">';
+            // Returns background color
+            $tm_heading_background_color = get_theme_mod( 'tm_heading_background_color' );
 
-        } else {
+            if ( $tm_heading_background_image ) {
 
-            echo '<section class="heading-title heading-default">';
+                echo '<section class="heading-title heading-background-image parallax-window" data-parallax="scroll" data-image-src="' . esc_url( $tm_heading_background_image ) . '">';
+
+            } elseif ( $tm_heading_background_color ) {
+
+                echo '<section class="heading-title heading-background-color">';
+
+            } else {
+
+                echo '<section class="heading-title heading-default">';
+
+            }
+
+                echo '<div class="overlay"></div><!-- /.overlay -->';
+
+                // Returns the text alignment
+                $tm_heading_text_alignment = get_theme_mod( 'tm_heading_text_alignment' );
+                
+                echo '<div class="container text-align-' . esc_attr( $tm_heading_text_alignment ) . '">';
+
+                    echo '<h1>';
+
+                        if ( is_page() || is_single() ) {
+                            
+                            the_title();
+
+                        } elseif ( is_home() ) {
+
+                            /**
+                             * 
+                             * Blog title
+                             * 
+                             * @link https://codex.wordpress.org/Conditional_Tags#The_Blog_Page
+                             * 
+                             */
+                            $blog_title = get_the_title( get_option( 'page_for_posts', true ) );
+                            echo apply_filters( 'the_title', $blog_title );
+
+                        } elseif ( is_archive() ) {
+
+                            the_archive_title();
+
+                        } else {
+
+                            echo '@todo';
+
+                        }
+
+                    echo '</h1>';
+
+                echo '</div><!-- /.container -->';
+
+            echo '</section><!-- /.heading-title -->';
 
         }
-
-            echo '<div class="overlay"></div><!-- /.overlay -->';
-
-            // Returns the text alignment
-            $heading_text_alignment = get_theme_mod( 'heading_text_alignment', 'center' );
-            
-            echo '<div class="container text-align-' . esc_attr( $heading_text_alignment ) . '">';
-
-                echo '<h1>';
-
-                    if ( is_page() || is_single() ) {
-                        
-                        the_title();
-
-                    } elseif ( is_home() ) {
-
-                        /**
-                         * 
-                         * Blog title
-                         * 
-                         * @link https://codex.wordpress.org/Conditional_Tags#The_Blog_Page
-                         * 
-                         */
-                        $blog_title = get_the_title( get_option( 'page_for_posts', true ) );
-                        echo apply_filters( 'the_title', $blog_title );
-
-                    } else {
-
-                        echo 'Todo';
-
-                    }
-
-                echo '</h1>';
-
-            echo '</div><!-- /.container -->';
-
-        echo '</section><!-- /.heading-title -->';
 
     }
 

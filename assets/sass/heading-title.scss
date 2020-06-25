@@ -1,6 +1,10 @@
 .heading-title {
     margin-top: 52.5px;
     padding: 7.5% 15px 7.5%;
+    &.parallax-window {
+        height: auto !important;
+        min-height: auto;
+    }
     h1 {
         margin-bottom: 0;
     }

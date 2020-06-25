@@ -103,6 +103,12 @@
             $('.heading-title').css('color', newval);
         });
     });
+    wp.customize('tm_heading_text_alignment', function (value) {
+        value.bind(function (newval) {
+            $('.heading-title .container').css('text-align', newval);
+        });
+    });
+
 
 
     
