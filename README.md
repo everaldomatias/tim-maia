@@ -54,6 +54,10 @@ Report bugs or do suggestions using the [Issues/Project Forum](https://github.co
 
 To contribute, just click on the **Fork** button, create a *Branch*, improve the code and send it with a **Pull Request**.
 
+## TODO
+
+- 404 page
+
 ## Changelog ##
 
 2.0.0

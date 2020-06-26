@@ -254,6 +254,33 @@ function tm_background_thumbnail( $size = 'thumbnail' ) {
 
 }
 
+function tm_background_first_image_attached_url( $size = 'thumbnail' ) {
+
+    global $post;
+
+    $image = get_posts( [
+        'numberposts'    => 1,
+        'post_type'      => 'attachment',
+        'post_mime_type' => 'image',
+        'post_parent'    => $post->ID,
+    ] );
+    
+    if ( count( $image ) == 1 ) {
+
+        $image = $image[0];
+        
+        $image = wp_get_attachment_image_src( $image->ID, $size );
+        
+        return esc_url( $image[0] );
+
+    } else {
+
+        return null;
+
+    }
+
+}
+
 /**
  *
  * Define valores e configurações iniciais ao ativar o tema.
@@ -544,5 +571,30 @@ function tm_print_comments_counter() {
         </span><!-- /.comments -->
 
     <?php endif;
+
+}
+
+if ( ! function_exists( 'tm_archive_title_filter' ) ) {
+
+    /**
+     * 
+     * Filter archive titles
+     * 
+     * @see https://developer.wordpress.org/reference/functions/get_the_archive_title/
+     * 
+     */
+    function tm_archive_title_filter( $title ) {
+
+        if ( is_post_type_archive( 'portfolio' ) ) {
+
+            $portfolio = get_post_type_object( 'portfolio' );
+            $title = $portfolio->labels->singular_name;
+
+        }
+
+        return $title;
+
+    }
+    add_filter( 'get_the_archive_title', 'tm_archive_title_filter' );
 
 }

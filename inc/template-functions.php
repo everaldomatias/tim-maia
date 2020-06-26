@@ -77,6 +77,10 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
 
                             the_archive_title();
 
+                        } elseif ( is_post_type_archive() ) {
+
+                            echo 'cpt';
+                            
                         } else {
 
                             echo '@todo';

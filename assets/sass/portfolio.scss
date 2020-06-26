@@ -1,0 +1,77 @@
+body.post-type-archive-portfolio {
+    .container.loop {
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 100px;
+        padding-top: 100px;
+        .each {
+            background-color: #cccccc;
+            background-blend-mode: multiply;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            flex-basis: calc( 33.333333% - 30px );
+            margin: 15px;
+            min-height: 350px;
+            overflow: hidden;
+            text-align: center;
+            padding: 0;
+            position: relative;
+            @include transition( all .45s ease-in-out );
+            & > a {
+                color: $white;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                z-index: 9999;
+            }
+            .inner {
+                bottom: -15px;
+                height: auto;
+                opacity: 0.9;
+                padding: 15px;
+                position: absolute;
+                @include transition( all .3s ease-in-out );
+                width: 100%;
+                h2 {
+                    margin-bottom: 0;
+                    padding-bottom: 15px;
+                    padding-top: 10px;
+                    position: relative;
+                }
+                .cat {
+                    opacity: 0.8;
+                    a {
+                        display: inherit;
+                    }
+                }
+                .meta {
+                    min-height: 25px;
+                    @include transition( all .45s ease-in-out );
+                    opacity: 0;
+                    @media ( max-width: 768px ) {
+                        margin-bottom: 15px;
+                        margin-top: -15px;
+                        opacity: 0.8;
+                    }
+                }
+                @media ( max-width: 768px ) {
+                    bottom: 0px;
+                }
+            }
+            &:hover {
+                background-color: #333333;
+                .inner {
+                    bottom: 0px;
+                    .meta {
+                        margin-bottom: 15px;
+                        margin-top: -15px;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
