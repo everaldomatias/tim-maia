@@ -6,7 +6,7 @@ $get_template_directory = get_template_directory();
 require_once $get_template_directory . '/inc/class-wp-bootstrap-navwalker.php';
 
 // Class Custom Post Type
-require_once $get_template_directory . '/inc/class-post-type.php';
+require_once $get_template_directory . '/inc/CPT.php';
 
 // Custom Post Types
 require_once $get_template_directory . '/inc/post-types.php';
