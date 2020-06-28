@@ -2,27 +2,45 @@
 get_header(); ?>
 <main>
 
-	<div class="container loop">
+	<div class="container loopx">
+
+        <?php $terms = get_terms( 'portfolio_type' ); ?>
+            <?php if( $terms ) { 
+            ?>
+
+            <ul id="types" class="filter clearfix">
+                <li><a href="#" class="active" data-filter="*"><span>Todos</span></a></li>
+                <?php foreach( $terms as $term ){
+                    echo "<li><a href='#' data-filter='.$term->slug'><span>$term->name</span></a></li>";
+                } ?>
+            </ul><!-- /types -->
+
+            <?php } ?>
 
         <?php if ( have_posts() ) : ?>
 
+        <div id="cpt-wrap" class="clearfix filterable-cpt  grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
+        <div class="cpt-content">
+
             <?php while ( have_posts() ) : the_post(); ?>
+
+                <?php $terms = get_the_terms( get_the_ID(), 'portfolio_type' ); ?>
 
                 <?php if ( has_post_thumbnail() ) : ?>
 
-                    <div <?php tm_background_thumbnail( 'full' ); ?> class="each">
+                    <div <?php tm_background_thumbnail( 'full' ); ?> class="each grid-item cpt-item <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
                 
                 <?php elseif ( $bg = tm_background_first_image_attached_url( 'full' ) ) : ?>
 
-                    <div style="background-image: url(' <?php echo $bg; ?> ')" class="each">
+                    <div style="background-image: url(' <?php echo $bg; ?> ')" class="each grid-item cpt-item <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
                 
                 <?php else : ?>
 
-                    <div class="each">
+                    <div class="each grid-item cpt-item <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
 
                 <?php endif; ?>
 
-                    <a href="<?php the_permalink(); ?>">
+                    <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                         <div class="inner">
                             
                             <span class="cat"><?php the_category( ' • ' ); ?></span><!-- /.cat -->
@@ -34,6 +52,9 @@ get_header(); ?>
                 </div><!-- /.each -->
 
             <?php endwhile; ?>
+
+            </div><!-- cpt-content -->
+        </div><!-- cpt-wrap -->
 
         <?php else : ?>
 

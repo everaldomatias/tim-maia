@@ -1,4 +1,9 @@
 body.post-type-archive-portfolio {
+
+    ul#types {
+        list-style: none;
+    }
+
     .container.loop {
         align-items: stretch;
         display: flex;

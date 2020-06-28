@@ -56,3 +56,28 @@ jQuery(document).ready(function() {
 	});
 
 });
+
+jQuery(document).ready(function ($) {
+
+	var $grid = $('.grid').isotope({
+		itemSelector: '.grid-item',
+		percentPosition: true,
+		layoutMode: 'fitRows'
+	});
+
+	// Layout Isotope after each image loads
+	$grid.imagesLoaded().progress(function () {
+		$grid.isotope('layout');
+	});
+
+	// Filter items on button click
+	$('#types').on('click', 'a', function () {
+		var filterValue = $(this).attr('data-filter');
+
+		$('#cpt-wrap').isotope({ filter: filterValue });
+
+		$(this).parent('div').find('a').removeClass('active');
+		$(this).addClass('active');
+	});
+
+});
