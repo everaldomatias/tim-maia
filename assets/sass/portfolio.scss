@@ -1,4 +1,5 @@
-body.post-type-archive-portfolio {
+body.post-type-archive-portfolio,
+body.home {
 
     .container.loop {
         max-width: 90%;
@@ -102,5 +103,18 @@ body.post-type-archive-portfolio {
                 }
             }
         }
+    }
+}
+
+#section-portfolio {
+    padding-bottom: 100px;
+    padding-top: 100px;
+    > .container {
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+    .container.loop {
+        padding-bottom: 0;
     }
 }

@@ -48,6 +48,12 @@ function tm_customizer_output_css() {
                 color: <?php echo get_theme_mod( 'tm_color_section_features', '#FFFFFF' ); ?>;
             }
 
+            /* Section Portfolio */
+            #section-portfolio {
+                background-color: <?php echo get_theme_mod( 'tm_background_color_section_portfolio', '#222222' ); ?>;
+                color: <?php echo get_theme_mod( 'tm_color_section_portfolio', '#FFFFFF' ); ?>;
+            }
+
             /* Section Blog */
             #section-blog {
                 background-color: <?php echo get_theme_mod( 'tm_background_color_section_blog', '#333333' ); ?>;

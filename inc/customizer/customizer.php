@@ -79,6 +79,10 @@ function tm_customize_register( $wp_customize ) {
             'title'       => esc_html__( 'Recursos', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir recursos do seu produto/serviço na Home do site.', 'tim-maia' ),
         ),
+        'tm_section_portfolio' => array (
+            'title'       => esc_html__( 'Portfólio', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para exibir o portfólio.', 'tim-maia' ),
+        ),
         'tm_section_blog' => array (
             'title'       => esc_html__( 'Blog', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir os últimos posts do blog.', 'tim-maia' ),
@@ -828,6 +832,86 @@ function tm_customize_register( $wp_customize ) {
                     'placeholder' => __( home_url() . '/features' ),
                 ),
                 'section'  => 'tm_section_features',
+            )
+        )
+    );
+
+    /**
+     * 
+     * Section Portfolio
+     * 
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_portfolio', array(
+            'default'           => '1',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_portfolio_control',
+            array(
+                'settings' => 'tm_use_section_portfolio',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Portfólio?', 'tim-maia' ),
+                'section'  => 'tm_section_portfolio'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_color_section_portfolio', array(
+            'default'   => '#FFFFFF',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_color_section_portfolio_control',
+            array(
+                'settings' => 'tm_color_section_portfolio',
+                'label'    => esc_html__( 'Cor do texto da seção', 'tim-maia' ),
+                'section'  => 'tm_section_portfolio'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_background_color_section_portfolio', array(
+            'default'   => '#222222',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_background_color_section_portfolio_control',
+            array(
+                'settings' => 'tm_background_color_section_portfolio',
+                'label'    => esc_html__( 'Cor de fundo da seção', 'tim-maia' ),
+                'section'  => 'tm_section_portfolio'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_portfolio_button', array(
+            'default'           => esc_html__( 'Veja mais!', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_portfolio_button_control',
+            array(
+                'settings'    => 'tm_portfolio_button',
+                'type'        => 'text',
+                'label'       => esc_html__( 'Botão', 'tim-maia' ),
+                'description' => esc_html__( 'Título do botão para acessar o Portfólio.', 'tim-maia' ),
+                'section'     => 'tm_section_portfolio'
             )
         )
     );

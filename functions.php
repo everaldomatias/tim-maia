@@ -128,7 +128,9 @@ function model_scripts() {
 	// Grunt main file with Bootstrap and others libs.
     wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 
-    if ( is_post_type_archive( 'portfolio' ) ) {
+    $tm_use_section_portfolio = get_theme_mod( 'tm_use_section_portfolio', '0' );
+    
+    if ( $tm_use_section_portfolio || is_post_type_archive( 'portfolio' ) ) {
 
         wp_enqueue_script( 'isotope', $template_url . '/assets/js/libs/isotope.pkgd.min.js', array( 'jquery', 'imagesloaded' ), null, true );
         
@@ -469,6 +471,10 @@ if ( ! function_exists( 'tm_get_sections' ) ):
             
             case 'tm_section_action':
                 $output .= tm_load_template_part( 'template-parts/section/section-action' );
+                break;
+
+            case 'tm_section_portfolio':
+                $output .= tm_load_template_part( 'template-parts/section/section-portfolio' );
                 break;
 
             case 'tm_section_features':

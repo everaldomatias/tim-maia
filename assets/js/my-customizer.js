@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
             // Important! Make sure to trigger change event so Customizer knows it has to save the field
             $('#' + panelSectionHidden).find('.customize-control-text input').trigger('change');
 
-            console.log(inputValues);
+            //console.log(inputValues);
         }
 
     });

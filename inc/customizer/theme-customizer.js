@@ -73,6 +73,18 @@
         });
     });
 
+    // Portfolio
+    wp.customize('tm_color_section_portfolio', function (value) {
+        value.bind(function (newval) {
+            $('#section-portfolio').css('color', newval);
+        });
+    });
+    wp.customize('tm_background_color_section_portfolio', function (value) {
+        value.bind(function (newval) {
+            $('#section-portfolio').css('background-color', newval);
+        });
+    });
+
     // Blog
     wp.customize('tm_color_section_blog', function (value) {
         value.bind(function (newval) {
