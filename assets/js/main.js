@@ -60,9 +60,9 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function ($) {
 
 	var $grid = $('.grid').isotope({
+		layoutMode: 'fitRows',
 		itemSelector: '.grid-item',
-		percentPosition: true,
-		layoutMode: 'fitRows'
+		percentPosition: true
 	});
 
 	// Layout Isotope after each image loads
@@ -78,6 +78,7 @@ jQuery(document).ready(function ($) {
 
 		$(this).parent('div').find('a').removeClass('active');
 		$(this).addClass('active');
+		return false;
 	});
 
 });

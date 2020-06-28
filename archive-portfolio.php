@@ -2,7 +2,7 @@
 get_header(); ?>
 <main>
 
-	<div class="container loopx">
+	<div class="container loop">
 
         <?php $terms = get_terms( 'portfolio_type' ); ?>
             <?php if( $terms ) { 
