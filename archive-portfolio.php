@@ -22,21 +22,41 @@ get_header(); ?>
         <div id="cpt-wrap" class="clearfix filterable-cpt  grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
         <div class="cpt-content">
 
+            <div class="grid-sizer"></div>
+
+            <?php $count = 0; ?>
+
             <?php while ( have_posts() ) : the_post(); ?>
+
+                <?php
+                $count++;
+                $class = '';
+
+                if ( $count == 2 ) {
+                    $class = 'each grid-item grid-item--width2 cpt-item ';
+                } elseif( $count == 4 ) {
+                    $class = 'each grid-item grid-item--width2 cpt-item ';
+                    $count == 0;
+                } else {
+                    $class = 'each grid-item cpt-item ';
+                }
+                
+                
+                ?>
 
                 <?php $terms = get_the_terms( get_the_ID(), 'portfolio_type' ); ?>
 
                 <?php if ( has_post_thumbnail() ) : ?>
 
-                    <div <?php tm_background_thumbnail( 'full' ); ?> class="each grid-item cpt-item <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
+                    <div <?php tm_background_thumbnail( 'full' ); ?> class="<?php echo $class; ?> <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
                 
                 <?php elseif ( $bg = tm_background_first_image_attached_url( 'full' ) ) : ?>
 
-                    <div style="background-image: url(' <?php echo $bg; ?> ')" class="each grid-item cpt-item <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
+                    <div style="background-image: url(' <?php echo $bg; ?> ')" class="<?php echo $class; ?> <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
                 
                 <?php else : ?>
 
-                    <div class="each grid-item cpt-item <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
+                    <div class="<?php echo $class; ?> <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
 
                 <?php endif; ?>
 

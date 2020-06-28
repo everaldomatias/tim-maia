@@ -62,7 +62,11 @@ jQuery(document).ready(function ($) {
 	var $grid = $('.grid').isotope({
 		layoutMode: 'fitRows',
 		itemSelector: '.grid-item',
-		percentPosition: true
+		percentPosition: true,
+		masonry: {
+			// use element for option
+			columnWidth: '.grid-sizer'
+		}
 	});
 
 	// Layout Isotope after each image loads
