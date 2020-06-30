@@ -37,6 +37,11 @@ function tm_customizer_output_css() {
             #section-about {
                 color: <?php echo get_theme_mod( 'tm_color_section_about', '#FFFFFF' ); ?>;
             }
+            #section-about .buttons a.btn,
+            #section-about .buttons a.btn:hover {
+                color: <?php echo get_theme_mod( 'tm_color_section_about', '#FFFFFF' ); ?>;
+                border-color: <?php echo get_theme_mod( 'tm_color_section_about', '#FFFFFF' ); ?>;
+            }
 
             /* Section Action */
             #section-action {
@@ -47,16 +52,32 @@ function tm_customizer_output_css() {
             #section-features {
                 color: <?php echo get_theme_mod( 'tm_color_section_features', '#FFFFFF' ); ?>;
             }
+            #section-features .buttons a.btn,
+            #section-features .buttons a.btn:hover {
+                color: <?php echo get_theme_mod( 'tm_color_section_features', '#FFFFFF' ); ?>;
+            }
 
             /* Section Portfolio */
             #section-portfolio {
                 background-color: <?php echo get_theme_mod( 'tm_background_color_section_portfolio', '#222222' ); ?>;
                 color: <?php echo get_theme_mod( 'tm_color_section_portfolio', '#FFFFFF' ); ?>;
             }
+            #section-portfolio ul#types li a,
+            #section-portfolio ul#types li a:hover {
+                color: <?php echo get_theme_mod( 'tm_color_section_portfolio', '#FFFFFF' ); ?>;
+            }
+            #section-portfolio .buttons a.btn,
+            #section-portfolio .buttons a.btn:hover {
+                color: <?php echo get_theme_mod( 'tm_color_section_portfolio', '#FFFFFF' ); ?>;
+            }
 
             /* Section Blog */
             #section-blog {
                 background-color: <?php echo get_theme_mod( 'tm_background_color_section_blog', '#333333' ); ?>;
+                color: <?php echo get_theme_mod( 'tm_color_section_blog', '#FFFFFF' ); ?>;
+            }
+            #section-blog .buttons a.btn,
+            #section-blog .buttons a.btn:hover {
                 color: <?php echo get_theme_mod( 'tm_color_section_blog', '#FFFFFF' ); ?>;
             }
 

@@ -39,7 +39,7 @@
 
                 <?php if ( $portfolio->have_posts() ) : ?>
 
-                <div id="cpt-wrap" class="clearfix filterable-cpt  grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
+                <div id="cpt-wrap" class="clearfix filterable-cpt grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
                 <div class="cpt-content">
 
                     <div class="grid-sizer"></div>

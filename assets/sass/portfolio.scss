@@ -20,12 +20,21 @@ body.home {
                 }
             }
         }
+        #cpt-wrap {
+            @media ( max-width: 768px ) {
+                height: auto !important;
+            }
+        }
         /* fluid 4 columns */
         .grid-sizer,
         .grid-item {
             width: 25%;
             @media ( max-width: 768px ) {
-                width: 50%;
+                float: left !important;
+                left: 0 !important;
+                position: relative !important;
+                top: 0 !important;
+                width: 50% !important;
             }
         }
         
@@ -33,7 +42,11 @@ body.home {
         .grid-item--width2 {
             width: 50%;
             @media ( max-width: 768px ) {
-                width: 50%;
+                float: left !important;
+                left: 0 !important;
+                position: relative !important;
+                top: 0 !important;
+                width: 50% !important;
             }
         }
         .each {
@@ -116,5 +129,12 @@ body.home {
     }
     .container.loop {
         padding-bottom: 0;
+        @media ( max-width: 768px ) {
+            padding-left: 0;
+            padding-right: 0;
+        }        
+    }
+    .buttons {
+        margin-top: 30px;
     }
 }
