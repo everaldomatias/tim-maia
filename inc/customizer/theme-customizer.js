@@ -28,7 +28,7 @@
         });
     });
 
-    // Body
+    // Body Home
     wp.customize('tm_general_settings_sections_background_color', function (value) {
         value.bind(function (newval) {
             $('body.home').css('background-color', newval);
@@ -49,6 +49,13 @@
             $('.fixed-top a').css('color', newval);
             $('.fixed-top .dropdown-menu a.dropdown-item').css('color', newval);
             $('.footer-menu a').css('color', newval);
+        });
+    });
+
+    // Sections
+    wp.customize('tm_setting_color_section_hero', function (value) {
+        value.bind(function (newval) {
+            $('.section-home').css('max-height', newval);
         });
     });
 

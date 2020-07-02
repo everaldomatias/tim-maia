@@ -33,6 +33,12 @@ function tm_customizer_output_css() {
                 color: <?php echo get_theme_mod( 'tm_fixed_color', '#888888' ); ?>;
             }
 
+            /* Sections */
+            .section-home {
+                min-height: <?php echo get_theme_mod( 'tm_section_general_settings_size_control', '100' ); ?>% !important;
+                /* height: <?php echo get_theme_mod( 'tm_section_general_settings_size_control', '100' ); ?>% !important; */
+            }
+
             /* Section About */
             #section-about {
                 color: <?php echo get_theme_mod( 'tm_color_section_about', '#FFFFFF' ); ?>;

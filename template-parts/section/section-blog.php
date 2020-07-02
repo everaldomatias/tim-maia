@@ -4,7 +4,7 @@
 
     <?php $tm_title_section_blog = get_theme_mod( 'tm_title_section_blog', __( 'Blog!', 'tim-maia' ) ); ?>
 
-    <div id="section-blog">
+    <div id="section-blog" class="section-home">
 
         <div class="overlay"></div>
 

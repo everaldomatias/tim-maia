@@ -5,13 +5,13 @@ $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_sect
 
 if ( $tm_setting_background_section_hero ) : ?>
 
-    <div id="section-hero" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
+    <div id="section-hero" class="parallax-window section-home" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
         
         <div class="overlay"></div><!-- /.overlay -->
 
 <?php else : ?>
 
-    <div id="section-hero">
+    <div id="section-hero section-home">
 
 <?php endif; ?>
 

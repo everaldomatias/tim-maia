@@ -4,7 +4,7 @@
 
     <?php $tm_title_section_features = get_theme_mod( 'tm_title_section_features' ); ?>
 
-    <div id="section-features">
+    <div id="section-features" class="section-home">
         
         <div class="container text-center">
             <h2><?php echo apply_filters( 'the_title', $tm_title_section_features ); ?></h2>

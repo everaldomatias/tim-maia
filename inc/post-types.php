@@ -34,8 +34,9 @@ if ( class_exists( 'CPT' ) ) {
             'all_items'    => __( 'Exibir todos', 'tim-maia' ),
             'search_items' => __( 'Pesquisar tipos', 'tim-maia' ),
             'parent_item'  => __( 'Tipo superior', 'tim-maia' ),
-            'not_found'    => __( 'Nenhum tipo', 'tim-maia' )
-        ]
+            'not_found'    => __( 'Nenhum tipo', 'tim-maia' ),
+        ],
+        'show_in_rest' => true
     ];
     $portfolio->register_taxonomy( [
         'taxonomy_name'      => 'portfolio_type',

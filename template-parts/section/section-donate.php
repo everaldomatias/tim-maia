@@ -10,7 +10,7 @@ if ( $tm_use_section_donate ) :
     
     if ( $tm_background_section_donate ) : ?>
 
-    <div id="section-donate" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_background_section_donate ); ?>">
+    <div id="section-donate" class="parallax-window section-home" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_background_section_donate ); ?>">
         
         <div class="overlay"></div><!-- /.overlay -->
 

@@ -4,7 +4,7 @@
 
     <?php $tm_title_section_portfolio = get_theme_mod( 'tm_title_section_portfolio', __( 'Portfólio', 'tim-maia' ) ); ?>
 
-    <div id="section-portfolio">
+    <div id="section-portfolio" class="section-home">
 
         <div class="overlay"></div>
 

@@ -50,6 +50,10 @@ Report bugs or do suggestions using the [Issues/Project Forum](https://github.co
 
 [bongkarn thanyakij](https://www.pexels.com/@bongkarn-thanyakij-683719?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)
 
+### WordPress Customizer Range Value Control
+
+[WordPress Customizer Range Value Control](https://github.com/soderlind/class-customizer-range-value-control)
+
 ## Contribute to the Project ##
 
 To contribute, just click on the **Fork** button, create a *Branch*, improve the code and send it with a **Pull Request**.
