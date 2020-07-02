@@ -18,26 +18,6 @@ jQuery(document).ready(function() {
 			}, 200);
 		});
 
-	} else {
-
-		height = height / 2;
-		
-		if ( height <= 450 ) {
-			height = 450;
-		}
-
-		jQuery(parallax).css('height', height);
-
-		jQuery(window).on('resize', function () {
-
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(function () {
-
-				jQuery(parallax).css('height', height);
-
-			}, 200);
-		});
-
 	}
 
 	jQuery(function() {
