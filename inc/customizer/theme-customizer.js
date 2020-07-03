@@ -52,13 +52,6 @@
         });
     });
 
-    // Sections
-    wp.customize('tm_setting_color_section_hero', function (value) {
-        value.bind(function (newval) {
-            $('.section-home').css('max-height', newval);
-        });
-    });
-
     // Hero
     wp.customize( 'tm_setting_color_section_hero', function ( value ) {
         value.bind( function ( newval ) {

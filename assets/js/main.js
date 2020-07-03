@@ -6,14 +6,14 @@ jQuery(document).ready(function() {
 
 	if ( jQuery( 'body.home' ).length ) {
 
-		jQuery(parallax).css('height', height);
+		jQuery(parallax).css('min-height', height);
 
 		jQuery(window).on('resize', function () {
 
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(function () {
 
-				jQuery(parallax).css('height', height);
+				jQuery(parallax).css('min-height', height);
 
 			}, 200);
 		});
