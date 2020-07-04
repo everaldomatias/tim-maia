@@ -6,9 +6,68 @@ header.site-header {
 			.navbar-toggler {
 				border: 0 !important;
 				float: right;
+				height: 40px;
+				position: relative;
+				width: 40px;
+				.navbar-toggler-icon {
+					background-color: #333333;
+					border-radius: 10px;
+					height: 3px;
+					left: 10%;
+					position: absolute;
+					width: 80%;
+					&:nth-child(1) {
+						display: none;
+						@include transition( all .1s ease-in-out );
+					}
+					&:nth-child(2) {
+						transform: rotate(45deg);
+						transform-origin: center;
+						@include transition( all .45s ease-in-out );
+					}
+					&:nth-child(3) {
+						transform: rotate(135deg);
+						transform-origin: center;
+						@include transition( all .45s ease-in-out );
+					}
+					&:nth-child(4) {
+						display: none;
+						@include transition( all .1s ease-in-out );
+					}
+				}
 				&:focus {
 					border: 0 !important;
 					outline: 0 !important;	
+				}
+				&.collapsed {
+					.navbar-toggler-icon {
+						background-color: black;
+						border-radius: 10px;
+						height: 3px;
+						left: 10%;
+						position: absolute;
+						width: 80%;
+						&:nth-child(1) {
+							display: block;
+							top: 8px;
+						}
+						&:nth-child(2) {
+							top: 19px;
+							transform: rotate(0deg);
+							transform-origin: center;
+							@include transition( all .45s ease-in-out );
+						}
+						&:nth-child(3) {
+							top: 19px;
+							transform: rotate(0deg);
+							transform-origin: center;
+							@include transition( all .45s ease-in-out );
+						}
+						&:nth-child(4) {
+							display: block;
+							top: 30px;
+						}
+					}
 				}
 			}
 			.navbar-brand {

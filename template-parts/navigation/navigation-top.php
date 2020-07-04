@@ -4,6 +4,9 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseClick" aria-expanded="false" aria-controls="collapseClick">
             <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
