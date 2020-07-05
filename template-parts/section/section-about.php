@@ -16,7 +16,7 @@ if ( $tm_use_section_about ) :
 
     <?php else : ?>
 
-        <div id="section-about">
+        <div id="section-about" class="section-home">
 
     <?php endif; ?>
 

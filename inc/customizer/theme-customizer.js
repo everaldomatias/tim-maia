@@ -35,6 +35,14 @@
         });
     });
 
+    // Sections on Home
+    wp.customize('tm_general_settings_padding', function (value) {
+        value.bind(function (newval) {
+            $('.section-home').css('padding-bottom', newval);
+            $('.section-home').css('padding-top', newval);
+        })
+    })
+
     // Menu Fixed & Menu Footer
     wp.customize('tm_fixed_background_color', function (value) {
         value.bind(function (newval) {

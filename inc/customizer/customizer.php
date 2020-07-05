@@ -1439,36 +1439,35 @@ function tm_customize_register( $wp_customize ) {
     ) );
 
     /**
-     * Adiciona a seção Tamanho das Seções no painel Configurações Gerais
+     * Adiciona a seção Espaçamento das Seções no painel Configurações Gerais
      */
-    // $wp_customize->add_section( 'tm_section_general_settings_size', array(
-    //     'title'       => esc_html__( 'Tamanho das seções da Home', 'tim-maia' ),
-    //     'panel'       => 'tm_panel_general_settings',
-    //     'priority'    => 1
-    // ) );
+    $wp_customize->add_section( 'tm_section_general_settings_padding', array(
+        'title'       => esc_html__( 'Espaçamento das seções da Home', 'tim-maia' ),
+        'panel'       => 'tm_panel_general_settings',
+        'priority'    => 1
+    ) );
 
-    // /**
-    //  * 
-    //  */
-    // $wp_customize->add_setting(
-    //     'tm_section_general_settings_size_control', array(
-    //         'default'   => '100',
-    //         //'transport' => 'postMessage'
-    //     )
-    // );
+    /**
+     * 
+     */
+    $wp_customize->add_setting(
+        'tm_general_settings_padding', array(
+            'default'   => '100',
+        )
+    );
 
-    // $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'tm_section_general_settings_size_control', array(
-    //     'type'     => 'range-value',
-    //     'section'  => 'tm_section_general_settings_size',
-    //     'settings' => 'tm_section_general_settings_size_control',
-    //     'label' => __( 'Tamanho máximo das seções', 'tim-maia' ),
-    //     'input_attrs' => array(
-    //         'min'    => 50,
-    //         'max'    => 100,
-    //         'step'   => 5,
-    //         'suffix' => '%', //optional suffix
-    //     ),
-    // ) ) );
+    $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'tm_general_settings_padding_control', array(
+        'type'     => 'range-value',
+        'section'  => 'tm_section_general_settings_padding',
+        'settings' => 'tm_general_settings_padding',
+        'label' => __( 'Margem das seções na Home', 'tim-maia' ),
+        'input_attrs' => array(
+            'min'    => 30,
+            'max'    => 200,
+            'step'   => 5,
+            'suffix' => 'px', //optional suffix
+        ),
+    ) ) );
 
     /**
      * Adiciona a seção Cores no painel Configurações Gerais
