@@ -4,7 +4,7 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
 
     /**
      * 
-     * 
+     * Print the heading titles
      * 
      */
     function tm_title_pages() {
@@ -43,7 +43,7 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
                 echo '<div class="overlay"></div><!-- /.overlay -->';
 
                 // Returns the text alignment
-                $tm_heading_text_alignment = get_theme_mod( 'tm_heading_text_alignment' );
+                $tm_heading_text_alignment = get_theme_mod( 'tm_heading_text_alignment', 'center' );
                 
                 echo '<div class="container text-align-' . esc_attr( $tm_heading_text_alignment ) . '">';
 

@@ -5,8 +5,11 @@
 	}
 	.entry-content {
 		padding: 60px 0 0;
-
-
+		&.col-sm-9 {
+			@media ( min-width: 768px ) {
+				padding-right: 15px;
+			}
+		}
 		/* Forms */
 		label {
 			display: block
@@ -34,6 +37,7 @@
 	}
 	#comments {
 		margin-bottom: 50px;
+		margin-top: 50px;
 		ol.comment-list {
 			padding-left: 0;
 			li.comment {
