@@ -17,7 +17,6 @@
         }
     }
 }
-
 .blog,
 .category {
 	#content {
@@ -42,7 +41,9 @@
 				@include transition( all .45s ease-in-out );
 				& > a {
 					height: 100%;
+					left: 0;
 					position: absolute;
+					top: 0;
 					width: 100%;
 					z-index: 9999;
 				}
@@ -87,8 +88,6 @@
 					background-color: #333333;
 					.inner {
 						bottom: -10px;
-						h2 {
-						}
 						.meta {
 							margin-bottom: 15px;
 							margin-top: -15px;
