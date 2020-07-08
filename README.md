@@ -21,6 +21,8 @@ Loading..
 
 ## Plugins Support ##
 
+Contact Form 7
+
 Loading..
 
 ## External Libs ##

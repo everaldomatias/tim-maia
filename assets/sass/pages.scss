@@ -28,11 +28,16 @@
 			}
 		}
 		input[type="submit"] {
-			background-color: $cinza-escuro;
-			border: 0;
-			box-shadow: 0;
-			color: $branco;
+			background-color: transparent;
+			border: 1px solid $cinza-escuro;
+			border-radius: 3px;
+			color: $cinza-escuro;
 			padding: 10px 15px;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				cursor: pointer;
+				filter: brightness( 70% );
+			}
 		}
 	}
 	#comments {
