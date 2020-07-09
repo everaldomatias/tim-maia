@@ -6,20 +6,24 @@ if ( class_exists( 'CPT' ) ) {
      * @link https://github.com/jjgrainger/wp-custom-post-type-class
      */
 
+    // Labels
+    $singular = get_theme_mod( 'tm_portfolio_labels_singular', __( 'Portfólio', 'tim-maia' ) );
+    $plural = get_theme_mod( 'tm_portfolio_labels_plural', __( 'Portfólios', 'tim-maia' ) );
+
     $arguments = [
         'show_in_rest' => true, // Enable Gutenberg
         'supports'     => [ 'title', 'editor', 'thumbnail' ],
         'has_archive'  => true,
         'labels' => [
             'add_new'       => __( 'Adicionar novo', 'tim-maia' ),
-            'search_items'  => __( 'Pesquisar portfólio', 'tim-maia' )
+            'search_items'  => __( 'Pesquisar', 'tim-maia' )
         ]
     ];
 
     $portfolio = new CPT( [
         'post_type_name' => 'portfolio',
-        'singular'       => 'Portfólio',
-        'plural'         => 'Portfólio',
+        'singular'       => $singular,
+        'plural'         => $plural,
         'slug'           => 'portfolio'
     ], $arguments );
 

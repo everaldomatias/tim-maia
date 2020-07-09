@@ -601,7 +601,7 @@ if ( ! function_exists( 'tm_archive_title_filter' ) ) {
         if ( is_post_type_archive( 'portfolio' ) ) {
 
             $portfolio = get_post_type_object( 'portfolio' );
-            $title = $portfolio->labels->singular_name;
+            $title = $portfolio->labels->name;
 
         }
 

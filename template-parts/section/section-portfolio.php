@@ -2,7 +2,7 @@
 
 <?php if ( $tm_use_section_portfolio ) : ?>
 
-    <?php $tm_title_section_portfolio = get_theme_mod( 'tm_title_section_portfolio', __( 'Portfólio', 'tim-maia' ) ); ?>
+    <?php $tm_title_section_portfolio = get_theme_mod( 'tm_portfolio_labels_plural', __( 'Portfólios', 'tim-maia' ) ); ?>
 
     <div id="section-portfolio" class="section-home">
 

@@ -923,6 +923,52 @@ function tm_customize_register( $wp_customize ) {
 
     /**
      * 
+     * Translations for labels Portfólio
+     * 
+     */
+
+    $wp_customize->add_setting(
+        'tm_portfolio_labels_singular', array(
+            'default'           => esc_html__( 'Portfólio', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_portfolio_labels_singular_control',
+            array(
+                'settings'    => 'tm_portfolio_labels_singular',
+                'type'        => 'text',
+                'label'       => esc_html__( 'Título da seção (Singular)', 'tim-maia' ),
+                'section'     => 'tm_section_portfolio'
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'tm_portfolio_labels_plural', array(
+            'default'           => esc_html__( 'Portfólios', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_portfolio_labels_plural_control',
+            array(
+                'settings'    => 'tm_portfolio_labels_plural',
+                'type'        => 'text',
+                'label'       => esc_html__( 'Título da seção (Plural)', 'tim-maia' ),
+                'section'     => 'tm_section_portfolio'
+            )
+        )
+    );
+
+
+
+    /**
+     * 
      * Section Blog
      * 
      */
