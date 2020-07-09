@@ -75,6 +75,7 @@ function tm_customizer_output_css() {
             #section-portfolio .buttons a.btn,
             #section-portfolio .buttons a.btn:hover {
                 color: <?php echo get_theme_mod( 'tm_color_section_portfolio', '#FFFFFF' ); ?>;
+                border-color: <?php echo get_theme_mod( 'tm_color_section_portfolio', '#FFFFFF' ); ?>
             }
 
             /* Section Blog */

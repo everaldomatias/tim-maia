@@ -611,3 +611,30 @@ if ( ! function_exists( 'tm_archive_title_filter' ) ) {
     add_filter( 'get_the_archive_title', 'tm_archive_title_filter' );
 
 }
+
+
+add_action( 'load-options-permalink.php', 'tm_portfolio_load_permalinks' );
+function tm_portfolio_load_permalinks() {
+
+	if( isset( $_POST['tm_portfolio_base'] ) ) {
+		update_option( 'tm_portfolio_base', sanitize_title_with_dashes( $_POST['tm_portfolio_base'] ) );
+    }
+    
+    $tm_title_section_portfolio = get_theme_mod( 'tm_portfolio_labels_singular', __( 'Portfólio', 'tim-maia' ) );
+    $tm_title_section_portfolio = __( 'Base para', 'tim-maia' ) . ' ' . $tm_title_section_portfolio;
+	
+	// Add a settings field to the permalink page
+    add_settings_field( 'tm_portfolio_base', $tm_title_section_portfolio, 'tm_portfolio_field_callback', 'permalink', 'optional' );
+    
+}
+
+function tm_portfolio_field_callback() {
+
+    $tm_title_section_portfolio = get_theme_mod( 'tm_portfolio_labels_singular', __( 'Portfólio', 'tim-maia' ) );
+    $tm_title_section_portfolio = sanitize_title( $tm_title_section_portfolio );
+
+	$value = get_option( 'tm_portfolio_base', $tm_title_section_portfolio );
+	echo '<code>' . get_option( 'home' ) . '/</code>';
+	echo '<input type="text" value="' . esc_attr( $value ) . '" name="tm_portfolio_base" id="tm_portfolio_base" class="regular-text" />';
+
+}

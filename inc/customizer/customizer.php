@@ -948,7 +948,7 @@ function tm_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting(
         'tm_portfolio_labels_plural', array(
-            'default'           => esc_html__( 'Portfólios', 'tim-maia' ),
+            'default'           => esc_html__( 'Portfólio', 'tim-maia' ),
             'sanitize_callback' => 'wp_kses_post'
         )
     );

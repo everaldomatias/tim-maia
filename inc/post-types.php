@@ -8,7 +8,10 @@ if ( class_exists( 'CPT' ) ) {
 
     // Labels
     $singular = get_theme_mod( 'tm_portfolio_labels_singular', __( 'Portfólio', 'tim-maia' ) );
-    $plural = get_theme_mod( 'tm_portfolio_labels_plural', __( 'Portfólios', 'tim-maia' ) );
+    $plural = get_theme_mod( 'tm_portfolio_labels_plural', __( 'Portfólio', 'tim-maia' ) );
+    
+    $tm_portfolio_base_default = sanitize_title( $plural );
+	$tm_portfolio_base = get_option( 'tm_portfolio_base', $tm_portfolio_base_default );
 
     $arguments = [
         'show_in_rest' => true, // Enable Gutenberg
@@ -24,7 +27,7 @@ if ( class_exists( 'CPT' ) ) {
         'post_type_name' => 'portfolio',
         'singular'       => $singular,
         'plural'         => $plural,
-        'slug'           => 'portfolio'
+        'slug'           => sanitize_title( $tm_portfolio_base )
     ], $arguments );
 
     $portfolio->menu_icon( 'dashicons-portfolio' );

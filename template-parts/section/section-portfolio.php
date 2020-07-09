@@ -114,7 +114,7 @@
                 <?php
                 $tm_portfolio_button = get_theme_mod( 'tm_portfolio_button', __( 'Veja mais!', 'tim-maia' ) );
                 if ( $portfolio->post_count >= 1 && ! empty( $tm_portfolio_button ) ) {
-                    echo '<a class="btn" href="' . esc_url( get_home_url() ) . '/portfolio">' . esc_attr( $tm_portfolio_button ) . '</a>';
+                    echo '<a class="btn" href="' . esc_url( get_post_type_archive_link( 'portfolio' ) ) . '">' . esc_attr( $tm_portfolio_button ) . '</a>';
                 } ?>
 
             </div><!-- /.container.text-center -->
