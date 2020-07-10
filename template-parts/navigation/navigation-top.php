@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-md" role="navigation">
-    <div class="container-fluid">
+    <div class="container">
       
         <!-- Brand and toggle get grouped for better mobile display -->
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapseClick" aria-expanded="false" aria-controls="collapseClick">
@@ -28,5 +28,5 @@
             ?>
         <?php endif; ?>
 
-    </div><!-- /.container-fluid -->
+    </div><!-- /.container -->
 </nav>
