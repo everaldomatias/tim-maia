@@ -1,7 +1,7 @@
 /* Header */
 header.site-header {
 	.navbar.fixed-top {
-		&>.container-fluid {
+		&>.container {
 			display: block !important;
 			.navbar-toggler {
 				border: 0 !important;
@@ -84,6 +84,7 @@ header.site-header {
 				}
 			}
 			.navbar-nav {
+				margin-left: auto;
 				@media( max-width: 768px ) {
 					float: none !important;
 				}

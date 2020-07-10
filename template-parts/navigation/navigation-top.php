@@ -18,9 +18,9 @@
                     'theme_location'    => 'top',
                     'depth'             => 2,
                     'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse float-left',
+                    'container_class'   => 'collapse navbar-collapse',
                     'container_id'      => 'collapseClick',
-                    'menu_class'        => 'nav navbar-nav float-left',
+                    'menu_class'        => 'nav navbar-nav',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'            => new WP_Bootstrap_Navwalker()
                 )
