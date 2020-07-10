@@ -1740,6 +1740,26 @@ function tm_customize_register( $wp_customize ) {
         'priority'    => 1
     ) );
 
+    $wp_customize->add_setting(
+        'tm_heading_use', array(
+            'default'           => '0',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_heading_use_control',
+            array(
+                'settings'    => 'tm_heading_use',
+                'type'        => 'checkbox',
+                'label'       => esc_html__( 'Não usar imagem no cabeçalho de título?', 'tim-maia' ),
+                'description' => esc_html__( 'Mesmo sem definir a imagem (padrão) para o cabeçalho dos títulos abaixo, ela pode ser servida pelas imagens destacadas das páginas, então, caso queira bloquear definitivamente o uso de imagem em todas as páginas internas, marque essa opção.', 'tim-maia' ),
+                'section'     => 'tm_heading_title'
+            )
+        )
+    );
+
     /**
      * Heading Title > Background Image Default
      */
@@ -1762,6 +1782,28 @@ function tm_customize_register( $wp_customize ) {
             )
         )
     );
+
+    /**
+     * Heading Title -> Padding of the Headings Title
+     */
+    $wp_customize->add_setting(
+        'tm_heading_padding', array(
+            'default'   => '100',
+        )
+    );
+
+    $wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'tm_heading_padding_control', array(
+        'type'     => 'range-value',
+        'section'  => 'tm_heading_title',
+        'settings' => 'tm_heading_padding',
+        'label' => __( 'Margem dos cabeçalhos de título nas páginas internas', 'tim-maia' ),
+        'input_attrs' => array(
+            'min'    => 30,
+            'max'    => 200,
+            'step'   => 5,
+            'suffix' => 'px', //optional suffix
+        ),
+    ) ) );
 
     /**
      * Heading Title > Background Color

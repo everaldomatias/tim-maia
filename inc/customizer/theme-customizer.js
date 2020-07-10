@@ -120,6 +120,12 @@
     });
 
     // Heading Title
+    wp.customize('tm_heading_padding', function (value) {
+        value.bind(function (newval) {
+            $('.heading-title').css('padding-bottom', newval);
+            $('.heading-title').css('padding-top', newval);
+        });
+    });
     wp.customize('tm_heading_background_color', function (value) {
         value.bind(function (newval) {
             $('.heading-title.heading-background-color').css('background-color', newval);

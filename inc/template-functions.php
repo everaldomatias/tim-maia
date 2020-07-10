@@ -26,7 +26,9 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
             // Returns background color
             $tm_heading_background_color = get_theme_mod( 'tm_heading_background_color' );
 
-            if ( $tm_heading_background_image ) {
+            $tm_heading_use = get_theme_mod( 'tm_heading_use', '0' );
+
+            if ( $tm_heading_background_image && ! $tm_heading_use ) {
 
                 echo '<section class="heading-title heading-background-image parallax-window" data-parallax="scroll" data-image-src="' . esc_url( $tm_heading_background_image ) . '">';
 

@@ -104,6 +104,10 @@ function tm_customizer_output_css() {
             }
 
             /* Heading Title */
+            .heading-title {
+                padding-bottom: <?php echo get_theme_mod( 'tm_heading_padding', '100' ); ?>px;
+                padding-top: <?php echo get_theme_mod( 'tm_heading_padding', '100' ); ?>px;
+            }
             .heading-title h1 {
                 color: <?php echo get_theme_mod( 'tm_heading_color' ); ?>;
             }
