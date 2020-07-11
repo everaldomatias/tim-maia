@@ -95,17 +95,10 @@ body.home {
 
 // # Content
 #content {
-	//background: $branco;
 	margin: 0 auto;
 	max-width: 1280px;
 	position: relative;
 	z-index: 99;
-	.entry-content {
-		@media ( max-width: 1258px ) {
-			padding-left: 15px !important;
-			padding-right: 15px !important;
-		}
-	}
 }
 
 // # Components

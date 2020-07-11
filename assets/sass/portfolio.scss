@@ -2,7 +2,8 @@ body.post-type-archive-portfolio,
 body.home {
 
     .container.loop {
-        max-width: 90%;
+        padding-left: 0;
+        padding-right: 0;
         padding-top: 0;
         @media ( max-width: 768px ) {
             max-width: 100%;
@@ -61,7 +62,7 @@ body.home {
             color: #ffffff;
             height: 350px;
             overflow: hidden;
-            padding: 15px;
+            padding: 0;
             @include transition( all .45s ease-in-out );
             @media ( max-width: 768px ) {
                 height: 270px;
@@ -125,16 +126,6 @@ body.home {
 }
 
 #section-portfolio {
-    padding-bottom: 100px;
-    padding-top: 100px;
-    > .container {
-        h2 {
-            margin-bottom: 0;
-        }
-    }
-    .container.loop {
-        padding-bottom: 0;
-    }
     .buttons {
         margin-top: 30px;
     }
