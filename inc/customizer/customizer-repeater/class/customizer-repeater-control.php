@@ -111,17 +111,17 @@ class Customizer_Repeater extends WP_Customize_Control {
 
 	/*Enqueue resources for the control*/
 	public function enqueue() {
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/customizer-repeater/css/font-awesome.min.css', array(), CUSTOMIZER_REPEATER_VERSION );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/inc/customizer/customizer-repeater/css/font-awesome.min.css', array(), CUSTOMIZER_REPEATER_VERSION );
 
-		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_template_directory_uri().'/customizer-repeater/css/admin-style.css', array(), CUSTOMIZER_REPEATER_VERSION );
+		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_template_directory_uri().'/inc/customizer/customizer-repeater/css/admin-style.css', array(), CUSTOMIZER_REPEATER_VERSION );
 
 		wp_enqueue_style( 'wp-color-picker' );
 
-		wp_enqueue_script( 'customizer-repeater-script', get_template_directory_uri() . '/customizer-repeater/js/customizer_repeater.js', array('jquery', 'jquery-ui-draggable', 'wp-color-picker' ), CUSTOMIZER_REPEATER_VERSION, true  );
+		wp_enqueue_script( 'customizer-repeater-script', get_template_directory_uri() . '/inc/customizer/customizer-repeater/js/customizer_repeater.js', array('jquery', 'jquery-ui-draggable', 'wp-color-picker' ), CUSTOMIZER_REPEATER_VERSION, true  );
 
-		wp_enqueue_script( 'customizer-repeater-fontawesome-iconpicker', get_template_directory_uri() . '/customizer-repeater/js/fontawesome-iconpicker.min.js', array( 'jquery' ), CUSTOMIZER_REPEATER_VERSION, true );
+		wp_enqueue_script( 'customizer-repeater-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer/customizer-repeater/js/fontawesome-iconpicker.min.js', array( 'jquery' ), CUSTOMIZER_REPEATER_VERSION, true );
 
-		wp_enqueue_style( 'customizer-repeater-fontawesome-iconpicker-script', get_template_directory_uri() . '/customizer-repeater/css/fontawesome-iconpicker.min.css', array(), CUSTOMIZER_REPEATER_VERSION );
+		wp_enqueue_style( 'customizer-repeater-fontawesome-iconpicker-script', get_template_directory_uri() . '/inc/customizer/customizer-repeater/css/fontawesome-iconpicker.min.css', array(), CUSTOMIZER_REPEATER_VERSION );
 	}
 
 	public function render_content() {
