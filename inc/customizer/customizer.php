@@ -16,6 +16,11 @@ require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php'
 require_once( dirname( __FILE__ ) . '/class-customizer-range-value-control/class-customizer-range-value-control.php' );
 
 /**
+ * Include the Customizer Repeater control
+ */
+require dirname( __FILE__ ) . '/customizer-repeater/functions.php';
+
+/**
  * Inlcude the CSS function print by customizer.
  */
 require_once( dirname( __FILE__ ) . '/customizer-css.php' );
@@ -148,6 +153,47 @@ function tm_customize_register( $wp_customize ) {
             )
         )
     );
+
+
+    $wp_customize->add_setting( 'customizer_repeater_example', array(
+            'sanitize_callback' => 'customizer_repeater_sanitize'
+    ));
+    $wp_customize->add_control( new Customizer_Repeater( $wp_customize, 'customizer_repeater_example', array(
+        'label'   => esc_html__('Example','customizer-repeater'),
+        'section' => 'tm_section_hero',
+        'priority' => 1,
+        'customizer_repeater_image_control' => true,
+        'customizer_repeater_icon_control' => true,
+        'customizer_repeater_title_control' => true,
+        'customizer_repeater_subtitle_control' => true,
+        'customizer_repeater_text_control' => true,
+        'customizer_repeater_link_control' => true,
+        'customizer_repeater_shortcode_control' => true,
+        'customizer_repeater_repeater_control' => true
+    ) ) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     $wp_customize->add_setting(
         'tm_setting_color_section_hero', array(
