@@ -70,7 +70,12 @@ img {
 .hfeed.site {
 	overflow: hidden;
 }
-
+.container-title {
+	@media ( max-width: 768px ) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
 .entry-title {
 	display: block;
 	margin-bottom: 30px;

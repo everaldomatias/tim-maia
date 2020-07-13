@@ -47,7 +47,7 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
                 // Returns the text alignment
                 $tm_heading_text_alignment = get_theme_mod( 'tm_heading_text_alignment', 'center' );
                 
-                echo '<div class="container text-align-' . esc_attr( $tm_heading_text_alignment ) . '">';
+                echo '<div class="container container-title text-align-' . esc_attr( $tm_heading_text_alignment ) . '">';
 
                     echo '<h1>';
 
