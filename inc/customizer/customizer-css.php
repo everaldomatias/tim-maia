@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
- * 
+ *
  * Output CSS generate from customizer on the wp_head hook
- * 
+ *
  */
 function tm_customizer_output_css() {
     ?>
@@ -53,6 +53,11 @@ function tm_customizer_output_css() {
             #section-action {
                 color: <?php echo get_theme_mod( 'tm_color_section_action', '#FFFFFF' ); ?>;
             }
+			#section-action a.btn,
+			#section-action a.btn:hover {
+				color: <?php echo get_theme_mod( 'tm_color_section_action', '#FFFFFF' ); ?>;
+				border-color: <?php echo get_theme_mod( 'tm_color_section_action', '#FFFFFF' ); ?>;
+			}
 
             /* Section Features */
             #section-features {
@@ -125,7 +130,7 @@ function tm_customizer_output_css() {
             }
 
             #section-hero h1, #section-hero .description { color: <?php echo get_theme_mod( 'tm_setting_color_section_hero', '#FFFFFF' ); ?>; }
-        
+
         </style>
 
     <?php
