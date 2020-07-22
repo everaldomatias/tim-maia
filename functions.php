@@ -14,10 +14,7 @@ require_once $get_template_directory . '/inc/post-types.php';
 // Template Functions
 require_once $get_template_directory . '/inc/template-functions.php';
 
-if ( class_exists( 'Kirki' ) ) {
-	//require 'inc/kirki.php';
-}
-
+// Customizer
 require_once $get_template_directory . '/inc/customizer/customizer.php';
 
 require_once $get_template_directory . '/inc/strings-default.php';
