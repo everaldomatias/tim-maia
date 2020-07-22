@@ -1,11 +1,12 @@
 <?php
 get_header(); ?>
+
 <main>
 
 	<div class="container loop">
 
         <?php $terms = get_terms( 'portfolio_type' ); ?>
-            <?php if( $terms ) { 
+            <?php if( $terms ) {
             ?>
 
             <ul id="types" class="filter clearfix">
@@ -39,21 +40,18 @@ get_header(); ?>
                     $count == 0;
                 } else {
                     $class = 'each grid-item cpt-item ';
-                }
-                
-                
-                ?>
+                } ?>
 
                 <?php $terms = get_the_terms( get_the_ID(), 'portfolio_type' ); ?>
 
                 <?php if ( has_post_thumbnail() ) : ?>
 
                     <div <?php tm_background_thumbnail( 'full' ); ?> class="<?php echo $class; ?> <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
-                
+
                 <?php elseif ( $bg = tm_background_first_image_attached_url( 'full' ) ) : ?>
 
                     <div style="background-image: url(' <?php echo $bg; ?> ')" class="<?php echo $class; ?> <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
-                
+
                 <?php else : ?>
 
                     <div class="<?php echo $class; ?> <?php if( $terms ) foreach ( $terms as $term ) { echo $term->slug .' '; }; ?>">
@@ -62,10 +60,10 @@ get_header(); ?>
 
                     <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                         <div class="inner">
-                            
+
                             <span class="cat"><?php the_category( ' • ' ); ?></span><!-- /.cat -->
                             <h2><?php the_title(); ?></h2>
-                            
+
                         </div><!-- /.inner -->
                     </a>
 
@@ -73,8 +71,8 @@ get_header(); ?>
 
             <?php endwhile; ?>
 
-            </div><!-- cpt-content -->
-        </div><!-- cpt-wrap -->
+            </div><!-- /.cpt-content -->
+        </div><!-- /.cpt-wrap -->
 
         <?php else : ?>
 
@@ -83,7 +81,7 @@ get_header(); ?>
             </div><!-- /.entry-content -->
 
         <?php endif; ?>
-	
+
 	</div><!-- /.container.loop -->
 
 </main>

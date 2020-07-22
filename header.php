@@ -25,19 +25,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<?php
-	/**
-	 *
-	 * Retorna as strings padrões do tema no array $sd
-	 * 
- 	 * @author 		Everaldo Matias <http://everaldomatias.github.io>
- 	 * @version 	0.1
- 	 * @since 		09/04/2018
- 	 * @see 		https://codex.wordpress.org/Transients_API
- 	 * 
-	 */
-	$sd = get_transient( 'strings_default' ); ?>
-
 	<header id="masthead" class="site-header" role="banner">
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 	</header><!-- /#masthead -->
@@ -46,4 +33,3 @@
 
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
-

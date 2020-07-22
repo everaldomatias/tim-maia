@@ -44,29 +44,25 @@ function tm_setup() {
 
 	// Add support to Custom Logo
     add_theme_support( 'custom-logo' );
-    
-    
-        
-        // Add supports to WooCommerce
-        add_theme_support( 'woocommerce', array(
-            'thumbnail_image_width' => 400,
-            'single_image_width'    => 800,
 
-            'product_grid'          => array(
-                'default_rows'    => 4,
-                'min_rows'        => 2,
-                'max_rows'        => 8,
-                'default_columns' => 4,
-                'min_columns'     => 2,
-                'max_columns'     => 4,
-            ),
-        ) );
-        add_theme_support( 'wc-product-gallery-zoom' );
-        add_theme_support( 'wc-product-gallery-lightbox' );
-        add_theme_support( 'wc-product-gallery-slider' );
+	// Add supports to WooCommerce
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 400,
+		'single_image_width'    => 800,
 
-    
-	
+		'product_grid'          => array(
+			'default_rows'    => 4,
+			'min_rows'        => 2,
+			'max_rows'        => 8,
+			'default_columns' => 4,
+			'min_columns'     => 2,
+			'max_columns'     => 4,
+		),
+	) );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
 }
 add_action( 'after_setup_theme', 'tm_setup' );
 
@@ -129,13 +125,13 @@ function model_scripts() {
     wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 
     $tm_use_section_portfolio = get_theme_mod( 'tm_use_section_portfolio', '0' );
-    
+
     if ( $tm_use_section_portfolio || is_post_type_archive( 'portfolio' ) ) {
 
         wp_enqueue_script( 'isotope', $template_url . '/assets/js/libs/isotope.pkgd.min.js', array( 'jquery', 'imagesloaded' ), null, true );
-        
+
     }
-    
+
 
 }
 add_action( 'wp_enqueue_scripts', 'model_scripts' );
@@ -159,15 +155,15 @@ add_filter( 'stylesheet_uri', 'model_stylesheet_uri', 10, 2 );
  * Add custom class in the body
  *
  * @since  0.0.1
- * 
+ *
  * @param  string $clasees
- * 
+ *
  * @return string in the body HTML class
  */
 function model_body_class( $classes ) {
 
 	global $post;
- 
+
     if ( is_page() || is_single() ) {
         $classes[] = $post->post_name;
     }
@@ -175,7 +171,7 @@ function model_body_class( $classes ) {
     if ( has_custom_logo() ) {
     	$classes[] = 'has-custom-logo';
     }
-     
+
     return $classes;
 
 }
@@ -187,7 +183,7 @@ add_filter( 'body_class', 'model_body_class' );
  */
 
 /**
- * 
+ *
  * Retorna quantidade de colunas nos widgets com Bootstrap grid
  * de acordo com a quantidade de widgets ativos.
  *
@@ -195,15 +191,15 @@ add_filter( 'body_class', 'model_body_class' );
  * @version     2.0.0
  * @since       20/08/2018
  * @return      sting class
- * 
+ *
  */
 function get_widgets_class_by_qtd( $sidebar_name ) {
-    
+
     if ( $sidebar_name ) {
 
         global $sidebars_widgets;
         $count = count( $sidebars_widgets[$sidebar_name] );
-        
+
         switch ( $count ) {
             case '1':
                 $class = 'col-sm-12';
@@ -231,7 +227,7 @@ function get_widgets_class_by_qtd( $sidebar_name ) {
 }
 
 /**
- * 
+ *
  * Retorna o template da Sessão Social caso
  * esteja definida no Customizer para ser ebinida.
  *
@@ -241,7 +237,7 @@ function get_widgets_class_by_qtd( $sidebar_name ) {
  * @see 		inc/hooks.php
  * @link 		https://codex.wordpress.org/Plugin_API/Hooks_2.0.x
  * @return 		template file
- * 
+ *
  */
 function get_template_section_social() {
 	$use_social = get_theme_mod( 'use_social', '1' );
@@ -251,9 +247,9 @@ function get_template_section_social() {
 }
 
 function tm_background_thumbnail( $size = 'thumbnail' ) {
-    
+
     global $post;
-    
+
     if ( has_post_thumbnail( $post->ID ) ) {
 
         $get_post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $size, false, '' );
@@ -273,13 +269,13 @@ function tm_background_first_image_attached_url( $size = 'thumbnail' ) {
         'post_mime_type' => 'image',
         'post_parent'    => $post->ID,
     ] );
-    
+
     if ( count( $image ) == 1 ) {
 
         $image = $image[0];
-        
+
         $image = wp_get_attachment_image_src( $image->ID, $size );
-        
+
         return esc_url( $image[0] );
 
     } else {
@@ -293,18 +289,18 @@ function tm_background_first_image_attached_url( $size = 'thumbnail' ) {
 /**
  *
  * Define valores e configurações iniciais ao ativar o tema.
- * 
+ *
  * @author 		Everaldo Matias <http://everaldomatias.github.io>
  * @version 	0.1
  * @since 		15/05/2018
  *
  */
 function initial_config_theme() {
-    
+
     $initial_config_theme = get_option( 'initial_config_theme', false );
 
     if ( $initial_config_theme == false ) {
-        
+
         /* Home */
         $page_title = 'Home';
         $page_check = get_page_by_title( $page_title );
@@ -348,14 +344,14 @@ function initial_config_theme() {
 add_action( 'after_switch_theme', 'initial_config_theme' );
 
 /**
- * 
+ *
  * Add WooCommerce support
  * @todo Enviar essas informações para um arquivo externo, que será iniciado apenas quando o WooCommerce estiver ativo.
- * 
+ *
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-    
+
 add_action( 'woocommerce_before_main_content', 'tm_wc_wrapper_start', 10 );
 add_action( 'woocommerce_after_main_content', 'tm_wc_wrapper_end', 10 );
 
@@ -370,11 +366,11 @@ function tm_wc_wrapper_end() {
 }
 
 /**
- * 
+ *
  * Check if WooCommerce is activated
- * 
+ *
  * @see https://docs.woocommerce.com/document/query-whether-woocommerce-is-activated/
- * 
+ *
  */
 if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 	function is_woocommerce_activated() {
@@ -385,7 +381,7 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 /**
  *
  * Remove valores e configurações iniciais ao desativar o tema.
- * 
+ *
  * @author 		Everaldo Matias <http://everaldomatias.github.io>
  * @version 	0.1
  * @since 		15/05/2018
@@ -421,9 +417,9 @@ function show_whatsapp() {
         $titulo_whatsapp = get_theme_mod( 'titulo_whatsapp', 'WhatsApp' );
         $frase_whatsapp = get_theme_mod( 'frase_whatsapp' );
         if ( ! empty( $frase_whatsapp ) ) {
-            echo '<a target="_blank" href="https://wa.me/' . esc_html( $whatsapp ) . '?text=' . urlencode( $frase_whatsapp ) . '" class="float-whatsapp title-whatsapp-active" title=" ' . esc_html( $titulo_whatsapp ) . '">';         
+            echo '<a target="_blank" href="https://wa.me/' . esc_html( $whatsapp ) . '?text=' . urlencode( $frase_whatsapp ) . '" class="float-whatsapp title-whatsapp-active" title=" ' . esc_html( $titulo_whatsapp ) . '">';
             echo esc_html( $titulo_whatsapp );
-            
+
         } else {
             echo '<a target="_blank" href="https://wa.me/' . esc_html( $whatsapp ) . '" class="float-whatsapp" title="WhatsApp">';
         }
@@ -468,7 +464,7 @@ if ( ! function_exists( 'tm_get_sections' ) ):
             case 'tm_section_about':
                 $output .= tm_load_template_part( 'template-parts/section/section-about' );
                 break;
-            
+
             case 'tm_section_action':
                 $output .= tm_load_template_part( 'template-parts/section/section-action' );
                 break;
@@ -501,7 +497,7 @@ if ( ! function_exists( 'tm_get_sections' ) ):
 endif;
 
 function tm_load_template_part( $template_name, $part_name = null ) {
-    
+
     ob_start();
         get_template_part( $template_name, $part_name );
         $var = ob_get_contents();
@@ -511,21 +507,21 @@ function tm_load_template_part( $template_name, $part_name = null ) {
 }
 
 /**
- * 
+ *
  * Print buttons by customizer
- * 
+ *
  * @author      Everaldo Matias <https://everaldo.dev>
  * @version     1.0.0
  * @since       03/05/2020
  * @see         inc/customizer.php
- * 
+ *
  * @todo        Add filter hook
- * 
+ *
  * @param       string $button
  * @param       string $link
- * 
+ *
  * @return      HTML
- * 
+ *
  */
 
 function tm_print_button( $button, $link = '' ) {
@@ -545,7 +541,7 @@ function tm_print_button( $button, $link = '' ) {
         } else {
             $html = '<button class="btn">' . apply_filters( 'the_title', $button ) . '</button>';
         }
-        
+
     }
 
     return $html;
@@ -554,15 +550,15 @@ function tm_print_button( $button, $link = '' ) {
 
 
 /**
- * 
+ *
  * Print comments counter
- * 
+ *
  * @author      Everaldo Matias <https://everaldo.dev>
  * @version     1.0.0
  * @since       10/05/2020
- * 
+ *
  * @return      HTML
- * 
+ *
  */
 
 function tm_print_comments_counter() {
@@ -590,11 +586,11 @@ function tm_print_comments_counter() {
 if ( ! function_exists( 'tm_archive_title_filter' ) ) {
 
     /**
-     * 
+     *
      * Filter archive titles
-     * 
+     *
      * @see https://developer.wordpress.org/reference/functions/get_the_archive_title/
-     * 
+     *
      */
     function tm_archive_title_filter( $title ) {
 
@@ -619,13 +615,13 @@ function tm_portfolio_load_permalinks() {
 	if( isset( $_POST['tm_portfolio_base'] ) ) {
 		update_option( 'tm_portfolio_base', sanitize_title_with_dashes( $_POST['tm_portfolio_base'] ) );
     }
-    
+
     $tm_title_section_portfolio = get_theme_mod( 'tm_portfolio_labels_singular', __( 'Portfólio', 'tim-maia' ) );
     $tm_title_section_portfolio = __( 'Base para', 'tim-maia' ) . ' ' . $tm_title_section_portfolio;
-	
+
 	// Add a settings field to the permalink page
     add_settings_field( 'tm_portfolio_base', $tm_title_section_portfolio, 'tm_portfolio_field_callback', 'permalink', 'optional' );
-    
+
 }
 
 function tm_portfolio_field_callback() {
