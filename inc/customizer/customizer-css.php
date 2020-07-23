@@ -63,6 +63,7 @@ function tm_customizer_output_css() {
             #section-features {
                 color: <?php echo get_theme_mod( 'tm_color_section_features', '#FFFFFF' ); ?>;
             }
+
             #section-features .buttons a.btn,
             #section-features .buttons a.btn:hover {
                 color: <?php echo get_theme_mod( 'tm_color_section_features', '#FFFFFF' ); ?>;
