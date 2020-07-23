@@ -987,8 +987,8 @@ function tm_customize_register( $wp_customize ) {
             array(
                 'settings'    => 'tm_features_button',
                 'type'        => 'text',
-                'label'       => esc_html__( 'Botão', 'tim-maia' ),
-                'description' => esc_html__( 'Caso precise utilizar um botão na seção, preencha os campos abaixo.', 'tim-maia' ),
+                'label'       => esc_html__( 'Botão da Seção', 'tim-maia' ),
+                'description' => esc_html__( 'Caso precise utilizar um botão no final da seção, preencha os campos abaixo.', 'tim-maia' ),
                 'input_attrs' => array(
                     'placeholder' => esc_html__( 'Veja todos nossos Recursos!', 'tim-maia' ),
                 ),

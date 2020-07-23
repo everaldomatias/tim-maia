@@ -64,9 +64,7 @@
 
             <div class="buttons">
                 <div class="container text-center">
-
                     <?php echo tm_print_button( 'tm_features_button', 'tm_features_button_url' ); ?>
-
                 </div><!-- /.container -->
             </div><!-- /.buttons -->
 
