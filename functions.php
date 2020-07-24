@@ -60,6 +60,9 @@ function tm_setup() {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 
+	// Responsive embeds
+	add_theme_support( 'responsive-embeds' );
+
 }
 add_action( 'after_setup_theme', 'tm_setup' );
 
