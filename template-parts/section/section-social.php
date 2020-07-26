@@ -26,7 +26,11 @@
 
 				<?php foreach( $icons as $key => $value ) : ?>
 
-					<a href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
+					<?php if ( 'email' == $key ) : ?>
+						<a rel="nofollow noopener" target="_blank" href="mailto:<?php echo antispambot( sanitize_email( $value ) ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
+					<?php else : ?>
+						<a rel="nofollow noopener" target="_blank" href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ); ?>"></a>
+					<?php endif; ?>
 
 				<?php endforeach; ?>
 
