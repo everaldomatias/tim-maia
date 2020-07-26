@@ -1,8 +1,6 @@
-<?php $tm_use_section_social = get_theme_mod( 'tm_use_section_social', '1' ); ?>
+<?php $tm_use_section_social = get_theme_mod( 'tm_use_section_social', '1' );
 
-<?php if ( $tm_use_section_social ) : ?>
-
-	<?php
+if ( $tm_use_section_social ) :
 
 	/**
 	 * Get the social URLs
@@ -19,21 +17,23 @@
 	$icons = array_filter( $icons ); ?>
 
     <div id="section-social">
-
         <div class="container container-icons">
 
-			<?php if ( is_array( $icons ) ) : ?>
+			<?php if ( is_array( $icons ) ) :
 
-				<?php foreach( $icons as $key => $value ) : ?>
+				foreach( $icons as $key => $value ) :
 
-					<a href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
+					if ( 'email' == $key ) : ?>
+						<a rel="nofollow noopener" target="_blank" href="mailto:<?php echo antispambot( sanitize_email( $value ) ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
+					<?php else : ?>
+						<a rel="nofollow noopener" target="_blank" href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ); ?>"></a>
+					<?php endif;
 
-				<?php endforeach; ?>
+				endforeach;
 
-			<?php endif; ?>
+			endif; ?>
 
         </div><!-- /.container.container-icons -->
-
     </div><!-- /#section-social -->
 
-<?php endif; ?>
+<?php endif;

@@ -1727,7 +1727,7 @@ function tm_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'tm_social_email', array(
             'default'           => '',
-            'sanitize_callback' => 'esc_url_raw'
+            'sanitize_callback' => 'sanitize_email'
         )
     );
     $wp_customize->add_control(
@@ -1736,7 +1736,7 @@ function tm_customize_register( $wp_customize ) {
             'tm_social_email_control',
             array(
                 'settings' => 'tm_social_email',
-                'type'     => 'url',
+                'type'     => 'text',
                 'label'    => esc_html__( 'Email', 'tim-maia' ),
                 'input_attrs' => array(
                     'placeholder' => __( 'yourmail@host.com', 'tim-maia' ),
