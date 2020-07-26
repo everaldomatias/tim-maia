@@ -1,9 +1,9 @@
 <?php
 
 /**
- * 
- * 
- * 
+ *
+ *
+ *
  */
 function tm_sanitize_select( $input, $setting ) {
 
@@ -17,3 +17,30 @@ function tm_sanitize_select( $input, $setting ) {
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 
 }
+
+/**
+ *
+ * Add iFrame to allowed wp_kses_post tags
+ *
+ * @param array  $tags Allowed tags, attributes, and/or entities.
+ * @param string $context Context to judge allowed tags by. Allowed values are 'post'.
+ *
+ * @return array
+ *
+ */
+function tm_wpkses_post_tags( $tags, $context ) {
+
+	if ( 'post' === $context ) {
+		$tags['iframe'] = array(
+			'src'             => true,
+			'height'          => true,
+			'width'           => true,
+			'frameborder'     => true,
+			'allowfullscreen' => true,
+		);
+	}
+
+	return $tags;
+}
+
+add_filter( 'wp_kses_allowed_html', 'tm_wpkses_post_tags', 10, 2 );

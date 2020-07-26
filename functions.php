@@ -483,6 +483,10 @@ if ( ! function_exists( 'tm_get_sections' ) ):
 
             case 'tm_section_donate':
                 $output .= tm_load_template_part( 'template-parts/section/section-donate' );
+				break;
+
+			case 'tm_section_location':
+                $output .= tm_load_template_part( 'template-parts/section/section-location' );
                 break;
 
             default:

@@ -97,14 +97,18 @@ function tm_customize_register( $wp_customize ) {
             'title'       => esc_html__( 'Blog', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir os últimos posts do blog.', 'tim-maia' ),
         ),
-        'tm_section_social' => array (
-            'title'       => esc_html__( 'Social', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir os ícones das redes sociais.', 'tim-maia' ),
-        ),
         'tm_section_donate' => array (
-            'title'       => esc_html__( 'Doações', 'tim-maia' ),
+			'title'       => esc_html__( 'Doações', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir pedir apoio e doações.', 'tim-maia' ),
         ),
+        'tm_section_location' => array (
+			'title'       => esc_html__( 'Localização', 'tim-maia' ),
+            'description' => esc_html__( 'Seção para exibir mapa de localização.', 'tim-maia' ),
+        ),
+		'tm_section_social' => array (
+			'title'       => esc_html__( 'Social', 'tim-maia' ),
+			'description' => esc_html__( 'Seção para exibir os ícones das redes sociais.', 'tim-maia' ),
+		),
     );
 
     $sortable_sections = get_theme_mod( 'tm_sections_order' );
@@ -1431,7 +1435,95 @@ function tm_customize_register( $wp_customize ) {
                 'section'  => 'tm_section_donate',
             )
         )
+	);
+
+
+	/**
+     *
+     * Section Location
+     *
+     */
+	$wp_customize->add_setting(
+        'tm_use_section_location', array(
+            'default'           => '0',
+            'sanitize_callback' => 'wp_kses_post'
+        )
     );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_location_control',
+            array(
+                'settings' => 'tm_use_section_location',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Localização?', 'tim-maia' ),
+                'section'  => 'tm_section_location'
+            )
+        )
+	);
+
+	$wp_customize->add_setting(
+        'tm_title_section_location', array(
+            'default'           => esc_attr__( 'Localização', 'tim-maia' ),
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_title_section_location_control',
+            array(
+                'settings' => 'tm_title_section_location',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Título para a seção Localização', 'tim-maia' ),
+                'section'  => 'tm_section_location'
+            )
+        )
+	);
+
+	$wp_customize->add_setting(
+        'tm_description_section_map', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_description_section_map_control',
+            array(
+                'settings'    => 'tm_description_section_map',
+                'type'        => 'textarea',
+                'label'       => esc_html__( 'Google Maps', 'tim-maia' ),
+                'description' => esc_attr__( 'Adicione aqui o <iframe> do Google Maps com o endereço que pretende exibir.', 'tim-maia' ),
+                'section'     => 'tm_section_location'
+            )
+        )
+    );
+
+	$wp_customize->add_setting(
+        'tm_description_section_location', array(
+            'default'           => '',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_description_section_location_control',
+            array(
+                'settings'    => 'tm_description_section_location',
+                'type'        => 'textarea',
+                'label'       => esc_html__( 'Descrição para a seção Localização', 'tim-maia' ),
+                'description' => esc_attr__( 'Use esse campo para detalhar melhor o endereço apresentado.', 'model' ),
+                'section'     => 'tm_section_location'
+            )
+        )
+    );
+
+
+
+
 
     /**
      *
