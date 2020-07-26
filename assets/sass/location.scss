@@ -1,0 +1,17 @@
+#section-location {
+	min-height: 600px;
+	padding-bottom: 0;
+	padding-top: 0;
+	position: relative;
+	.wrap-map {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		width: 100%;
+		iframe {
+			min-height: 600px;
+			width: 100%;
+		}
+	}
+}

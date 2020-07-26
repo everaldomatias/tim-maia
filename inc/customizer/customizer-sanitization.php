@@ -37,6 +37,9 @@ function tm_wpkses_post_tags( $tags, $context ) {
 			'width'           => true,
 			'frameborder'     => true,
 			'allowfullscreen' => true,
+			'style'           => true,
+			"aria-hidden"     => true,
+			"tabindex"        => true
 		);
 	}
 

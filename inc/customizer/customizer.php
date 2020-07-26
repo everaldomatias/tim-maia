@@ -1463,26 +1463,7 @@ function tm_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-        'tm_title_section_location', array(
-            'default'           => esc_attr__( 'Localização', 'tim-maia' ),
-            'sanitize_callback' => 'wp_kses_post'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'tm_title_section_location_control',
-            array(
-                'settings' => 'tm_title_section_location',
-                'type'     => 'text',
-                'label'    => esc_html__( 'Título para a seção Localização', 'tim-maia' ),
-                'section'  => 'tm_section_location'
-            )
-        )
-	);
-
-	$wp_customize->add_setting(
-        'tm_description_section_map', array(
+        'tm_location_section_map', array(
             'default'           => '',
             'sanitize_callback' => 'wp_kses_post'
         )
@@ -1490,9 +1471,9 @@ function tm_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
-            'tm_description_section_map_control',
+            'tm_location_section_map_control',
             array(
-                'settings'    => 'tm_description_section_map',
+                'settings'    => 'tm_location_section_map',
                 'type'        => 'textarea',
                 'label'       => esc_html__( 'Google Maps', 'tim-maia' ),
                 'description' => esc_attr__( 'Adicione aqui o <iframe> do Google Maps com o endereço que pretende exibir.', 'tim-maia' ),
@@ -1500,30 +1481,6 @@ function tm_customize_register( $wp_customize ) {
             )
         )
     );
-
-	$wp_customize->add_setting(
-        'tm_description_section_location', array(
-            'default'           => '',
-            'sanitize_callback' => 'wp_kses_post'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'tm_description_section_location_control',
-            array(
-                'settings'    => 'tm_description_section_location',
-                'type'        => 'textarea',
-                'label'       => esc_html__( 'Descrição para a seção Localização', 'tim-maia' ),
-                'description' => esc_attr__( 'Use esse campo para detalhar melhor o endereço apresentado.', 'model' ),
-                'section'     => 'tm_section_location'
-            )
-        )
-    );
-
-
-
-
 
     /**
      *
