@@ -1,32 +1,30 @@
 {
-  "name": "Tim Maia",
+  "name": "timmaia",
   "description": "WordPress Theme for Templates and Artists who wish to promote their work.",
-  "version": "0.0.2",
-  "title": "Model",
+  "version": "1.0.0",
+  "title": "Tim Maia Theme",
   "homepage": "https://github.com/everaldomatias/tim-maia/",
   "main": "Gruntfile.js",
   "devDependencies": {
-    "glob-watcher": "^3.2.0",
-    "grunt": "^1.1.0",
+    "glob-watcher": "^5.0.5",
+    "grunt": "^1.2.1",
     "grunt-cli": "^1.3.2",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-imagemin": "^1.0.0",
-    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-rename": "^0.2.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-curl": "^2.5.1",
-    "grunt-ftp-deploy": "^0.1.10",
-    "grunt-rename": "^0.1.4",
-    "grunt-rsync": "^2.0.0",
+    "grunt-rsync": "^3.0.0",
     "grunt-text-replace": "^0.4.0",
-    "grunt-zip": "^0.17.1",
-    "load-grunt-tasks": "^3.5.2",
-    "readable-stream": "^2.3.7",
-    "sass": "^1.26.5"
+    "grunt-zip": "^0.18.2",
+    "load-grunt-tasks": "^5.1.0",
+    "readable-stream": "^3.6.0",
+    "sass": "^1.26.10"
   },
   "engines": {
-    "node": ">=0.10.1",
-    "npm": ">=1.1.0"
+    "node": ">=10.19.0",
+    "npm": ">=6.14.4"
   }
 }
