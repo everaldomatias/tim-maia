@@ -16,6 +16,11 @@ require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php'
 require_once( dirname( __FILE__ ) . '/class-customizer-range-value-control/class-customizer-range-value-control.php' );
 
 /**
+ * Include the Custom Editor control file.
+ */
+require_once( dirname( __FILE__ ) . '/class-customizer-editor-control.php' );
+
+/**
  * Include the Customizer Repeater control
  */
 require dirname( __FILE__ ) . '/customizer-repeater/functions.php';
@@ -158,8 +163,8 @@ function tm_customize_register( $wp_customize ) {
         )
     );
 
-
-    $wp_customize->add_setting( 'customizer_repeater_example', array(
+	// Repeater.. wait
+    /* $wp_customize->add_setting( 'customizer_repeater_example', array(
             'sanitize_callback' => 'customizer_repeater_sanitize'
     ));
     $wp_customize->add_control( new Customizer_Repeater( $wp_customize, 'customizer_repeater_example', array(
@@ -175,29 +180,7 @@ function tm_customize_register( $wp_customize ) {
         'customizer_repeater_shortcode_control' => true,
         'customizer_repeater_repeater_control' => true
     ) ) );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ */
 
     $wp_customize->add_setting(
         'tm_setting_color_section_hero', array(
@@ -215,7 +198,52 @@ function tm_customize_register( $wp_customize ) {
                 'section'  => 'tm_section_hero'
             )
         )
-    );
+	);
+
+	// $wp_customize->add_setting(
+    //     'tm_hero_description', array(
+    //         'default'           => '',
+    //         'sanitize_callback' => 'wp_kses_post'
+    //     )
+    // );
+    // $wp_customize->add_control(
+    //     new WP_Customize_Control(
+    //         $wp_customize,
+    //         'tm_hero_description_control',
+    //         array(
+    //             'settings'    => 'tm_hero_description',
+    //             'type'        => 'textarea',
+    //             'label'       => esc_html__( 'Descrição para a seção Hero', 'tim-maia' ),
+    //             'description' => esc_attr__( 'Utilize esse campo para aprimorar sua seção Hero. Aceita HTML básico.', 'tim-maia' ),
+    //             'section'     => 'tm_section_hero'
+    //         )
+    //     )
+	// );
+
+	// Dev
+
+
+	$wp_customize->add_setting( 'tm_hero_description',
+		array(
+			'default'           => '',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+	$wp_customize->add_control( new Skyrocket_TinyMCE_Custom_control( $wp_customize, 'tm_hero_description',
+		array(
+			'label'       => esc_html__( 'Descrição para a seção Hero', 'tim-maia' ),
+			'description' => esc_attr__( 'Utilize esse campo para aprimorar sua seção Hero. Aceita HTML básico.', 'tim-maia' ),
+			'section'     => 'tm_section_hero',
+			'input_attrs' => array(
+				'toolbar1' => 'bold italic bullist numlist alignleft aligncenter alignright link',
+				'toolbar2' => 'bold italic bullist numlist alignleft aligncenter alignright link',
+				'mediaButtons' => true,
+			)
+		)
+	) );
+
+	// Dev
 
     /**
      *
