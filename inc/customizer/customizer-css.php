@@ -98,6 +98,10 @@ function tm_customizer_output_css() {
             #section-donate {
                 color: <?php echo get_theme_mod( 'tm_color_section_donate', '#FFFFFF' ); ?>;
             }
+			#section-donate .buttons a.btn {
+                border-color: <?php echo get_theme_mod( 'tm_color_section_donate', '#FFFFFF' ); ?>;
+                color: <?php echo get_theme_mod( 'tm_color_section_donate', '#FFFFFF' ); ?>;
+			}
 
             /* Section Social */
             #section-social {
