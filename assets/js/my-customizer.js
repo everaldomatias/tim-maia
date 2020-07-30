@@ -50,7 +50,7 @@ jQuery(document).ready(function ($) {
  *
  * TinyMCE Custom Control
  *
- * @author Anthony Hortin <http://maddisondesigns.com>
+ * @author Anthony Hortin <https://maddisondesigns.com>
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  * @link https://github.com/maddisondesigns
  *

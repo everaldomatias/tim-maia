@@ -6,7 +6,7 @@ $tm_setting_background_section_hero = get_theme_mod( 'tm_setting_background_sect
 if ( $tm_setting_background_section_hero ) : ?>
 
     <div id="section-hero" class="parallax-window section-home" data-parallax="scroll" data-image-src="<?php echo esc_url( $tm_setting_background_section_hero ); ?>">
-        
+
         <div class="overlay"></div><!-- /.overlay -->
 
 <?php else : ?>
@@ -16,7 +16,7 @@ if ( $tm_setting_background_section_hero ) : ?>
 <?php endif; ?>
 
     <div class="container text-center">
-    
+
         <?php
 
         // Logo or site title
@@ -30,15 +30,15 @@ if ( $tm_setting_background_section_hero ) : ?>
             // The site title
             echo '<h1>' . apply_filters( 'the_title', get_bloginfo( 'name' ) ) . '</h1>';
 
-        }
+		}
 
-        // The site description
-        $desc = get_bloginfo( 'description' );
+		// Description by hero
+		$tm_hero_description = get_theme_mod( 'tm_hero_description' );
 
-        if ( ! empty( $desc ) ) {
+        if ( ! empty( $tm_hero_description ) ) {
 
             echo '<div class="description">';
-                echo apply_filters( 'the_content', $desc );
+                echo apply_filters( 'the_content', $tm_hero_description );
             echo '</div><!-- /.description -->';
 
         } ?>
