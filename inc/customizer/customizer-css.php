@@ -39,6 +39,11 @@ function tm_customizer_output_css() {
                 color: <?php echo get_theme_mod( 'tm_fixed_color', '#888888' ); ?>;
             }
 
+			/* Hamburguer Menu */
+			.navbar-toggler .navbar-toggler-icon {
+				background-color: <?php echo get_theme_mod( 'tm_fixed_color', '#888888' ); ?> !important;
+			}
+
             /* Section About */
             #section-about {
                 color: <?php echo get_theme_mod( 'tm_color_section_about', '#FFFFFF' ); ?>;
