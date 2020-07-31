@@ -19,7 +19,7 @@ function tm_customizer_output_css() {
                 background-color: <?php echo get_theme_mod( 'tm_general_settings_sections_background_color', '#508991' ); ?>;
             }
 
-            /* Sections on Home */
+            /* Sections on Home, with class body.home .section-home */
             body.home .section-home {
                 padding-bottom: <?php echo get_theme_mod( 'tm_general_settings_padding', '100' ); ?>px;
                 padding-top: <?php echo get_theme_mod( 'tm_general_settings_padding', '100' ); ?>px;
