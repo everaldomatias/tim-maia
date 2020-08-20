@@ -603,7 +603,13 @@ if ( ! function_exists( 'tm_archive_title_filter' ) ) {
             $portfolio = get_post_type_object( 'portfolio' );
             $title = $portfolio->labels->name;
 
-        }
+		}
+
+		if (is_post_type_archive('team')) {
+
+			$team = get_post_type_object('team');
+			$title = $team->labels->name;
+		}
 
         return $title;
 
@@ -612,7 +618,9 @@ if ( ! function_exists( 'tm_archive_title_filter' ) ) {
 
 }
 
-
+/**
+ * Alter URL base from CPT Portfolio in admin setting
+ */
 add_action( 'load-options-permalink.php', 'tm_portfolio_load_permalinks' );
 function tm_portfolio_load_permalinks() {
 
@@ -638,3 +646,35 @@ function tm_portfolio_field_callback() {
 	echo '<input type="text" value="' . esc_attr( $value ) . '" name="tm_portfolio_base" id="tm_portfolio_base" class="regular-text" />';
 
 }
+
+/**
+ * Alter URL base from CPT Team in admin setting
+ */
+add_action('load-options-permalink.php', 'tm_team_load_permalinks');
+function tm_team_load_permalinks()
+{
+
+	if (isset($_POST['tm_team_base'])) {
+		update_option('tm_team_base', sanitize_title_with_dashes($_POST['tm_team_base']));
+	}
+
+	$tm_title_section_team = get_theme_mod('tm_team_labels_singular', __('Equipe', 'tim-maia'));
+	$tm_title_section_team = __('Base para', 'tim-maia') . ' ' . $tm_title_section_team;
+
+	// Add a settings field to the permalink page
+	add_settings_field('tm_team_base', $tm_title_section_team, 'tm_team_field_callback', 'permalink', 'optional');
+
+}
+
+function tm_team_field_callback()
+{
+
+	$tm_title_section_team = get_theme_mod('tm_team_labels_singular', __('Equipe', 'tim-maia'));
+	$tm_title_section_team = sanitize_title($tm_title_section_team);
+
+	$value = get_option('tm_team_base', $tm_title_section_team);
+	echo '<code>' . get_option('home') . '/</code>';
+	echo '<input type="text" value="' . esc_attr($value) . '" name="tm_team_base" id="tm_team_base" class="regular-text" />';
+
+}
+
