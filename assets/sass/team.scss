@@ -2,6 +2,9 @@
 	.loop {
 		align-items: stretch;
 		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+		margin-top: 15px;
 		padding-left: 0;
 		padding-right: 0;
 
@@ -11,13 +14,37 @@
 		}
 
 		.each {
-			flex: 1;
-			margin: auto 15px;
+			background-color: #cccccc;
+			background-blend-mode: multiply;
+			background-size: cover;
+			background-position: center;
+			color: #ffffff;
+			flex: 0 0 calc(33.333333% - 30px);
+			margin: 15px;
+			min-height: 350px;
+			overflow: hidden;
+			padding: 0;
+			position: relative;
 			text-align: center;
 
+			& > a {
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 9999;
+			}
 			h3 {
 				padding-bottom: 15px;
 				padding-top: 15px;
+			}
+			.inner {
+				bottom: -45px;
+				height: auto;
+				opacity: 0.9;
+				padding: 15px;
+				position: absolute;
 			}
 		}
 	}
