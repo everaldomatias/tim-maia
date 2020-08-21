@@ -1,0 +1,24 @@
+.post-type-archive-team {
+	.loop {
+		align-items: stretch;
+		display: flex;
+		padding-left: 0;
+		padding-right: 0;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+			max-width: 100%;
+		}
+
+		.each {
+			flex: 1;
+			margin: auto 15px;
+			text-align: center;
+
+			h3 {
+				padding-bottom: 15px;
+				padding-top: 15px;
+			}
+		}
+	}
+}
