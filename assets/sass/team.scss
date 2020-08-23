@@ -3,8 +3,7 @@
 		align-items: stretch;
 		display: flex;
 		flex-wrap: wrap;
-		margin-bottom: 15px;
-		margin-top: 15px;
+		justify-content: center;
 		padding-left: 0;
 		padding-right: 0;
 
@@ -14,11 +13,11 @@
 		}
 
 		.each {
-			background-color: #cccccc;
+			background-color: #CCCCCC;
 			background-blend-mode: multiply;
 			background-size: cover;
 			background-position: center;
-			color: #ffffff;
+			border-radius: 3px;
 			flex: 0 0 calc(33.333333% - 30px);
 			margin: 15px;
 			min-height: 350px;
@@ -26,25 +25,72 @@
 			padding: 0;
 			position: relative;
 			text-align: center;
+			transition: all 0.45s ease-in-out;
+			-o-transition: all 0.45s ease-in-out;
+			-moz-transition: all 0.45s ease-in-out;
+			-ms-transition: all 0.45s ease-in-out;
+			-webkit-transition: all 0.45s ease-in-out;
 
 			& > a {
+				color: #ffffff;
 				height: 100%;
 				left: 0;
 				position: absolute;
 				top: 0;
 				width: 100%;
 				z-index: 9999;
+
+				.inner {
+					background: rgb(78, 78, 78);
+					background: linear-gradient(360deg, rgba(78, 78, 78, 0.55) 50%, rgba(70, 70, 70, 0) 100%);
+					bottom: -45px;
+					height: auto;
+					opacity: 0.9;
+					padding: 15px;
+					position: absolute;
+					width: 100%;
+					transition: all 0.45s ease-in-out;
+					-o-transition: all 0.45s ease-in-out;
+					-moz-transition: all 0.45s ease-in-out;
+					-ms-transition: all 0.45s ease-in-out;
+					-webkit-transition: all 0.45s ease-in-out;
+
+					h2 {
+						margin-bottom: 0;
+						padding-bottom: 25px;
+						padding-top: 10px;
+						position: relative;
+					}
+
+					.meta {
+						min-height: 25px;
+						transition: all 0.45s ease-in-out;
+						-o-transition: all 0.45s ease-in-out;
+						-moz-transition: all 0.45s ease-in-out;
+						-ms-transition: all 0.45s ease-in-out;
+						-webkit-transition: all 0.45s ease-in-out;
+						opacity: 0;
+					}
+
+				}
 			}
-			h3 {
-				padding-bottom: 15px;
-				padding-top: 15px;
-			}
-			.inner {
-				bottom: -45px;
-				height: auto;
-				opacity: 0.9;
-				padding: 15px;
-				position: absolute;
+
+			&:hover {
+				background-color: #444444;
+				& > a {
+					color: #ffffff;
+
+					.inner {
+						bottom: -10px;
+
+						.meta {
+							margin-bottom: 15px;
+							margin-top: -15px;
+							opacity: 0.8;
+						}
+
+					}
+				}
 			}
 		}
 	}

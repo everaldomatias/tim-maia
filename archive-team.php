@@ -6,7 +6,7 @@ get_header(); ?>
 
 		<?php if (have_posts()) : ?>
 
-			<div class="col-sm-12 loop">
+			<div class="col-sm-12 entry-content loop">
 
 				<?php while (have_posts()) : the_post(); ?>
 
@@ -16,6 +16,9 @@ get_header(); ?>
 							<div class="inner">
 
 								<h2><?php the_title(); ?></h2>
+								<div class="meta">
+									<p>Especialidade</p>
+								</div><!-- /.meta -->
 
 							</div><!-- /.inner -->
 						</a>
@@ -28,9 +31,9 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<div class="col-sm-12 entry-content">
+			<div class="col-sm-12 entry-content loop no-loop">
 				<?php _e('Sinto muito, não temos nada para exibir aqui!', 'model'); ?>
-			</div><!-- /.entry-content -->
+			</div><!-- /.col-sm-12.entry-content.loop.no-loop -->
 
 		<?php endif; ?>
 

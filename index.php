@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
 <main>
-oi
+
 	<?php
 	/**
 	 *
