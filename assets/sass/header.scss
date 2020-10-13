@@ -1,6 +1,7 @@
 /* Header */
 header.site-header {
 	.navbar.fixed-top {
+		z-index: 9;
 		&>.container {
 			display: block !important;
 			.navbar-toggler {
@@ -37,7 +38,7 @@ header.site-header {
 				}
 				&:focus {
 					border: 0 !important;
-					outline: 0 !important;	
+					outline: 0 !important;
 				}
 				&.collapsed {
 					.navbar-toggler-icon {

@@ -122,7 +122,9 @@ function model_scripts() {
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 	// Grunt main file with Bootstrap and others libs.
-    wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+	wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+
+    wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/team.js', array(), null, true );
 
     $tm_use_section_portfolio = get_theme_mod( 'tm_use_section_portfolio', '0' );
 
@@ -678,3 +680,47 @@ function tm_team_field_callback()
 
 }
 
+
+add_action('wp_enqueue_scripts', 'team_scripts');
+function team_scripts() {
+	wp_register_script('team', get_template_directory_uri() . '/assets/js/team.js', ['jquery'], '', true);
+
+	$data = [
+		'ajaxurl'  => admin_url('admin-ajax.php'),
+		'security' => wp_create_nonce('get_member')
+	];
+
+	wp_localize_script('team', 'team_object', $data);
+
+	wp_enqueue_script('team');
+}
+
+
+
+
+
+function get_member()
+{
+
+	check_ajax_referer( 'get_member', 'security' );
+	$post_id = $_POST['post_id'];
+
+	$post = get_post($post_id, 'ARRAY_A');
+
+	if ( has_post_thumbnail( $post['ID'] ) ) {
+		echo '<div class="thumb">';
+		echo get_the_post_thumbnail( $post['ID'] );
+		echo '</div>';
+	}
+
+	echo '<div class="content">';
+	echo '<h2>' . $post['post_title'] . '</h2>';
+	echo get_the_content('', true, $post['ID'] );
+	echo '</div>';
+
+	die();
+
+}
+
+add_action("wp_ajax_get_member", "get_member");
+add_action("wp_ajax_nopriv_get_member", "get_member");
