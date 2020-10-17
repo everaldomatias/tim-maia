@@ -6,8 +6,6 @@ get_header(); ?>
 
 		<?php if (have_posts()) : ?>
 
-		<div class="modal-team"></div>
-
 			<div class="col-sm-12 entry-content loop">
 
 				<?php while (have_posts()) : the_post(); ?>
@@ -40,7 +38,6 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</div><!-- /.container -->
-
 
 </main>
 

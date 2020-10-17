@@ -15,15 +15,11 @@ jQuery(document).ready(function ($) {
 			};
 
 			$.post(team_object.ajaxurl, data, function (response) {
-
+				$('.overlay-modal').toggleClass('active');
+				$('html').toggleClass('modal-active');
 				if (response) {
-
-					$('.overlay-modal').toggleClass('active');
-					$('html').toggleClass('modal-active');
-
 					$('.response-content').html(response);
 				}
-
 			});
 
 		})
