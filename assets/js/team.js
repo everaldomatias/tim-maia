@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-	if ($('.post-type-archive-team')) {
+	if ($('.post-type-archive-team').length) {
 
 		$('body').on('click', '.each a', function(event) {
 
