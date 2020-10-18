@@ -3,9 +3,9 @@
 if ( ! function_exists( 'tm_title_pages' ) ) {
 
     /**
-     * 
+     *
      * Print the heading titles
-     * 
+     *
      */
     function tm_title_pages() {
 
@@ -46,23 +46,23 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
 
                 // Returns the text alignment
                 $tm_heading_text_alignment = get_theme_mod( 'tm_heading_text_alignment', 'center' );
-                
+
                 echo '<div class="container container-title text-align-' . esc_attr( $tm_heading_text_alignment ) . '">';
 
                     echo '<h1>';
 
                         if ( is_page() || is_single() ) {
-                            
+
                             the_title();
 
                         } elseif ( is_home() ) {
 
                             /**
-                             * 
+                             *
                              * Blog title
-                             * 
+                             *
                              * @link https://codex.wordpress.org/Conditional_Tags#The_Blog_Page
-                             * 
+                             *
                              */
                             $blog_title = get_the_title( get_option( 'page_for_posts', true ) );
                             echo apply_filters( 'the_title', $blog_title );
@@ -70,19 +70,24 @@ if ( ! function_exists( 'tm_title_pages' ) ) {
                         } elseif( is_category() ) {
 
                             echo single_term_title( '', false );
-                        
+
                         } elseif ( is_woocommerce_activated() && is_shop() ) {
 
                             woocommerce_page_title();
 
-                        } elseif ( is_archive() ) {
+                        } elseif ( is_post_type_archive( 'team' ) ) {
+
+							$team_title = get_theme_mod( 'tm_team_labels_singular', __( 'Equipe', 'tim-maia' ) );
+							echo apply_filters( 'the_title', $team_title );
+
+						} elseif ( is_archive() ) {
 
                             the_archive_title();
 
                         } elseif ( is_post_type_archive() ) {
 
                             echo 'cpt';
-                            
+
                         } else {
 
                             echo '@todo';
