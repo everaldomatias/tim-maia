@@ -97,7 +97,11 @@ function tm_customize_register( $wp_customize ) {
         'tm_section_portfolio' => array (
             'title'       => esc_html__( 'Portfólio', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir o portfólio.', 'tim-maia' ),
-        ),
+		),
+		'tm_section_team' => array(
+			'title'       => esc_html__( 'Equipe', 'tim-maia' ),
+			'description' => esc_html__( 'Seção para exibir sua equipe.', 'tim-maia' ),
+		),
         'tm_section_blog' => array (
             'title'       => esc_html__( 'Blog', 'tim-maia' ),
             'description' => esc_html__( 'Seção para exibir os últimos posts do blog.', 'tim-maia' ),
@@ -1129,7 +1133,7 @@ function tm_customize_register( $wp_customize ) {
                 'section'     => 'tm_section_portfolio'
             )
         )
-    );
+	);
 
     /**
      *
@@ -1167,15 +1171,104 @@ function tm_customize_register( $wp_customize ) {
             $wp_customize,
             'tm_portfolio_labels_plural_control',
             array(
-                'settings'    => 'tm_portfolio_labels_plural',
-                'type'        => 'text',
-                'label'       => esc_html__( 'Título da seção (Plural)', 'tim-maia' ),
-                'section'     => 'tm_section_portfolio'
+                'settings' => 'tm_portfolio_labels_plural',
+                'type'     => 'text',
+                'label'    => esc_html__( 'Título da seção (Plural)', 'tim-maia' ),
+                'section'  => 'tm_section_portfolio'
             )
         )
-    );
+	);
 
+	/**
+	 *
+	 * Section Equipe
+	 *
+	 */
+	$wp_customize->add_setting(
+		'tm_use_section_team',
+		array(
+			'default'           => '1',
+			'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'tm_use_section_team_control',
+			array(
+				'settings' => 'tm_use_section_team',
+				'type'     => 'checkbox',
+				'label'    => esc_html__('Usar a seção Equipe?', 'tim-maia'),
+				'section'  => 'tm_section_team'
+			)
+		)
+	);
 
+	/**
+	 *
+	 * Translations for labels Equipe
+	 *
+	 */
+
+	$wp_customize->add_setting(
+		'tm_team_labels_singular',
+		array(
+			'default'           => esc_html__('Equipe', 'tim-maia'),
+			'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'tm_team_labels_singular_control',
+			array(
+				'settings' => 'tm_team_labels_singular',
+				'type'     => 'text',
+				'label'    => esc_html__('Título da seção (Singular)', 'tim-maia'),
+				'section'  => 'tm_section_team'
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'tm_team_labels_agent_singular',
+		array(
+			'default'           => esc_html__('Profissional', 'tim-maia'),
+			'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'tm_team_labels_agent_singular_control',
+			array(
+				'settings' => 'tm_team_labels_agent_singular',
+				'type'     => 'text',
+				'label'    => esc_html__('Nome de cada agente da Equipe (Singular)', 'tim-maia'),
+				'section'  => 'tm_section_team'
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'tm_team_labels_agent_plural',
+		array(
+			'default'           => esc_html__('Profissionais', 'tim-maia'),
+			'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'tm_team_labels_agent_plural_control',
+			array(
+				'settings' => 'tm_team_labels_agent_plural',
+				'type'     => 'text',
+				'label'    => esc_html__('Coletivo de agentes da Equipe (Plural)', 'tim-maia'),
+				'section'  => 'tm_section_team'
+			)
+		)
+	);
 
     /**
      *
