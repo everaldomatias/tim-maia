@@ -11,6 +11,9 @@ require_once $get_template_directory . '/inc/CPT.php';
 // Custom Post Types
 require_once $get_template_directory . '/inc/post-types.php';
 
+// Metaboxes
+require_once $get_template_directory . '/inc/meta-boxes.php';
+
 // Template Functions
 require_once $get_template_directory . '/inc/template-functions.php';
 
