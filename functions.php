@@ -707,6 +707,7 @@ function get_member()
 
 	check_ajax_referer( 'get_member', 'security' );
 	$post_id = $_POST['post_id'];
+	$specialty = get_post_meta($post_id, 'team_specialty', true);
 
 	$post = get_post($post_id, 'ARRAY_A');
 
@@ -718,6 +719,11 @@ function get_member()
 
 	echo '<div class="content">';
 	echo '<h2>' . $post['post_title'] . '</h2>';
+
+	echo '<span class="meta">';
+	echo apply_filters('the_title', $specialty);
+	echo '</span>';
+
 	echo get_the_content('', true, $post['ID'] );
 	echo '</div>';
 
