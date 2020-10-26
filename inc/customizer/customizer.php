@@ -73,59 +73,10 @@ function tm_customize_register( $wp_customize ) {
         )
     );
 
-    /**
-     * Cria um array com as seções disponíveis
-     */
-
-    $default_sections = array (
-        'tm_section_hero' => array (
-            'title'       => esc_html__( 'Hero', 'tim-maia' ),
-            'description' => esc_html__( 'Seção hero para exibir o título/nome do site com uma imagem de fundo.', 'tim-maia' ),
-        ),
-        'tm_section_about' => array (
-            'title'       => esc_html__( 'Sobre', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para detalhar e explicar melhor do que se trata o site.', 'tim-maia' ),
-        ),
-        'tm_section_action' => array (
-            'title'       => esc_html__( 'Ação', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para adicionar uma chamada de ação.', 'tim-maia' ),
-        ),
-        'tm_section_features' => array (
-            'title'       => esc_html__( 'Recursos', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir recursos do seu produto/serviço na Home do site.', 'tim-maia' ),
-        ),
-        'tm_section_portfolio' => array (
-            'title'       => esc_html__( 'Portfólio', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir o portfólio.', 'tim-maia' ),
-		),
-		'tm_section_team' => array(
-			'title'       => esc_html__( 'Equipe', 'tim-maia' ),
-			'description' => esc_html__( 'Seção para exibir sua equipe.', 'tim-maia' ),
-		),
-        'tm_section_blog' => array (
-            'title'       => esc_html__( 'Blog', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir os últimos posts do blog.', 'tim-maia' ),
-        ),
-        'tm_section_donate' => array (
-			'title'       => esc_html__( 'Doações', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir pedir apoio e doações.', 'tim-maia' ),
-        ),
-        'tm_section_location' => array (
-			'title'       => esc_html__( 'Localização', 'tim-maia' ),
-            'description' => esc_html__( 'Seção para exibir mapa de localização.', 'tim-maia' ),
-        ),
-		'tm_section_social' => array (
-			'title'       => esc_html__( 'Social', 'tim-maia' ),
-			'description' => esc_html__( 'Seção para exibir os ícones das redes sociais.', 'tim-maia' ),
-		),
-    );
-
     $sortable_sections = get_theme_mod( 'tm_sections_order' );
-    if ( ! isset( $sortable_sections ) || empty( $sortable_sections ) ) {
-    //if ( isset( $sortable_sections ) || ! empty( $sortable_sections ) ) {
-        set_theme_mod( 'tm_sections_order', implode( ',', array_keys( $default_sections ) ) );
-    }
-    $sortable_sections = explode( ',', $sortable_sections );
+	$sortable_sections = explode( ',', $sortable_sections );
+
+	$default_sections = tm_register_sections();
 
     foreach( $sortable_sections as $sortable_section ){
         $wp_customize->add_section( $sortable_section, array(
@@ -2337,3 +2288,70 @@ function tm_customizer_live_preview() {
 	);
 }
 add_action( 'customize_preview_init', 'tm_customizer_live_preview' );
+
+/**
+ * Register the sections
+ *
+ * @return array
+ */
+function tm_register_sections() {
+	$default_sections = array(
+		'tm_section_hero' => array(
+			'title'       => esc_html__('Hero', 'tim-maia'),
+			'description' => esc_html__('Seção hero para exibir o título/nome do site com uma imagem de fundo.', 'tim-maia'),
+		),
+		'tm_section_about' => array(
+			'title'       => esc_html__('Sobre', 'tim-maia'),
+			'description' => esc_html__('Seção para detalhar e explicar melhor do que se trata o site.', 'tim-maia'),
+		),
+		'tm_section_action' => array(
+			'title'       => esc_html__('Ação', 'tim-maia'),
+			'description' => esc_html__('Seção para adicionar uma chamada de ação.', 'tim-maia'),
+		),
+		'tm_section_features' => array(
+			'title'       => esc_html__('Recursos', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir recursos do seu produto/serviço na Home do site.', 'tim-maia'),
+		),
+		'tm_section_portfolio' => array(
+			'title'       => esc_html__('Portfólio', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir o portfólio.', 'tim-maia'),
+		),
+		'tm_section_team' => array(
+			'title'       => esc_html__('Equipe', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir sua equipe.', 'tim-maia'),
+		),
+		'tm_section_blog' => array(
+			'title'       => esc_html__('Blog', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir os últimos posts do blog.', 'tim-maia'),
+		),
+		'tm_section_donate' => array(
+			'title'       => esc_html__('Doações', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir pedir apoio e doações.', 'tim-maia'),
+		),
+		'tm_section_location' => array(
+			'title'       => esc_html__('Localização', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir mapa de localização.', 'tim-maia'),
+		),
+		'tm_section_social' => array(
+			'title'       => esc_html__('Social', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir os ícones das redes sociais.', 'tim-maia'),
+		),
+	);
+	return $default_sections;
+}
+
+/**
+ * Run config of the sections
+ */
+function tm_init_sections() {
+
+	$sortable_sections = get_theme_mod('tm_sections_order');
+	$sortable_sections = explode(',', $sortable_sections);
+
+	$register_sections = tm_register_sections();
+
+	if (count($sortable_sections) != count($register_sections)) {
+		set_theme_mod('tm_sections_order', implode(',', array_keys($register_sections)));
+	}
+
+}

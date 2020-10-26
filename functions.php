@@ -344,7 +344,13 @@ function initial_config_theme() {
             update_option( 'page_for_posts', $page_blog_check->ID );
         }
 
-    }
+	}
+
+	/**
+	 * Init sections by theme
+	 */
+	tm_init_sections();
+
 }
 add_action( 'after_switch_theme', 'initial_config_theme' );
 
