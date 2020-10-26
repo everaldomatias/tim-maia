@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(function() {
 
 	var parallax = jQuery('.parallax-window');
 	var height = window.innerHeight;
@@ -36,8 +36,7 @@ jQuery(document).ready(function() {
 	});
 
 });
-
-jQuery(document).ready(function ($) {
+jQuery(function($) {
 
 	var $grid = $('.grid').isotope({
 		layoutMode: 'fitRows',
