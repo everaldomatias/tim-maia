@@ -113,9 +113,9 @@ if ( ! function_exists( 'tm_redirect_single_team' ) ) {
 	 *
 	 * @return void
 	 */
-	function tm_redirect_single_team() {
+	function tm_redirect_single_team($query) {
 
-		if ( is_singular( 'team' ) ) {
+		if ($query->is_singular && $query->get('post_type') === 'team') {
 
 			$singular     = get_theme_mod( 'tm_team_labels_singular', __( 'Equipe', 'tim-maia' ) );
 			$tm_team_base = get_option( 'tm_team_base', sanitize_title( $singular ) );
