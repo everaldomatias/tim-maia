@@ -115,19 +115,18 @@ if ( ! function_exists( 'tm_redirect_single_team' ) ) {
 	 */
 	function tm_redirect_single_team($query) {
 
-		if ($query->is_singular && $query->get('post_type') === 'team') {
+		if (is_singular('team')) {
 
 			$singular     = get_theme_mod( 'tm_team_labels_singular', __( 'Equipe', 'tim-maia' ) );
 			$tm_team_base = get_option( 'tm_team_base', sanitize_title( $singular ) );
 
 			wp_redirect( home_url( $tm_team_base ), 301 );
-
 			die();
 
 		}
 
 	}
 
-	add_action('pre_get_posts', 'tm_redirect_single_team');
+	add_action('template_redirect', 'tm_redirect_single_team');
 
 }
