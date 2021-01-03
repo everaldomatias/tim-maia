@@ -39,7 +39,7 @@ body.home {
                 width: 50% !important;
             }
         }
-        
+
         /* 2 columns */
         .grid-item--width2 {
             width: 50%;
@@ -50,7 +50,10 @@ body.home {
                 top: 0 !important;
                 width: 50% !important;
             }
-        }
+		}
+		.grid-item--width-full {
+			width: 100% !important;
+		}
         .each {
             background-color: #cccccc;
             background-blend-mode: multiply;
