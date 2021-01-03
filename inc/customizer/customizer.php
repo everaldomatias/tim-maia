@@ -1992,7 +1992,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_fixed_background_color', array(
-            'default'   => '#111111',
+            'default'   => '#2f293b',
             'transport' => 'postMessage'
         )
     );
@@ -2013,7 +2013,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_fixed_color', array(
-            'default'   => '#888888',
+            'default'   => '#f9f9f9',
             'transport' => 'postMessage'
         )
     );

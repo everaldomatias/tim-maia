@@ -30,7 +30,7 @@ function tm_customizer_output_css()
 		.fixed-top,
 		.fixed-top .dropdown-menu,
 		.footer-menu {
-			background-color: <?php echo get_theme_mod('tm_fixed_background_color', '#111111'); ?>;
+			background-color: <?php echo get_theme_mod('tm_fixed_background_color', '#2f293b'); ?>;
 		}
 
 		.fixed-top,
@@ -39,12 +39,12 @@ function tm_customizer_output_css()
 		.navbar-toggler.collapsed span,
 		.footer-menu,
 		.footer-menu a {
-			color: <?php echo get_theme_mod('tm_fixed_color', '#888888'); ?>;
+			color: <?php echo get_theme_mod('tm_fixed_color', '#f9f9f9'); ?>;
 		}
 
 		/* Hamburguer Menu */
 		.navbar-toggler .navbar-toggler-icon {
-			background-color: <?php echo get_theme_mod('tm_fixed_color', '#888888'); ?> !important;
+			background-color: <?php echo get_theme_mod('tm_fixed_color', '#f9f9f9'); ?> !important;
 		}
 
 		/* Section About */
