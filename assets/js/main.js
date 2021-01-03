@@ -4,6 +4,22 @@ jQuery(function() {
 	var height = window.innerHeight;
 	var resizeTimer;
 
+	if ( jQuery( '.full-height' ).length ) {
+
+		jQuery('.full-height').css('min-height', height);
+
+		jQuery(window).on('resize', function () {
+
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+
+				jQuery('.full-height').css('min-height', height);
+
+			}, 200);
+		});
+
+	}
+
 	if ( jQuery( 'body.home' ).length ) {
 
 		jQuery(parallax).css('min-height', height);

@@ -1,6 +1,9 @@
 /* Hero */
-
-#section-hero h1,
-#section-hero .description {
-    color: #FFFFFF;
+#section-hero {
+	h1, .description {
+		color: #FFFFFF;
+	}
+	&.default-bg-color {
+		background-image: linear-gradient(to right bottom, #352f37, #403a46, #4b4555, #555166, #5e5e77, #626b87, #657896, #6686a5, #6397b3, #61a7be, #63b8c5, #6cc8c8);
+	}
 }

@@ -101,7 +101,6 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_setting_background_section_hero', array(
-            'default'           => get_stylesheet_directory_uri() . '/assets/images/default/photo-of-person-holding-black-tablet-3740162.jpg',
             'sanitize_callback' => 'esc_url_raw',
             //'transport'         => 'postMessage'
         )
