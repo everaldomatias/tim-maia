@@ -1,7 +1,7 @@
 /**
  * This file adds some LIVE to the Theme Customizer live preview. To leverage
  * this, set your custom settings to 'postMessage' and then add your handling
- * here. Your javascript should grab settings from customizer controls, and 
+ * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  */
 (function ($) {
@@ -20,7 +20,7 @@
     //         $('#section-hero').attr('data-image-src', newval);
     //     });
     // });
-    
+
     // Body
     wp.customize('tm_general_settings_background_color', function (value) {
         value.bind(function (newval) {
@@ -65,7 +65,13 @@
         value.bind( function ( newval ) {
             $( '#section-hero h1, #section-hero .description' ).css( 'color', newval );
         });
-    });
+	});
+
+	wp.customize('tm_hero_description', function(value){
+		value.bind(function(to){
+			$('#section-hero .description').text(to);
+		});
+	});
 
     // Action
     wp.customize('tm_color_section_action', function (value) {
@@ -160,7 +166,7 @@
         });
     });
 
-    
+
 
     //
     wp.customize( 'tm_general_settings_over_layer_color', function (value) {
