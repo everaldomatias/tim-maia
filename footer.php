@@ -60,7 +60,7 @@
 
 					<?php else : ?>
 
-						<?php bloginfo( 'name' ); ?> • Copyright © <?php echo date( 'Y' ); ?> • Desenvolvido por <a href="https://everald.dev/" target="_blank" title="Desenvolvido por Everaldo Matias">Everaldo Matias</a>
+						<?php bloginfo( 'name' ); ?> • Copyright © <?php echo date( 'Y' ); ?> • Desenvolvido por <a href="https://everaldo.dev/" target="_blank" title="Desenvolvido por Everaldo Matias">Everaldo Matias</a>
 
 					<?php endif; ?>
 
