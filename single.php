@@ -8,7 +8,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : the_post(); ?>
 
-				<div class="col-sm-8 entry-content">
+				<div class="col-sm-9 entry-content">
 
 					<?php the_content(); ?>
 					
@@ -27,15 +27,13 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				<div class="col-sm-8 entry-content">
+				<div class="col-sm-9 entry-content">
 					<?php _e( 'Nada para exibir aqui!', 'model' ); ?>
 				</div><!-- /.entry-content -->
 
 			<?php endif; ?>
 
-			<div class="col-sm-4" id="sidebar">
-				<?php dynamic_sidebar( 'sidebar-main' ); ?>
-			</div><!-- /#sidebar -->
+			<?php get_sidebar(); ?>
 
 		</div><!-- /.row -->
 		

@@ -4,9 +4,11 @@
 		max-width: 100%;
 	}
 	.entry-content {
-		padding: 60px 0 0;
-
-
+		padding: 60px 0;
+		&.col-sm-9 {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 		/* Forms */
 		label {
 			display: block
@@ -25,14 +27,32 @@
 			}
 		}
 		input[type="submit"] {
-			background-color: $cinza-escuro;
-			border: 0;
-			box-shadow: 0;
-			color: $branco;
+			background-color: transparent;
+			border: 1px solid $cinza-escuro;
+			border-radius: 3px;
+			color: $cinza-escuro;
 			padding: 10px 15px;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				cursor: pointer;
+				filter: brightness( 70% );
+			}
+		}
+		.post-nav-links {
+			padding: 15px;
+			text-align: center;
+		}
+		.wp-block-image {
+			img {
+				@media ( max-width: 768px ) {
+					width: 100%;
+				}
+			}
 		}
 	}
 	#comments {
+		margin-bottom: 50px;
+		margin-top: 50px;
 		ol.comment-list {
 			padding-left: 0;
 			li.comment {

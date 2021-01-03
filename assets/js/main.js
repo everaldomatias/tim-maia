@@ -1,39 +1,35 @@
-jQuery(document).ready(function() {
+jQuery(function() {
 
 	var parallax = jQuery('.parallax-window');
 	var height = window.innerHeight;
 	var resizeTimer;
 
-	if ( jQuery( 'body.home' ).length ) {
+	if ( jQuery( '.full-height' ).length ) {
 
-		jQuery(parallax).css('height', height);
+		jQuery('.full-height').css('min-height', height);
 
 		jQuery(window).on('resize', function () {
 
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(function () {
 
-				jQuery(parallax).css('height', height);
+				jQuery('.full-height').css('min-height', height);
 
 			}, 200);
 		});
 
-	} else {
+	}
 
-		height = height / 2;
-		
-		if ( height <= 450 ) {
-			height = 450;
-		}
+	if ( jQuery( 'body.home' ).length ) {
 
-		jQuery(parallax).css('height', height);
+		jQuery(parallax).css('min-height', height);
 
 		jQuery(window).on('resize', function () {
 
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(function () {
 
-				jQuery(parallax).css('height', height);
+				jQuery(parallax).css('min-height', height);
 
 			}, 200);
 		});
@@ -53,6 +49,35 @@ jQuery(document).ready(function() {
 	      }
 	    }
 	  });
+	});
+
+});
+jQuery(function($) {
+
+	var $grid = $('.grid').isotope({
+		layoutMode: 'fitRows',
+		itemSelector: '.grid-item',
+		percentPosition: true,
+		masonry: {
+			// use element for option
+			columnWidth: '.grid-sizer'
+		}
+	});
+
+	// Layout Isotope after each image loads
+	$grid.imagesLoaded().progress(function () {
+		$grid.isotope('layout');
+	});
+
+	// Filter items on button click
+	$('#types').on('click', 'a', function () {
+		var filterValue = $(this).attr('data-filter');
+
+		$('#cpt-wrap').isotope({ filter: filterValue });
+
+		$(this).parent('div').find('a').removeClass('active');
+		$(this).addClass('active');
+		return false;
 	});
 
 });

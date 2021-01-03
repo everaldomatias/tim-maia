@@ -5,26 +5,36 @@
 
 /*!
 Theme Name: Model
-Author URI: https://everaldomatias.github.io/
+Author URI: https://everaldo.dev/
 Description: Main stylesheet.
 Author: Everaldo Matias
-Author URI: https://everaldomatias.github.io/model/
+Author URI: https://timmaia.everaldo.dev/
 */
 
 @import
-	"bootstrap", 			// Bootstrap
-        "variables",			// Custom Variables
-        "layout",			// Custom Layout
-        "header",                       // Header
-        "parallax",			// Parallax
-        "home",				// Home
-        "blog",                         // Blog
-        "sidebar",                      // Sidebar
-        "pages",			// Pages
-        "social",			// Social
-        "acao",				// Call to Action
-        "doacoes",			// Doações
-        "archives",                     // Archives
-        "footer",			// Footer
-        "woocommerce"                   // WooCommerce
+	"bootstrap",     // Bootstrap
+	"variables",     // Custom Variables
+	"layout",        // Custom Layout
+	"media",         // Media Queries
+	"header",        // Header
+	"heading-title", // Heading Title
+	"parallax",      // Parallax
+	"hero",          // Hero
+	"about",         // About
+	"home",          // Home
+	"blog",          // Blog
+	"sidebar",       // Sidebar
+	"comments",      // Comments
+	"pages",         // Pages
+	"social",        // Social
+	"action",        // Call to Action
+	"features",      // Features
+	"donate",        // Donate
+	"location",      // Location
+	"archives",      // Archives
+	"footer",        // Footer
+	"woocommerce",   // WooCommerce
+	"portfolio",     // Portfolio
+	"team",          // Team
+	"cf7"            // Contact Form 7
 ;

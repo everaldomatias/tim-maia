@@ -1,0 +1,23 @@
+#section-features {
+    color: #ffffff;
+    .container-features {
+        align-items: stretch;
+        display: flex;
+        @media ( max-width: 768px ) {
+            flex-direction: column;
+        }
+        .each-feature {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            img {
+                max-width: 150px;
+                padding: 15px;
+            }
+            h3 {
+                padding-bottom: 15px;
+                padding-top: 15px;
+            }
+        }
+    }  
+}

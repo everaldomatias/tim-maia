@@ -1,41 +1,39 @@
-<?php
-/**
- *
- * Retorna as strings padrões do tema no array $sd
- * 
- * @author 		Everaldo Matias <http://everaldomatias.github.io>
- * @version 	0.1
- * @since 		09/04/2018
- * @see 		https://codex.wordpress.org/Transients_API
- * 
- */
-$sd = get_transient( 'strings_default' );
+<?php $tm_use_section_social = get_theme_mod( 'tm_use_section_social', '0' );
 
-/**
- * Sessão Social
- */
+if ( $tm_use_section_social ) :
 
-$social 				= array();
-$social['facebook'] 	= get_theme_mod( 'facebook', $sd['facebook'] );
-$social['instagram'] 	= get_theme_mod( 'instagram', $sd['instagram'] );
-$social['twitter'] 		= get_theme_mod( 'twitter', $sd['twitter'] );
-$social['tumblr'] 		= get_theme_mod( 'tumblr', $sd['tumblr'] );
-$social['snapchat'] 	= get_theme_mod( 'snapchat', $sd['snapchat'] );
-$social['flickr'] 		= get_theme_mod( 'flickr', $sd['flickr'] );
-$social['site'] 		= get_theme_mod( 'site', $sd['site'] );
-$social['email'] 		= get_theme_mod( 'email', $sd['email'] );
-$social 				= array_filter( $social );
+	/**
+	 * Get the social URLs
+	 */
+	$icons = [];
+	$icons['facebook']  = get_theme_mod( 'tm_social_facebook' );
+	$icons['instagram'] = get_theme_mod( 'tm_social_instagram' );
+	$icons['twitter']   = get_theme_mod( 'tm_social_twitter' );
+	$icons['tumblr']    = get_theme_mod( 'tm_social_tumblr' );
+	$icons['flickr']    = get_theme_mod( 'tm_social_flickr' );
+	$icons['snapchat']  = get_theme_mod( 'tm_social_snapchat' );
+	$icons['site']      = get_theme_mod( 'tm_social_site' );
+	$icons['email']     = get_theme_mod( 'tm_social_email' );
+	$icons = array_filter( $icons ); ?>
 
-if ( is_array( $social ) ) : ?>
+    <div id="section-social">
+        <div class="container container-icons">
 
-	<div id="section-social">
-		<div class="container"></div>
+			<?php if ( is_array( $icons ) ) :
 
-			<?php foreach ( $social as $key => $value ) : ?>
-				<a href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
-			<?php endforeach; ?>
+				foreach( $icons as $key => $value ) :
 
-		</div><!-- /.container -->
-	</div><!-- /#section-social -->
-	
-<?php endif; ?>
+					if ( 'email' == $key ) : ?>
+						<a rel="nofollow noopener" target="_blank" href="mailto:<?php echo antispambot( sanitize_email( $value ) ); ?>" class="<?php echo esc_attr( $key ) ?>"></a>
+					<?php else : ?>
+						<a rel="nofollow noopener" target="_blank" href="<?php echo esc_url( $value ); ?>" class="<?php echo esc_attr( $key ); ?>"></a>
+					<?php endif;
+
+				endforeach;
+
+			endif; ?>
+
+        </div><!-- /.container.container-icons -->
+    </div><!-- /#section-social -->
+
+<?php endif;

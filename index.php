@@ -6,12 +6,12 @@ get_header(); ?>
 	/**
 	 *
 	 * Retorna as strings padrões do tema no array $sd
-	 * 
+	 *
  	 * @author 		Everaldo Matias <http://everaldomatias.github.io>
  	 * @version 	0.1
  	 * @since 		09/04/2018
  	 * @see 		https://codex.wordpress.org/Transients_API
- 	 * 
+ 	 *
 	 */
 	$sd = get_transient( 'strings_default' ); ?>
 
@@ -33,7 +33,7 @@ get_header(); ?>
 
 								<?php $count++; ?>
 								<?php $class = ''; ?>
-							
+
 								<?php if ( $count == 1 ) : ?>
 									<?php $class = 'col-sm-12'; ?>
 								<?php elseif ( $count == 2 || $count == 3 ) : ?>
@@ -44,7 +44,7 @@ get_header(); ?>
 
 								<div class="<?php echo $class; ?>">
 
-									<div <?php thumbnail_bg( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
+									<div <?php tm_background_thumbnail( 'full' ); ?> class="col-sm-12 each each-<?php echo $count; ?>">
 
 										<a href="<?php the_permalink(); ?>">
 											<div class="inner">
@@ -68,7 +68,7 @@ get_header(); ?>
 												</div><!-- /.meta -->
 											</div><!-- /.inner -->
 										</a>
-										
+
 									</div><!-- /.each-<?php echo $count; ?> -->
 
 								</div><!-- /.<?php echo $class; ?> -->
@@ -87,12 +87,10 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<div class="col-sm-3" id="sidebar">
-				<?php dynamic_sidebar( 'sidebar-main' ); ?>
-			</div><!-- /#sidebar -->
+			<?php get_sidebar(); ?>
 
 		</div><!-- /.row -->
-		
+
 	</div><!-- /.container -->
 
 </main>

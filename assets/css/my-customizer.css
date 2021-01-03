@@ -1,0 +1,9 @@
+li[id*="tm_hidden_"],
+ul[id*="tm_hidden_"],
+.tm_hidden {
+    display: none !important;
+}
+
+.tm_section .accordion-section-title:active {
+    cursor: move !important;
+}

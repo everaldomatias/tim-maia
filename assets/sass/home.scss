@@ -3,6 +3,12 @@
 	#content {
 		max-width: 100%;
 	}
+	/* All Sections */
+	[id*="section"] {
+		h2 {
+			margin-bottom: 30px;
+		}
+	}
 	/* Sobre */
 	#section-sobre {
 		background-color: #ffffff;
@@ -17,22 +23,10 @@
 	/* Diferenciais */
 	#section-diferenciais {
 		background-color: #ffffff;
-		padding-bottom: 80px;
-	    padding-top: 80px;
 	    text-align: center;
 	}
 	/* Blog */
 	#section-blog {
-		padding-bottom: 30px;
-		padding-top: 60px;
-		h2.home-title {
-			margin-bottom: 30px;
-			text-align: center;
-		}
-		a {
-			color: #ffffff;
-			text-decoration: none;
-		}
 		.each {
 			background-color: #cccccc;
 			background-blend-mode: multiply;
@@ -50,7 +44,9 @@
 			}
 			& > a {
 				height: 100%;
+				left: 0;
 				position: absolute;
+				top: 0;
 				width: 100%;
 				z-index: 9999;
 			}
@@ -92,8 +88,6 @@
 				background-color: #333333;
 				.inner {
 					bottom: -10px;
-					h2 {
-					}
 					.meta {
 						margin-bottom: 15px;
 						margin-top: -15px;
@@ -110,7 +104,6 @@
 			min-height: 400px;				
 		}
 		.btn {
-			margin: 0 auto;
 			&:hover {
 				opacity: 0.7;
 			}

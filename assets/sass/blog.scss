@@ -1,3 +1,25 @@
+#section-blog {
+	color: #ffffff;
+	.container-blog {
+        align-items: stretch;
+		display: flex;
+		padding-left: 0;
+        padding-right: 0;
+        @media ( max-width: 768px ) {
+            flex-direction: column;
+            max-width: 100%;
+        }
+        .each {
+            flex: 1;
+            margin: auto 15px;
+            text-align: center;
+            h3 {
+                padding-bottom: 15px;
+                padding-top: 15px;
+            }
+        }
+    }
+}
 .blog,
 .category {
 	#content {
@@ -22,7 +44,9 @@
 				@include transition( all .45s ease-in-out );
 				& > a {
 					height: 100%;
+					left: 0;
 					position: absolute;
+					top: 0;
 					width: 100%;
 					z-index: 9999;
 				}
@@ -67,8 +91,6 @@
 					background-color: #333333;
 					.inner {
 						bottom: -10px;
-						h2 {
-						}
 						.meta {
 							margin-bottom: 15px;
 							margin-top: -15px;

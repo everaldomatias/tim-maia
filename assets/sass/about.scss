@@ -1,0 +1,10 @@
+#section-about {
+    flex-wrap: wrap;
+    > div {
+        flex-basis: 100%;
+        @media ( max-width: 768px ) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

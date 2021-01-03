@@ -1,0 +1,37 @@
+.wpcf7 {
+    textarea {
+        height: 100px;
+    }
+    input[ type="text" ],
+    input[ type="email" ],
+    textarea {
+        background-color: $cinza-claro;
+        border: none;
+        border-radius: 3px;
+        color: $cinza-escuro;
+        padding: 10px;
+        width: 100%;
+        &:focus {
+            outline: none;
+        }
+        &::-webkit-input-placeholder /* Chrome/Opera/Safari */,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &:-moz-placeholder {
+            color: $cinza-escuro;
+        }
+    }
+    input[type="submit"] {
+        background-color: transparent;
+        border: 1px solid $cinza-escuro;
+        border-radius: 3px;
+        color: $cinza-escuro;
+        padding: 10px 15px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            cursor: pointer;
+            filter: brightness( 70% );
+        }
+    }
+
+}

@@ -1,5 +1,6 @@
 <?php
 get_header(); ?>
+
 <main>
 
 	<div class="container">
@@ -7,7 +8,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : the_post(); ?>
 
 			<div class="entry-content">
-				<?php the_content(); ?>				
+				<?php the_content(); ?>
 			</div><!-- /.entry-content -->
 
 		<?php else : ?>
@@ -17,7 +18,7 @@ get_header(); ?>
 			</div><!-- /.entry-content -->
 
 		<?php endif; ?>
-		
+
 	</div><!-- /.container -->
 
 </main>
