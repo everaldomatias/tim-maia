@@ -143,8 +143,8 @@ function tm_customizer_output_css()
 
 		/* Footer */
 		footer.site-footer {
-			background-color: <?php echo get_theme_mod('tm_footer_background_color', '#111111'); ?>;
-			color: <?php echo get_theme_mod('tm_footer_color', '#888888'); ?>;
+			background-color: <?php echo get_theme_mod('tm_footer_background_color', '#2f293b'); ?>;
+			color: <?php echo get_theme_mod('tm_footer_color', '#f9f9f9'); ?>;
 		}
 
 		footer.site-footer a:hover {

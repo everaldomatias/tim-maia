@@ -1,4 +1,4 @@
-<?php $tm_use_section_blog = get_theme_mod( 'tm_use_section_blog', '1' ); ?>
+<?php $tm_use_section_blog = get_theme_mod( 'tm_use_section_blog', '0' ); ?>
 
 <?php if ( $tm_use_section_blog ) : ?>
 
@@ -22,7 +22,7 @@
                 'ignore_sticky_posts' => 1
             );
             $posts = new WP_Query( $args );
-            
+
             if ( $posts->have_posts() ) :
                 while ( $posts->have_posts() ) : $posts->the_post(); ?>
 
@@ -30,14 +30,14 @@
 
                         <a href="<?php the_permalink(); ?>">
                             <div class="inner">
-                                
+
                                 <span class="cat"><?php the_category( ' • ' ); ?></span><!-- /.cat -->
                                 <h2><?php the_title(); ?></h2>
 
                                 <div class="meta">
                                     <?php tm_print_comments_counter(); ?>
                                 </div><!-- /.meta -->
-                                
+
                             </div><!-- /.inner -->
                         </a>
 

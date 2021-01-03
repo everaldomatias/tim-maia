@@ -1,4 +1,4 @@
-<?php $tm_use_section_features = get_theme_mod( 'tm_use_section_features', '1' ); ?>
+<?php $tm_use_section_features = get_theme_mod( 'tm_use_section_features', '0' ); ?>
 
 <?php if ( $tm_use_section_features ) : ?>
 

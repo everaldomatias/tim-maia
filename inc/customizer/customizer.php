@@ -206,7 +206,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_use_section_about', array(
-            'default'           => '1',
+            'default'           => '0',
             'sanitize_callback' => 'wp_kses_post'
         )
     );
@@ -396,7 +396,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_use_section_action', array(
-            'default'           => '1',
+            'default'           => '0',
             'sanitize_callback' => 'wp_kses_post'
         )
     );
@@ -585,7 +585,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_use_section_features', array(
-            'default'           => '1',
+            'default'           => '0',
             'sanitize_callback' => 'wp_kses_post'
         )
     );
@@ -1227,7 +1227,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_use_section_blog', array(
-            'default'           => '1',
+            'default'           => '0',
             'sanitize_callback' => 'wp_kses_post'
         )
     );
@@ -1326,7 +1326,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_use_section_donate', array(
-            'default'           => '1',
+            'default'           => '0',
             'sanitize_callback' => 'wp_kses_post'
         )
     );
@@ -1560,7 +1560,7 @@ function tm_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting(
         'tm_use_section_social', array(
-            'default'           => '1',
+            'default'           => '0',
             'sanitize_callback' => 'wp_kses_post'
         )
     );

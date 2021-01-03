@@ -1,4 +1,4 @@
-<?php $tm_use_section_donate = get_theme_mod( 'tm_use_section_donate', '1' );
+<?php $tm_use_section_donate = get_theme_mod( 'tm_use_section_donate', '0' );
 
 if ( $tm_use_section_donate ) :
 

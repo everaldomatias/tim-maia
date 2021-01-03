@@ -1,4 +1,4 @@
-<?php $tm_use_section_social = get_theme_mod( 'tm_use_section_social', '1' );
+<?php $tm_use_section_social = get_theme_mod( 'tm_use_section_social', '0' );
 
 if ( $tm_use_section_social ) :
 
