@@ -1775,6 +1775,86 @@ function tm_customize_register( $wp_customize ) {
     );
 
     /**
+     *
+     * Free
+     *
+     */
+    $wp_customize->add_setting(
+        'tm_use_section_free', array(
+            'default'           => '0',
+            'sanitize_callback' => 'wp_kses_post'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_use_section_free_control',
+            array(
+                'settings' => 'tm_use_section_free',
+                'type'     => 'checkbox',
+                'label'    => esc_html__( 'Usar a seção Free?', 'tim-maia' ),
+                'section'  => 'tm_section_free'
+            )
+        )
+    );
+
+    /**
+     * Background color
+     */
+    $wp_customize->add_setting(
+        'tm_free_background_color', array(
+            'default'   => '#444444',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_free_background_color_control',
+            array(
+                'settings' => 'tm_free_background_color',
+                'label'    => esc_html__( 'Cor de fundo da seção', 'tim-maia' ),
+                'section'  => 'tm_section_free'
+            )
+        )
+    );
+
+    /**
+     * Select the page
+     */
+    $wp_customize->add_setting(
+        'tm_free_page_id', array(
+            'default'   => '',
+            'transport' => 'postMessage'
+        )
+    );
+
+    $get_pages = get_pages();
+    $pages = [];
+
+    foreach( $get_pages as $page ) {
+        $pages[$page->ID] = $page->post_title;
+    }
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'tm_free_page_id_control',
+            array(
+                'label'    => __( 'Página', 'tim-maia' ),
+                'section'  => 'tm_section_free',
+                'settings' => 'tm_free_page_id',
+                'type'     => 'select',
+                'choices'  => $pages
+            )
+        )
+    );
+
+
+
+
+
+    /**
      * Adiciona o painel Configurações Gerais
      */
     $wp_customize->add_panel( 'tm_panel_general_settings', array(
@@ -2335,6 +2415,10 @@ function tm_register_sections() {
 			'title'       => esc_html__('Social', 'tim-maia'),
 			'description' => esc_html__('Seção para exibir os ícones das redes sociais.', 'tim-maia'),
 		),
+        'tm_section_free' => array(
+			'title'       => esc_html__('Livre', 'tim-maia'),
+			'description' => esc_html__('Seção para exibir o conteúdo de uma página.', 'tim-maia'),
+		),
 	);
 	return $default_sections;
 }
@@ -2350,7 +2434,7 @@ function tm_init_sections() {
 	$register_sections = tm_register_sections();
 
 	if (count($sortable_sections) != count($register_sections)) {
-		set_theme_mod('tm_sections_order', implode(',', array_keys($register_sections)));
-	}
+        set_theme_mod('tm_sections_order', implode(',', array_keys($register_sections)));
+    }
 
 }

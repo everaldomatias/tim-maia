@@ -500,6 +500,10 @@ if ( ! function_exists( 'tm_get_sections' ) ):
                 $output .= tm_load_template_part( 'template-parts/section/section-location' );
                 break;
 
+            case 'tm_section_free':
+                $output .= tm_load_template_part( 'template-parts/section/section-free' );
+                break;
+
             default:
                 break;
             }
