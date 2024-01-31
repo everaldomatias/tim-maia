@@ -7,21 +7,27 @@ body.home {
         @media ( max-width: 768px ) {
             max-width: 100%;
         }
-        ul#types {
-            list-style: none;
+
+        #types {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             margin-bottom: 0;
             padding: 30px 15px;
-            text-align: center;
-            li {
-                display: inline-block;
-                padding: 15px;
-                a {
-                    &:hover {
-                        text-decoration: none;
-                    }
+
+            a {
+                &.active {
+                    color: #FFF;
+                    font-weight: 700;
+                }
+
+                &:hover {
+                    color: #FFF;
+                    text-decoration: none;
                 }
             }
         }
+
         #cpt-wrap {
             @media ( max-width: 768px ) {
                 height: auto !important;

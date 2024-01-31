@@ -52,6 +52,7 @@ jQuery(function() {
 	});
 
 });
+
 jQuery(function($) {
 
 	var $grid = $('.grid').isotope({
@@ -75,8 +76,15 @@ jQuery(function($) {
 
 		$('#cpt-wrap').isotope({ filter: filterValue });
 
+		$('.grid-item').removeClass('filtered-item');
+
+		if (filterValue !== '*') {
+			$('.grid-item' + filterValue).addClass('filtered-item');
+		}
+		
 		$(this).parent('div').find('a').removeClass('active');
 		$(this).addClass('active');
+		
 		return false;
 	});
 

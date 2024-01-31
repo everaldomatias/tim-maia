@@ -130,16 +130,13 @@ function model_scripts() {
 	// Grunt main file with Bootstrap and others libs.
 	wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 
-    wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/team.js', array(), null, true );
+    // wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/team.js', array(), null, true );
 
     $tm_use_section_portfolio = get_theme_mod( 'tm_use_section_portfolio', '0' );
 
     if ( $tm_use_section_portfolio || is_post_type_archive( 'portfolio' ) ) {
-
-        wp_enqueue_script( 'isotope', $template_url . '/assets/js/libs/isotope.pkgd.min.js', array( 'jquery', 'imagesloaded' ), null, true );
-
+        wp_enqueue_script( 'isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', ['jquery', 'imagesloaded', 'model-main-min'], '3.0.6', true );
     }
-
 
 }
 add_action( 'wp_enqueue_scripts', 'model_scripts' );
@@ -248,7 +245,7 @@ function get_widgets_class_by_qtd( $sidebar_name ) {
  *
  */
 function get_template_section_social() {
-	$use_social = get_theme_mod( 'use_social', '1' );
+	$use_social = get_theme_mod( 'tm_use_section_social', '1' );
 	if ( $use_social ) {
 		get_template_part( 'template-parts/section/section', 'social' );
 	}
