@@ -105,6 +105,22 @@ body.home {
 	position: relative;
 }
 
+.alignfull,
+.wp-block-cover.alignfull {
+    margin-left: calc( 50% - 50vw);
+    margin-right: calc( 50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+}
+
+.alignwide,
+.wp-block-cover.alignwide {
+    width: calc(100% + 160px);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 // # Full Height
 .full-height {
 	align-items: center;
