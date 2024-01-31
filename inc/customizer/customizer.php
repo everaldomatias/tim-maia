@@ -1820,6 +1820,55 @@ function tm_customize_register( $wp_customize ) {
     );
 
     /**
+     * Font color
+     */
+    $wp_customize->add_setting(
+        'tm_free_font_color', array(
+            'default'   => '#EEEEEE',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'tm_free_font_color_control',
+            array(
+                'settings' => 'tm_free_font_color',
+                'label'    => esc_html__( 'Cor das fontes', 'tim-maia' ),
+                'section'  => 'tm_section_free'
+            )
+        )
+    );
+
+    /**
+     * Padding bottom/top
+     */
+    $wp_customize->add_setting(
+        'tm_free_padding', array(
+            'default'   => '100',
+            'transport' => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        new Customizer_Range_Value_Control(
+            $wp_customize,
+            'tm_free_padding_control',
+            array(
+                'type'     => 'range-value',
+                'section'  => 'tm_section_free',
+                'settings' => 'tm_free_padding',
+                'label' => __( 'Margem', 'tim-maia' ),
+                'input_attrs' => array(
+                    'min'    => 30,
+                    'max'    => 200,
+                    'step'   => 5,
+                    'suffix' => 'px', //optional suffix
+                )
+            )
+        )
+    );
+
+    /**
      * Select the page
      */
     $wp_customize->add_setting(
