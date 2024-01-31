@@ -66,6 +66,9 @@ function tm_setup() {
 	// Responsive embeds
 	add_theme_support( 'responsive-embeds' );
 
+    // Add wide size blocks
+    add_theme_support( 'align-wide' );
+
 }
 add_action( 'after_setup_theme', 'tm_setup' );
 
@@ -743,3 +746,10 @@ function get_member()
 
 add_action("wp_ajax_get_member", "get_member");
 add_action("wp_ajax_nopriv_get_member", "get_member");
+
+if ( ! function_exists( 'get_post_content' ) ) {
+    function get_post_content( $post = 0 ) {
+        $post = get_post( $post );
+        return apply_filters( 'the_content', $post->post_content );
+    }
+}
