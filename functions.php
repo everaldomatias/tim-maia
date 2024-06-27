@@ -128,7 +128,7 @@ function model_scripts() {
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 	// Grunt main file with Bootstrap and others libs.
-	wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+	wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/main.min.js', ['jquery', 'isotope', 'imagesloaded'], null, true );
 
     // wp_enqueue_script( 'model-main-min', $template_url . '/assets/js/team.js', array(), null, true );
 
